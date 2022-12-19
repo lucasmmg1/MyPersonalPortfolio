@@ -1,0 +1,7 @@
+@media (min-width: 1200px)
+{
+    .modal-2xl
+    {
+        --bs-modal-width: 1356px;
+    }
+}

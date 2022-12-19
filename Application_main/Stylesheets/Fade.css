@@ -1,0 +1,76 @@
+.FadeIn
+{
+    -webkit-animation: FadeIn 1s forwards; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: FadeIn 1s forwards; /* Firefox < 16 */
+    -ms-animation: FadeIn 1s forwards; /* Internet Explorer */
+    -o-animation: FadeIn 1s forwards; /* Opera < 12.1 */
+    animation: FadeIn 1s forwards;
+}
+.FadeOut
+{
+    -webkit-animation: FadeOut 1s forwards; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: FadeOut 1s forwards; /* Firefox < 16 */
+    -ms-animation: FadeOut 1s forwards; /* Internet Explorer */
+    -o-animation: FadeOut 1s forwards; /* Opera < 12.1 */
+    animation: FadeOut 1s forwards;
+}
+
+@keyframes FadeIn
+{
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+/* Firefox < 16 */
+@-moz-keyframes FadeIn
+{
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes FadeIn
+{
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+/* Internet Explorer */
+@-ms-keyframes FadeIn
+{
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+/* Opera < 12.1 */
+@-o-keyframes FadeIn
+{
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+
+@keyframes FadeOut
+{
+    from {opacity: 1;}
+    to   {opacity: 0;}
+}
+/* Firefox < 16 */
+@-moz-keyframes FadeOut
+{
+    from {opacity: 1;}
+    to   {opacity: 0;}
+}
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes FadeOut
+{
+    from {opacity: 1;}
+    to   {opacity: 0;}
+}
+/* Internet Explorer */
+@-ms-keyframes FadeOut
+{
+    from {opacity: 1;}
+    to   {opacity: 0;}
+}
+/* Opera < 12.1 */
+@-o-keyframes FadeOut
+{
+    from {opacity: 1;}
+    to   {opacity: 0;}
+}
