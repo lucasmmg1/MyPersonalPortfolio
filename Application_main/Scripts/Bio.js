@@ -59,7 +59,7 @@ function SetupBioSectionUpperRightDivision()
 
     paragraphTitle = paragraphHeader.appendChild(document.createElement("h3"));
     paragraphTitle.classList.add("m-0", "p-0", "text-opaque-dark");
-    paragraphTitle.innerHTML = USED_BIO_TITLE;
+    paragraphTitle.innerHTML = Constants.BIO_TITLE;
     paragraphTitle.id = "BioTitle";
 
     paragraphSubtitle = paragraphHeader.appendChild(document.createElement("h6"));

@@ -1,44 +1,22 @@
-const numberOfImagesPerRow = 3;
-
-function InstantiateMoodboard(content, imagePath, numberOfMoodboardRows, contentAction)
+function InstantiateMoodboardImageProject(content, instantiationOrder, imagePath, imageName, imageSize, contentAction)
 {
-    for (let i = numberOfMoodboardRows; i > 0; i--)
-        InstantiateMoodboardRow(content, imagePath, i, contentAction);
-}
-
-
-function InstantiateMoodboardRow(content, imagePath, currentMoodboardRow, contentAction)
-{
-    let instantiationId = 0;
-    let itemId = numberOfImagesPerRow * currentMoodboardRow;
-    let moodboardRow = content.appendChild(document.createElement("div"));
-    moodboardRow.classList.add("row", "m-0", "p-0");
-
-    for (let i = itemId; i > itemId - 3; i--)
+    setTimeout(() =>
     {
-        setTimeout(() => DecideImageSize(moodboardRow, currentMoodboardRow, itemId, imagePath, i, contentAction), 100 * instantiationId);
-        instantiationId++;
-    }
-}
-function DecideImageSize(content, currentMoodboardRow, itemId, imagePath, imageName, contentAction)
-{
-    let isImageBig = (currentMoodboardRow % 2 === 0 && imageName === itemId - 2) || (currentMoodboardRow % 2 === 1 && imageName === itemId);
-    let isRowEven = (currentMoodboardRow % 2 === 0 && imageName === itemId - 2);
-    let size = isImageBig ? "col-6" : "col-3";
-    let timeout = isImageBig ?  isRowEven ? 30 : 10 : isRowEven ? 10 : 30;
-
-    CheckIfImageExists(`${imagePath}${imageName}.png`,
-    function()
-    {
-        setTimeout(function()
-        {
-            InstantiateImage(content, imagePath, imageName, size, contentAction);
-        }, timeout);
-    },
-    function ()
-    {
-        let placeholder = content.appendChild(document.createElement("div"));
-        placeholder.classList.add(size);
+        CheckIfImageExists
+        (`${imagePath}/${imageName}`,
+            function()
+            {
+                setTimeout(function()
+                {
+                    InstantiateImage(content, imagePath, imageName, imageSize, contentAction);
+                }, instantiationOrder * 10);
+            },
+            function ()
+            {
+                let placeholder = content.appendChild(document.createElement("div"));
+                placeholder.classList.add(imageSize);
+            }
+        )
     })
 }
 function InstantiateImage(content, imagePath, imageName, imageSize, contentAction)
@@ -55,16 +33,75 @@ function InstantiateImage(content, imagePath, imageName, imageSize, contentActio
         contentAction(imageName);
     };
 
-    img.src = `${imagePath}${imageName}.png`;
+    img.src = `${imagePath}/${imageName}`;
     img.classList.add("w-100");
     img.alt = "";
 }
-
 function CheckIfImageExists(url, OnImageLoadSucceeded, OnImageLoadFailed)
 {
-    let img = new Image();
+    let img = document.createElement("img");
     img.onload = OnImageLoadSucceeded;
     img.onerror = OnImageLoadFailed;
 
     img.src = url;
+    img.remove();
+}
+
+function InstantiateMoodboardVideoProject(content, instantiationOrder, videoPath, videoName, videoSize, contentAction)
+{
+    setTimeout(() =>
+    {
+        CheckIfVideoExists
+        (`${videoPath}/${videoName}`,
+            function()
+            {
+                setTimeout(function()
+                {
+                    console.log("Loaded");
+                    InstantiateVideo(content, videoPath, videoName, videoSize, contentAction);
+                }, instantiationOrder * 10);
+            },
+            function ()
+            {
+                console.log("Failed");
+                let placeholder = content.appendChild(document.createElement("div"));
+                placeholder.classList.add(videoSize);
+            }
+        )
+    })
+}
+function InstantiateVideo(content, videoPath, videoName, videoSize, contentAction)
+{
+    let link = content.appendChild(document.createElement("a"));
+    let video = link.appendChild(document.createElement("video"));
+    let source = video.appendChild(document.createElement("source"));
+
+    link.type = "button";
+    link.classList.add(videoSize, "p-1");
+    link.dataset.bsToggle = "modal";
+    link.dataset.bsTarget = "#modalContent";
+    link.onclick = function()
+    {
+        contentAction(videoName);
+    };
+
+    video.classList.add("w-100");
+    video.alt = "";
+
+    source.src = `${videoPath}/${videoName}`;
+    source.type = "video/mp4";
+}
+function CheckIfVideoExists(url, OnVideoLoadSucceeded, OnVideoLoadFailed)
+{
+    let video = document.createElement("video");
+    let source = document.createElement("source");
+
+    video.onloadeddata = OnVideoLoadSucceeded;
+    video.onerror = OnVideoLoadFailed;
+
+    video.type = "video/mp4";
+    video.src = url;
+
+    source.remove();
+    video.remove();
 }

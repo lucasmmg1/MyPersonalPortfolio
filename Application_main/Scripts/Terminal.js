@@ -28,7 +28,7 @@ function SetupTerminalInterface()
 }
 function SetupTerminalCommands()
 {
-    let typewriter = new Typewriter(terminalDescription, {loop: false, delay: 25, cursor: ""});
+    let terminalTypewriter = new Typewriter(terminalDescription, {loop: false, delay: 25, cursor: ""});
     terminalDescription.classList.add("row", "pb-2");
 
     $(terminalBody).terminal
@@ -199,7 +199,7 @@ function SetupTerminalCommands()
 
         prompt: '$ ',
         checkArity: false,
-        greetings: typewriter.typeString(TERMINAL_DESCRIPTION_PT).start(),
+        greetings: terminalTypewriter.typeString(USED_TERMINAL_DESCRIPTION + Constants.TERMINAL_LANGUAGE_DESCRIPTION).start(),
     });
 }
 function SetupTerminalOrder()

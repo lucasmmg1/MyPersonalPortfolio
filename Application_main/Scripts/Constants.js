@@ -1,9 +1,18 @@
-//region Content
+class Constants
+{
+    //region Variables
 
-//region General Content
-let BIO_TITLE = "Lucas Martin Macedo Gagliano";
-let PROJECTS_CATEGORIES_QUANTITIES = ["4", "5", "5", "2", "5"];
-//endregion
+    //region Public Variables
+    static TERMINAL_LANGUAGE_DESCRIPTION = "\nTo change your this terminal's current language, type 'cl' followed by one of the following language codes.";
+    static BIO_TITLE = "Lucas Martin Macedo Gagliano";
+    static PROJECTS_CATEGORIES_QUANTITIES = ["4", "5", "5", "2", "5"];
+    static PROJECTS_SOFTWARES_QUANTITIES = ["1"];
+    //endregion
+
+    //endregion
+}
+
+//region Content
 
 //region PT-BR Content
 
@@ -14,7 +23,7 @@ let OG_DESCRIPTION_PT = "Sou um estudante de design de games. Venha conhecer meu
 //endregion
 
 //region Terminal
-let TERMINAL_DESCRIPTION_PT = "Bem-vindo ao meu portfolio. \nDigite 'comecar' para ser direcionado ou 'ajuda' para ver uma lista de comandos disponíveis.";
+let TERMINAL_DESCRIPTION_PT = "Bem-vindo ao meu portfolio! \nDigite 'comecar' para ser direcionado ou 'ajuda' para ver uma lista de comandos disponíveis.";
 //endregion
 
 //region Header
@@ -56,8 +65,8 @@ let BIG_BIO_CENTER_CONTENT_PT = "Isso é um pouco sobre mim! Abaixo, segue uma c
 //endregion
 
 //region Projects
-let PROJECTS_NAVBAR_TITLE_PT = "Categorias";
 let PROJECTS_CATEGORIES_NAMES_PT = ["Aplicativos", "Jogos", "Modelagens", "Animações", "Fotografias"];
+let PROJECTS_SOFTWARES_NAMES_PT = ["Processing"];
 let PROJECTS_MODAL_CAROUSEL_PREVIOUS_BUTTON_PT = "Anterior";
 let PROJECTS_MODAL_CAROUSEL_NEXT_BUTTON_PT = "Próximo";
 
@@ -95,6 +104,7 @@ let NAVBAR_OPTIONS_EN = ["Bio", "Projects"];
 //endregion
 
 //region Terminal
+let TERMINAL_DESCRIPTION_EN = "Welcome to my portfolio! \nType 'start' to be redirected or 'help' to see a list of available commands.";
 //endregion
 
 //region Bio
@@ -131,8 +141,8 @@ let BIG_BIO_CENTER_CONTENT_EN = "That’s a little about myself! Below, you can 
 //endregion
 
 //region Projects
-let PROJECTS_NAVBAR_TITLE_EN = "Categories";
 let PROJECTS_CATEGORIES_NAMES_EN = ["Apps", "Games", "3D Models", "Animations", "Pics"];
+let PROJECTS_SOFTWARES_NAMES_EN = ["Processing"];
 let PROJECTS_MODAL_CAROUSEL_PREVIOUS_BUTTON_EN = "Previous";
 let PROJECTS_MODAL_CAROUSEL_NEXT_BUTTON_EN = "Next";
 
@@ -164,11 +174,6 @@ let PROJECTS_MODELAGENS_ILUSAODEOTICA_DESCRIPTION_EN = "Mussum Ipsum, cacilds vi
 
 // region Holders
 
-//region General Holders
-let USED_BIO_TITLE;
-let USED_PROJECTS_CATEGORIES_QUANTITIES;
-//endregion
-
 //region Translational Holders
 
 //region Document
@@ -177,6 +182,7 @@ let USED_OG_DESCRIPTION;
 //endregion
 
 //region Terminal
+let USED_TERMINAL_DESCRIPTION;
 //endregion
 
 //region Header
@@ -194,8 +200,8 @@ let USED_BIG_BIO_CENTER_CONTENT;
 
 //region Projects
 let USED_SMALL_BIO_CONTENT;
-let USED_PROJECTS_NAVBAR_TITLE;
 let USED_PROJECTS_CATEGORIES_NAMES;
+let USED_PROJECT_SOFTWARES_NAMES;
 let USED_PROJECTS_MODAL_CAROUSEL_PREVIOUS_BUTTON;
 let USED_PROJECTS_MODAL_CAROUSEL_NEXT_BUTTON;
 
