@@ -10,14 +10,25 @@ function ShowAplicativos()
 function SetupAplicativosStructure()
 {
     aplicativosDivision = projectsSection.appendChild(document.createElement("div"));
-    aplicativosDivision.classList.add("col-12", "w-100", "m-0", "p-0");
+    aplicativosDivision.classList.add("row", "w-100", "m-0", "p-0");
 }
 function SetupAplicativosContent()
 {
-    InstantiateMoodboard(aplicativosDivision, `./Application_main/Sprites/Pages/Projects/Aplicativos/_Thumbnails/Thumbnail`, 2, SetupAplicativosModalContent);
+    let instantiationOrder = 0;
+    let currentRow = 2;
+
+    for (let i = modelagensSize; i > 0; i--)
+    {
+        let imageSize = currentRow % 2 === 0 && i === 3 * currentRow - 2 || currentRow % 2 !== 0 && i === 3 * currentRow ? 'col-6' : 'col-3';
+        InstantiateMoodboardImageProject(aplicativosDivision, instantiationOrder, `./Application_main/Sprites/Pages/Projects/Aplicativos/_Thumbnails`, `Thumbnail${i}.png`, imageSize, SetupAplicativosModalContent);
+        instantiationOrder++;
+
+        if ((i - 1) % 3 === 0)
+            currentRow--;
+    }
 }
 function SetupAplicativosModalContent(modalId)
-{t
+{
     let carouselSize, numberOfSlides, carouselContentPath;
     let descriptionSize, descriptionTitle, descriptionParagraph;
     document.body.style.overflow = "hidden";

@@ -1,4 +1,5 @@
 let modelagensDivision;
+let modelagensSize = 6;
 
 function ShowModelagens()
 {
@@ -14,17 +15,29 @@ function SetupModelagensStructure()
 }
 function SetupModelagensContent()
 {
-    InstantiateMoodboard(modelagensDivision, `./Application_main/Sprites/Pages/Projects/Modelagens/_Thumbnails/Thumbnail`, 2, SetupModelagensModalContent);
+    let instantiationOrder = 0;
+    let currentRow = 2;
+
+    for (let i = modelagensSize; i > 0; i--)
+    {
+        let imageSize = currentRow % 2 === 0 && i === 3 * currentRow - 2 || currentRow % 2 !== 0 && i === 3 * currentRow ? 'col-6' : 'col-3';
+        InstantiateMoodboardImageProject(modelagensDivision, instantiationOrder, `./Application_main/Sprites/Pages/Projects/Modelagens/_Thumbnails`, `Thumbnail${i}.png`, imageSize, SetupModelagensModalContent);
+        instantiationOrder++;
+
+        if ((i - 1) % 3 === 0)
+            currentRow--;
+    }
 }
 function SetupModelagensModalContent(modalId)
 {
+    console.log(modalId);
     let carouselSize, numberOfSlides, carouselContentPath;
     let descriptionSize, descriptionTitle, descriptionParagraph;
     document.body.style.overflow = "hidden";
 
-    switch (parseInt(modalId))
+    switch (modalId)
     {
-        case 1:
+        case "Thumbnail1.png":
             modalDialogSize = "modal-lg";
             carouselSize = "col-7";
             numberOfSlides = 9;
@@ -34,7 +47,7 @@ function SetupModelagensModalContent(modalId)
             descriptionParagraph = USED_PROJECTS_MODELAGENS_DONUT_DESCRIPTION;
             break;
 
-        case 2:
+        case "Thumbnail2.png":
             modalDialogSize = "modal-lg";
             carouselSize = "col-7";
             numberOfSlides = 6;
@@ -44,7 +57,7 @@ function SetupModelagensModalContent(modalId)
             descriptionParagraph = USED_PROJECTS_MODELAGENS_HAMBURGUER_DESCRIPTION;
             break;
 
-        case 3:
+        case "Thumbnail3.png":
             modalDialogSize = "modal-2xl";
             carouselSize = "col-7";
             numberOfSlides = 3;
@@ -54,7 +67,7 @@ function SetupModelagensModalContent(modalId)
             descriptionParagraph = USED_PROJECTS_MODELAGENS_SABREDELUZ_DESCRIPTION;
             break;
 
-        case 4:
+        case "Thumbnail4.png":
             modalDialogSize = "modal-lg";
             carouselSize = "col-7";
             numberOfSlides = 15;
@@ -64,7 +77,7 @@ function SetupModelagensModalContent(modalId)
             descriptionParagraph = USED_PROJECTS_MODELAGENS_TIEFIGHTER_DESCRIPTION;
             break;
 
-        case 5:
+        case "Thumbnail5.png":
             modalDialogSize = "modal-lg";
             carouselSize = "col-7";
             numberOfSlides = 1;
