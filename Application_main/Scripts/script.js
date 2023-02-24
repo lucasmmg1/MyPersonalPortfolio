@@ -1,16 +1,21 @@
+let currentPage;
+
 function main()
 {
-    SetupDocument();
-    SetupHead();
-    SetupHeader();
-    SetupNavbar();
-    SetupSection();
-}
+    DocumentController.Setup();
+    HeadController.Setup();
 
-function update()
-{
-    UpdateSelectedPageNavbar();
-    UpdateSelectedSection();
-}
+    switch (currentPage)
+    {
+        case "TerminalPage":
+            TerminalPageController.Setup();
+            break;
 
-main();
+        case "PortfolioPage":
+            PortfolioPageController.Setup();
+            break;
+
+        default:
+            break;
+    }
+}
