@@ -1,7 +1,7 @@
 class ProjectView
 {
     static tags = [];
-    static projectType;
+    static previewType;
     static previewFileSize;
     static previewFileType;
     static previewFilePath;
@@ -13,10 +13,10 @@ class ProjectView
     static descriptionParagraphKey;
     static modalDialogSize;
 
-    constructor(tags, projectType = undefined, previewImageSize = undefined, previewFileType = undefined, previewFilePath = undefined, carouselSize = undefined, numberOfSlides = undefined, carouselContentPath = undefined, descriptionSize = undefined, descriptionTitleKey = undefined, descriptionParagraphKey = undefined, modalDialogSize = undefined)
+    constructor(tags, previewType = undefined, previewImageSize = undefined, previewFileType = undefined, previewFilePath = undefined, carouselSize = undefined, numberOfSlides = undefined, carouselContentPath = undefined, descriptionSize = undefined, descriptionTitleKey = undefined, descriptionParagraphKey = undefined, modalDialogSize = undefined)
     {
         this.tags = tags;
-        this.projectType = projectType;
+        this.previewType = previewType;
         this.previewFileSize = previewImageSize;
         this.previewFileType = previewFileType;
         this.previewFilePath = previewFilePath;

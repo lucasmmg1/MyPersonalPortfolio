@@ -4,7 +4,8 @@ class TerminalPageController
     static terminalWindow;
     static terminalHeader;
     static terminalBody;
-    static terminalDescription;
+    static terminalGreetings;
+    static terminalHelper;
     static currentCommand;
 
     static Setup()
@@ -27,7 +28,8 @@ class TerminalPageController
             document.getElementsByClassName('terminal-scroller')[0].removeChild(child)
         }
 
-        document.getElementsByClassName('terminal-scroller')[0].appendChild(this.terminalDescription);
+        document.getElementsByClassName('terminal-scroller')[0].appendChild(this.terminalGreetings);
+        document.getElementsByClassName('terminal-scroller')[0].appendChild(this.terminalHelper);
         for (let i = 0; i < children.length; i++)
         {
             document.getElementsByClassName('terminal-scroller')[0].appendChild(children[i]);
@@ -35,8 +37,7 @@ class TerminalPageController
     }
     static SetupTerminalCommands()
     {
-        let terminalTypewriter = new Typewriter(this.terminalDescription, {loop: false, delay: 25, cursor: ""});
-        this.terminalDescription.classList.add("row", "pb-2");
+        let typewriter = new Typewriter(this.terminalGreetings, {loop: false, delay: 25, cursor: ""});
 
         $(this.terminalBody).terminal
         ({
@@ -191,11 +192,33 @@ class TerminalPageController
                 },
                 comecar: function()
                 {
-                    window.location = "../../../../../portfolio.html";
+                    window.location = "./portfolio.html";
+                },
+                cl: function(languageCode)
+                {
+                    if (languageCode === undefined)
+                    {
+                        TerminalPageController.ReturnError(`Error: Wrong number of parameters!`);
+                        return;
+                    }
+
+                    for (let language of Object.keys(Language.availableLanguages))
+                    {
+                        if (languageCode.toLowerCase() === language)
+                            Language.SetCurrentLanguage(languageCode.toLowerCase());
+                    }
+
+                    this.echo(Language.GetElementByLanguage("k_TerminalPage_ReloadWarning"));
+                    TerminalPageController.UpdateGivenCommand(2);
+
+                    setTimeout(() =>
+                    {
+                        document.location.reload();
+                    }, 100);
                 },
                 start: function()
                 {
-                    window.location = "../../../../../portfolio.html";
+                    window.location = "./portfolio.html";
                 }
             },
             {
@@ -206,25 +229,39 @@ class TerminalPageController
 
                 prompt: '$ ',
                 checkArity: false,
-                greetings: terminalTypewriter.typeString(Language.GetElementByLanguage("k_TerminalPage_TerminalGreeting") + Constants.generalContent["k_TerminalPage_TerminalLanguageWarning"]).start(),
+                greetings: typewriter.typeString(Language.GetElementByLanguage("k_TerminalPage_TerminalGreeting") + Constants.generalContent["k_TerminalPage_TerminalLanguageWarning"]).start(),
             });
+
+        setTimeout(() =>
+        {
+            for (let i = 0; i < Object.keys(Language.availableLanguages).length; i++)
+            {
+                let languageDiv = this.terminalHelper.appendChild(document.createElement("div"));
+                languageDiv.classList.add("row");
+                let typewriter = new Typewriter(languageDiv, {loop: false, delay: 25, cursor: ""});
+                typewriter.typeString(`${Object.keys(Language.availableLanguages)[i]}: ${Object.values(Language.availableLanguages)[i]}`).start();
+            }
+
+            typewriter = null;
+        }, (Language.GetElementByLanguage("k_TerminalPage_TerminalGreeting").length + Constants.generalContent["k_TerminalPage_TerminalLanguageWarning"].length) * 32.5);
     }
     static SetupTerminalInterface()
     {
         document.body.classList.add("bgcolor_F7F7F7");
 
         this.terminalContent = document.body.appendChild(document.createElement("div"));
-        this.terminalWindow = this.terminalContent.appendChild(document.createElement("div"));
         this.terminalContent.classList.add("d-flex", "w-50","h-100", "mx-auto");
+        this.terminalWindow = this.terminalContent.appendChild(document.createElement("div"));
         this.terminalWindow.classList.add("col", "h-50", "my-auto", "justify-content-center");
-
         this.terminalHeader = this.terminalWindow.appendChild(document.createElement("div"));
-        this.terminalBody = this.terminalWindow.appendChild(document.createElement("div"));
         this.terminalHeader.classList.add("text-center", "bgcolor_0E1013", "rounded-top", "text-cream");
+        this.terminalBody = this.terminalWindow.appendChild(document.createElement("div"));
         this.terminalBody.classList.add("w-100", "h-100", "ps-2", "pt-2", "bgcolor_300A25", "text-white");
-
         this.terminalHeader.innerHTML = "~./index.html";
-        this.terminalDescription = this.terminalBody.appendChild(document.createElement("div"));
+        this.terminalGreetings = this.terminalBody.appendChild(document.createElement("div"));
+        this.terminalGreetings.classList.add("row", "pb-2");
+        this.terminalHelper = this.terminalBody.appendChild(document.createElement("div"));
+        this.terminalHelper.classList.add("row", "pb-2");
     }
 
     static UpdateGivenCommand(sumDelta)
