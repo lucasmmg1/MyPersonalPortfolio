@@ -41,25 +41,20 @@ class PortfolioPageController
     static SetupLanguageDropdown()
     {
         let dropdownMenuButton = document.getElementById("dropdownMenuButton");
-        let dropdownMenuContent = document.getElementById("dropdownMenuContent");
-        let nonActiveLanguages = Language.availableLanguages.filter(function (value)
-        {
-            return value !== Language.GetCurrentLanguage()
-        });
-
         dropdownMenuButton.innerHTML = Language.GetCurrentLanguage();
+        let dropdownMenuContent = document.getElementById("dropdownMenuContent");
 
-        for (let nonActiveLanguage of nonActiveLanguages)
+        for (let languageCode of Object.keys(Language.availableLanguages))
         {
             let nonActiveLanguageOption = dropdownMenuContent.appendChild(document.createElement('a'));
             nonActiveLanguageOption.classList.add('dropdown-item', 'Calibri');
             nonActiveLanguageOption.onclick = function()
             {
-                Language.SetCurrentLanguage(nonActiveLanguage);
+                Language.SetCurrentLanguage(languageCode);
                 document.location.reload();
             };
 
-            nonActiveLanguageOption.innerHTML = nonActiveLanguage;
+            nonActiveLanguageOption.innerHTML = languageCode;
         }
     }
     static SetupNavbarOptions()

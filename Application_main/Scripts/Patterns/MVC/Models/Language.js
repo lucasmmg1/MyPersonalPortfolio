@@ -1,6 +1,10 @@
 class Language
 {
-    static availableLanguages = ['pt-BR', 'en-US'];
+    static availableLanguages =
+    {
+        "pt-br" : "português brasileiro",
+        "en-us" : "american english",
+    };
 
     static GetElementByLanguage(key)
     {
@@ -8,11 +12,11 @@ class Language
 
         switch (document.documentElement.lang)
         {
-            case "pt-BR":
+            case "pt-br":
                 returnValue = Constants.ptBrContent[key];
                 break;
 
-            case "en-US":
+            case "en-us":
                 returnValue = Constants.enUsContent[key];
                 break;
 
@@ -27,8 +31,8 @@ class Language
     {
         return localStorage.getItem("language");
     }
-    static SetCurrentLanguage(currentLanguage)
+    static SetCurrentLanguage(languageCode)
     {
-        localStorage.setItem("language", currentLanguage);
+        localStorage.setItem("language", languageCode);
     }
 }

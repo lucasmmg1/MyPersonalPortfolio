@@ -21,6 +21,7 @@ class MoodboardView
     {
         let media;
         let link = content.appendChild(document.createElement("a"));
+
         link.type = "button";
         link.classList.add(projectView.previewFileSize, "p-1");
         link.dataset.bsToggle = "modal";
@@ -30,20 +31,7 @@ class MoodboardView
             contentAction(projectView);
         };
 
-        switch (projectView.projectType)
-        {
-            case "image":
-                media = link.appendChild(document.createElement("img"));
-                break;
-
-            case "video":
-                media = link.appendChild(document.createElement("video"));
-                break;
-
-            default:
-                break;
-        }
-
+        media = link.appendChild(document.createElement(projectView.previewType));
         if (media === undefined) return;
         media.classList.add("w-100");
         media.alt = "";
