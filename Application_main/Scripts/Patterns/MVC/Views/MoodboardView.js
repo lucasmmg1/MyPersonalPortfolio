@@ -1,7 +1,13 @@
 class MoodboardView
 {
+    static loadedImages;
+    static unloadedProjects = [];
+
     static Create(instantiationOrder, content, projectView, contentAction)
     {
+        this.loadedImages = 0;
+        this.unloadedProjects = [];
+
         setTimeout(() =>
         {
             if (projectView.previewFilePath === undefined)
@@ -36,5 +42,7 @@ class MoodboardView
         media.classList.add("w-100");
         media.alt = "";
         media.src = `${projectView.previewFilePath}${projectView.previewFileType}`;
+
+        this.unloadedProjects.push(media);
     }
 }

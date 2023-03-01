@@ -158,6 +158,30 @@ class PortfolioProjectsSubsectionController
             MoodboardView.Create(instantiationOrder, this.selectedProjectSection, selectedProject, this.ShowSelectedProjectModalContent);
             instantiationOrder++;
         }
+
+        do
+        {
+            setTimeout(() =>
+            {
+                for (let moodboardProject of MoodboardView.unloadedProjects)
+                {
+                    if (moodboardProject.readyState < 2) continue;
+                    MoodboardView.loadedImages++;
+                }
+            }, 100);
+        }
+        while (MoodboardView.loadedImages != MoodboardView.unloadedProjects.length);
+        MoodboardView.unloadedProjects = [];
+
+        setTimeout
+        (
+            () =>
+            {
+                this.projectsSection.classList.remove("FadeOut");
+                this.projectsSection.classList.add("FadeIn");
+            },
+            550
+        )
     }
     static ShowSelectedProjectModalContent(selectedProject)
     {
@@ -217,15 +241,5 @@ class PortfolioProjectsSubsectionController
             },
             850
         );
-
-        setTimeout
-        (
-            () =>
-            {
-                this.projectsSection.classList.remove("FadeOut");
-                this.projectsSection.classList.add("FadeIn");
-            },
-            900
-        )
     }
 }

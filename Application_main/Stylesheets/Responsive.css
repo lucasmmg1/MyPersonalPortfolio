@@ -1,28 +1,429 @@
-@media (max-width: 768px)
+@media (max-width: 375px)
 {
     body
     {
+        background-color: blue !important;
+    }
+    h1
+    {
+        font-size: 3.25rem !important;
+    }
+
+
+    #BioSectionUpper
+    {
+        flex-direction: column-reverse !important;
+    }
+    #BioSectionUpperLeft
+    {
+        width: 100% !important;
+    }
+    #BioSectionUpperRight
+    {
+        width: 100% !important;
+        margin-bottom: 3rem !important;
+    }
+    #BioSectionFooter
+    {
+        flex-direction: column !important;
+    }
+    #BioSectionFooterLeft
+    {
+        width: 100% !important;
+        margin-top: 3rem !important;
+    }
+    #BioSectionFooterRight
+    {
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+    #BioTitle
+    {
+        font-size: 1.35rem !important;
+    }
+    #BioSubtitle
+    {
+        font-size: 1rem !important;
     }
 }
-
-@media (min-width: 768px)
+@media (min-width: 375px)
 {
     body
     {
+        background-color: blueviolet !important;
+    }
+    h1
+    {
+        font-size: 3.75rem !important;
+    }
+
+
+    #BioSectionUpper
+    {
+        flex-direction: column-reverse !important;
+    }
+    #BioSectionUpperLeft
+    {
+        width: 100% !important;
+    }
+    #BioSectionUpperRight
+    {
+        width: 100% !important;
+        margin-bottom: 3rem !important;
+    }
+    #BioSectionFooter
+    {
+        flex-direction: column !important;
+    }
+    #BioSectionFooterLeft
+    {
+        width: 100% !important;
+        margin-top: 3rem !important;
+    }
+    #BioSectionFooterRight
+    {
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+    #BioTitle
+    {
+        font-size: 1.35rem !important;
+    }
+    #BioSubtitle
+    {
+        font-size: 1rem !important;
     }
 }
+@media (min-width: 428px)
+{
+    body
+    {
+        background-color: red !important;
+    }
+    h1
+    {
+        font-size: 4.25rem !important;
+    }
 
+
+    #BioSectionUpper
+    {
+        flex-direction: column-reverse !important;
+    }
+    #BioSectionUpperLeft
+    {
+        width: 100% !important;
+    }
+    #BioSectionUpperRight
+    {
+        width: 100% !important;
+        margin-bottom: 3rem !important;
+    }
+    #BioSectionFooter
+    {
+        flex-direction: column !important;
+    }
+    #BioSectionFooterLeft
+    {
+        width: 100% !important;
+        margin-top: 3rem !important;
+    }
+    #BioSectionFooterRight
+    {
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+    #BioTitle
+    {
+        font-size: 1.35rem !important;
+    }
+    #BioSubtitle
+    {
+        font-size: 1rem !important;
+    }
+}
+@media (min-width: 575px)
+{
+    body
+    {
+        background-color: green !important;
+    }
+    h1
+    {
+        font-size: 4.75rem !important;
+    }
+
+
+    #BioSectionUpper
+    {
+        flex-direction: column-reverse !important;
+    }
+    #BioSectionUpperLeft
+    {
+        width: 100% !important;
+    }
+    #BioSectionUpperRight
+    {
+        width: 100% !important;
+        margin-bottom: 3rem !important;
+    }
+    #BioSectionFooter
+    {
+        flex-direction: column !important;
+    }
+    #BioSectionFooterLeft
+    {
+        width: 100% !important;
+        margin-top: 3rem !important;
+    }
+    #BioSectionFooterRight
+    {
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+    #BioTitle
+    {
+        font-size: 1.5rem !important;
+    }
+    #BioSubtitle
+    {
+        font-size: 1.25rem !important;
+    }
+}
+@media (min-width: 700px)
+{
+    body
+    {
+        background-color: yellow !important;
+    }
+    h1
+    {
+        font-size: 5.65rem !important;
+    }
+
+
+    #BioSectionUpper
+    {
+        flex-direction: column-reverse !important;
+    }
+    #BioSectionUpperLeft
+    {
+        width: 100% !important;
+    }
+    #BioSectionUpperRight
+    {
+        width: 100% !important;
+        margin-bottom: 3rem !important;
+    }
+    #BioSectionFooter
+    {
+        flex-direction: column !important;
+    }
+    #BioSectionFooterLeft
+    {
+        width: 100% !important;
+        margin-top: 3rem !important;
+    }
+    #BioSectionFooterRight
+    {
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+    #BioTitle
+    {
+        font-size: 1.65rem !important;
+    }
+    #BioSubtitle
+    {
+        font-size: 1.3rem !important;
+    }
+}
+@media (min-width: 830px)
+{
+    body
+    {
+        background-color: purple !important;
+    }
+    h1
+    {
+        font-size: 5rem !important;
+    }
+
+
+    #BioSectionUpper
+    {
+        flex-direction: row !important;
+    }
+    #BioSectionUpperLeft
+    {
+        width: 45% !important;
+    }
+    #BioSectionUpperRight
+    {
+        width: 45% !important;
+        margin-bottom: 0 !important;
+    }
+    #BioSectionFooter
+    {
+        flex-direction: row !important;
+    }
+    #BioSectionFooterLeft
+    {
+        width: 45% !important;
+        margin-top: 3rem !important;
+    }
+    #BioSectionFooterRight
+    {
+        width: 45% !important;
+        margin-top: 3rem !important;
+    }
+    #BioTitle
+    {
+        font-size: 1.075rem !important;
+    }
+    #BioSubtitle
+    {
+        font-size: 1rem !important;
+    }
+}
 @media (min-width: 992px)
 {
     body
     {
+        background-color: orangered !important;
+    }
+    h1
+    {
+        font-size: 5.5rem !important;
     }
 
+    #BioSectionUpper
+    {
+        flex-direction: row !important;
+    }
+    #BioSectionUpperLeft
+    {
+        width: 41.66% !important;
+    }
+    #BioSectionUpperRight
+    {
+        width: 41.66% !important;
+        margin-bottom: 0 !important;
+    }
+    #BioSectionFooter
+    {
+        flex-direction: row !important;
+    }
+    #BioSectionFooterLeft
+    {
+        width: 41.66% !important;
+        margin-top: 3rem !important;
+    }
+    #BioSectionFooterRight
+    {
+        width: 41.66% !important;
+        margin-top: 3rem !important;
+    }
+    #BioTitle
+    {
+        font-size: 1.2rem !important;
+    }
+    #BioSubtitle
+    {
+        font-size: 1.05rem !important;
+    }
 }
-
 @media (min-width: 1200px)
 {
     body
     {
+        background-color: pink !important;
+    }
+    h1
+    {
+        font-size: 5rem !important;
+    }
+
+    #BioSectionUpper
+    {
+        flex-direction: row !important;
+    }
+    #BioSectionUpperLeft
+    {
+        width: 41.66% !important;
+    }
+    #BioSectionUpperRight
+    {
+        width: 41.66% !important;
+        margin-bottom: 0 !important;
+    }
+    #BioSectionFooter
+    {
+        flex-direction: row !important;
+    }
+    #BioSectionFooterLeft
+    {
+        width: 41.66% !important;
+        margin-top: 3rem !important;
+    }
+    #BioSectionFooterRight
+    {
+        width: 41.66% !important;
+        margin-top: 3rem !important;
+    }
+    #BioTitle
+    {
+        font-size: 1.35rem !important;
+    }
+    #BioSubtitle
+    {
+        font-size: 1.15rem !important;
+    }
+}
+@media (min-width: 1920px)
+{
+    body
+    {
+        background-color: brown !important;
+    }
+    h1
+    {
+        font-size: 5rem !important;
+    }
+
+    #BioSectionUpper
+    {
+        flex-direction: row !important;
+    }
+    #BioSectionUpperLeft
+    {
+        width: 41.66% !important;
+    }
+    #BioSectionUpperRight
+    {
+        width: 41.66% !important;
+        margin-bottom: 0 !important;
+    }
+    #BioSectionFooter
+    {
+        flex-direction: row !important;
+    }
+    #BioSectionFooterLeft
+    {
+        width: 41.66% !important;
+        margin-top: 3rem !important;
+    }
+    #BioSectionFooterRight
+    {
+        width: 41.66% !important;
+        margin-top: 3rem !important;
+    }
+    #BioTitle
+    {
+        font-size: 1.65rem !important;
+    }
+    #BioSubtitle
+    {
+        font-size: 1.35rem !important;
     }
 }

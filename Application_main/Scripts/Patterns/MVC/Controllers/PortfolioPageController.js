@@ -32,10 +32,10 @@ class PortfolioPageController
     {
         let websiteHeader = document.getElementById('websiteHeader');
         let title = websiteHeader.appendChild(document.createElement("h1"));
-        let typewriter = new Typewriter(title, {loop: false, delay: 85});
         title.classList.add("mx-auto", "mt-0", "mb-0", "p-0", "line-height-1", "text-opaque-dark");
         title.id = "TituloIndex";
 
+        let typewriter = new Typewriter(title, {loop: false, delay: 85});
         typewriter.typeString(Language.GetElementByLanguage("k_PortfolioPage_BodyHeader")).start();
     }
     static SetupLanguageDropdown()
@@ -64,19 +64,23 @@ class PortfolioPageController
         for (let i = 0; i < this.pagesIds.length; i++)
         {
             let navbarOption = this.websiteNavbar.appendChild(document.createElement("button"));
-            let typewriter = new Typewriter(navbarOption, {loop: false, cursor: "", delay: 85});
-
-            navbarOption.classList.add("navbar-link", "w-15");
+            navbarOption.classList.add("row", "position-relative", "navbar-link");
             navbarOption.id = `${this.pagesIds[i]}Navbar`;
-
             navbarOption.addEventListener('click', () =>
-            {
+                {
                     this.UpdateSelectedPageId(i);
                     this.UpdateSelectedNavbarOption();
                     this.UpdateSelectedSectionOption();
-            },
-            true);
+                },
+                true);
 
+            let placeholderTMP = navbarOption.appendChild(document.createElement("p"));
+            placeholderTMP.classList.add("m-0", "p-0", "opacity-0");
+            placeholderTMP.innerHTML = `${Language.GetElementByLanguage("k_PortfolioPage_NavbarOptions")[i]}`;
+
+            let definitiveTMP = navbarOption.appendChild(document.createElement("p"));
+            definitiveTMP.classList.add("m-0", "p-0", "position-absolute", "navbar-overlay");
+            let typewriter = new Typewriter(definitiveTMP, {loop: false, cursor: "", delay: 85});
             typewriter.typeString(`${Language.GetElementByLanguage("k_PortfolioPage_NavbarOptions")[i]}`).start();
         }
     }

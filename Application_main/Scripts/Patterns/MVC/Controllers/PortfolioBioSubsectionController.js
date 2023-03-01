@@ -1,12 +1,12 @@
 class PortfolioBioSubsectionController
 {
-    static firstSectionRow;
-    static secondSectionRow;
-    static upperLeftDivision;
-    static upperRightDivision;
-    static lowerLeftDivision;
-    static lowerRightDivision;
-    static lowerCenterDivision;
+    static bioSectionUpper;
+    static bioSectionUpperLeft;
+    static bioSectionUpperRight;
+    static bioSectionFooter;
+    static bioSectionFooterLeft;
+    static bioSectionFooterRight;
+    static bioSectionFooterCenter;
 
     static Setup()
     {
@@ -20,72 +20,71 @@ class PortfolioBioSubsectionController
     }
     static SetupBioContent()
     {
-        this.firstSectionRow = PortfolioPageController.selectedSection.appendChild(document.createElement("div"));
-        this.secondSectionRow = PortfolioPageController.selectedSection.appendChild(document.createElement("div"));
-        this.upperLeftDivision = this.firstSectionRow.appendChild(document.createElement("div"));
-        this.upperRightDivision = this.firstSectionRow.appendChild(document.createElement("div"));
-        this.lowerLeftDivision = this.secondSectionRow.appendChild(document.createElement("div"));
-        this.lowerRightDivision = this.secondSectionRow.appendChild(document.createElement("div"));
-        this.lowerCenterDivision = this.secondSectionRow.appendChild(document.createElement("div"));
-
-        this.firstSectionRow.classList.add("d-flex", "flex-row", "row", "w-75", "mx-0", "mt-0", "mb-5", "p-0");
-        this.secondSectionRow.classList.add("d-flex", "flex-row", "row", "w-100", "mx-0", "mt-4", "mb-0", "p-0", "text-justify", "KeepCalm", "text-opaque-light");
-        this.secondSectionRow.id = "BioSectionFooter";
-        this.upperLeftDivision.classList.add("d-flex", "flex-column", "col-5", "m-auto", "px-3", "py-0");
-        this.upperRightDivision.classList.add("d-flex", "flex-column", "col-5", "m-auto", "p-0", "KeepCalm");
-        this.lowerLeftDivision.classList.add("d-flex", "flex-column", "col-6", "mx-0", "mt-2", "mb-0", "p-0");
-        this.lowerRightDivision.classList.add("d-flex", "flex-column", "col-6", "mx-0", "mt-2", "mb-0", "p-0");
-        this.lowerCenterDivision.classList.add("d-flex", "flex-column", "col-12", "m-auto", "p-0");
+        this.bioSectionUpper = PortfolioPageController.selectedSection.appendChild(document.createElement("div"));
+        this.bioSectionUpper.classList.add("d-flex", "row", "w-75", "mx-0", "mt-0", "mb-5", "p-0", "align-items-center", "justify-content-center");
+        this.bioSectionUpper.id = "BioSectionUpper";
+        this.bioSectionUpperLeft = this.bioSectionUpper.appendChild(document.createElement("div"));
+        this.bioSectionUpperLeft.classList.add("mx-auto", "px-3", "py-0");
+        this.bioSectionUpperLeft.id = "BioSectionUpperLeft";
+        this.bioSectionUpperRight = this.bioSectionUpper.appendChild(document.createElement("div"));
+        this.bioSectionUpperRight.classList.add("mx-auto", "p-0", "KeepCalm");
+        this.bioSectionUpperRight.id = "BioSectionUpperRight";
+        this.bioSectionFooter = PortfolioPageController.selectedSection.appendChild(document.createElement("div"));
+        this.bioSectionFooter.classList.add("d-flex", "row", "w-100", "mx-0", "mt-4", "mb-0", "p-0", "text-justify", "justify-content-center", "KeepCalm", "text-opaque-light");
+        this.bioSectionFooter.id = "BioSectionFooter";
+        this.bioSectionFooterLeft = this.bioSectionFooter.appendChild(document.createElement("div"));
+        this.bioSectionFooterLeft.classList.add("m-0", "p-0");
+        this.bioSectionFooterLeft.id = "BioSectionFooterLeft";
+        this.bioSectionFooterRight = this.bioSectionFooter.appendChild(document.createElement("div"));
+        this.bioSectionFooterRight.classList.add("m-0", "p-0");
+        this.bioSectionFooterRight.id = "BioSectionFooterRight";
+        this.bioSectionFooterCenter = this.bioSectionFooter.appendChild(document.createElement("div"));
+        this.bioSectionFooterCenter.classList.add("m-auto", "p-0");
     }
     static ShowBioContent()
     {
-        let bioPicture;
-        let paragraphHeader, paragraphSection, paragraphFooter;
-        let paragraphTitle, paragraphSubtitle, paragraphContent, paragraphLink;
-        let paragraphLeft, paragraphRight, paragraphCenter;
-        let downloadSection, downloadImage, downloadLink;
+        let bioPicture, paragraphHeader, paragraphSection, paragraphFooter, paragraphTitle, paragraphSubtitle, paragraphContent, paragraphLink, paragraphLeft, paragraphRight, paragraphCenter, downloadSection, downloadImage, downloadLink;
 
-        bioPicture = this.upperLeftDivision.appendChild(document.createElement("img"));
-        paragraphHeader = this.upperRightDivision.appendChild(document.createElement("div"));
-        paragraphSection = this.upperRightDivision.appendChild(document.createElement("div"));
-        paragraphFooter = this.upperRightDivision.appendChild(document.createElement("div"));
-        paragraphTitle = paragraphHeader.appendChild(document.createElement("h3"));
-        paragraphSubtitle = paragraphHeader.appendChild(document.createElement("h6"));
-        paragraphContent = paragraphSection.appendChild(document.createElement("p"));
-        paragraphLink = paragraphFooter.appendChild(document.createElement("a"));
-        paragraphLeft = this.lowerLeftDivision.appendChild(document.createElement("p"));
-        paragraphRight = this.lowerRightDivision.appendChild(document.createElement("p"));
-        paragraphCenter = this.lowerCenterDivision.appendChild(document.createElement("p"));
-        downloadSection = this.lowerCenterDivision.appendChild(document.createElement("div"))
-        downloadImage = downloadSection.appendChild(document.createElement("img"));
-        downloadLink = downloadSection.appendChild(document.createElement("a"))
-
+        bioPicture = this.bioSectionUpperLeft.appendChild(document.createElement("img"));
         bioPicture.classList.add("w-100", "rounded-2");
         bioPicture.src = "./Application_main/Sprites/Pages/Bio/sprt_UI_FotoPerfil.png";
+        paragraphHeader = this.bioSectionUpperRight.appendChild(document.createElement("div"));
         paragraphHeader.classList.add("m-0", "p-0", "text-start");
+        paragraphSection = this.bioSectionUpperRight.appendChild(document.createElement("div"));
         paragraphSection.classList.add("mx-0", "mt-4", "mb-0", "p-0", "text-justify");
+        paragraphFooter = this.bioSectionUpperRight.appendChild(document.createElement("div"));
         paragraphFooter.classList.add("m-0", "p-0", "text-end");
+        paragraphTitle = paragraphHeader.appendChild(document.createElement("h3"));
         paragraphTitle.classList.add("m-0", "p-0", "text-opaque-dark");
         paragraphTitle.innerHTML = Constants.generalContent["k_PortfolioPage_BioTitle"];
         paragraphTitle.id = "BioTitle";
+        paragraphSubtitle = paragraphHeader.appendChild(document.createElement("h6"));
         paragraphSubtitle.classList.add("m-0", "p-0", "text-opaque-light");
         paragraphSubtitle.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioSubtitle");
         paragraphSubtitle.id = "BioSubtitle";
+        paragraphContent = paragraphSection.appendChild(document.createElement("p"));
         paragraphContent.classList.add("m-0", "p-0", "text-opaque-light");
         paragraphContent.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioUpperParagraph");
+        paragraphLink = paragraphFooter.appendChild(document.createElement("a"));
         paragraphLink.classList.add("m-0", "p-0", "link-dark");
         paragraphLink.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioReadMoreLink");
         paragraphLink.href = "#BioSectionFooter";
-        paragraphLeft.classList.add("w-75", "mt-5", "mb-1", "p-0", "mx-auto");
+        paragraphLeft = this.bioSectionFooterLeft.appendChild(document.createElement("p"));
+        paragraphLeft.classList.add("w-75", "m-0", "p-0", "mx-auto");
         paragraphLeft.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioBottomLeftParagraph");
-        paragraphRight.classList.add("w-75", "mt-5", "mb-1", "p-0", "mx-auto");
+        paragraphRight = this.bioSectionFooterRight.appendChild(document.createElement("p"));
+        paragraphRight.classList.add("w-75", "m-0", "p-0", "mx-auto");
         paragraphRight.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioBottomRightParagraph");
-        paragraphCenter.classList.add("w-100", "mt-4", "mb-2", "p-0", "mx-auto", "text-center");
+        paragraphCenter = this.bioSectionFooterCenter.appendChild(document.createElement("p"));
+        paragraphCenter.classList.add("w-75", "mt-4", "mb-2", "p-0", "mx-auto", "text-center");
         paragraphCenter.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioBottomMiddleParagraph");
-        downloadSection.classList.add("w-25", "mt-3", "mb-5", "p-0", "mx-auto", "bgcolor_F7F7F7", "rounded-3", "link-primary");
-        downloadImage.classList.add("w-10", "my-3", "ms-5", "me-4", "text-start");
+        downloadSection = this.bioSectionFooterCenter.appendChild(document.createElement("div"))
+        downloadSection.classList.add("w-30", "mt-3", "mb-5", "p-0", "mx-auto", "bgcolor_F7F7F7", "rounded-3", "link-primary", "text-center");
+        downloadImage = downloadSection.appendChild(document.createElement("img"));
+        downloadImage.classList.add("w-10", "mx-1", "my-0", "p-0");
         downloadImage.src = "./Application_main/Sprites/Pages/Bio/sprt_UI_PDFLogo.png";
-        downloadLink.classList.add("w-25", "ms-5", "me-3", "text-end");
+        downloadLink = downloadSection.appendChild(document.createElement("a"))
+        downloadLink.classList.add("mx-1", "my-0", "p-0");
         downloadLink.innerHTML = "curriculum-lucas.pdf";
         downloadLink.target = "_blank";
         downloadLink.href = "./Application_main/Arquivos/curriculum-lucas.pdf";
