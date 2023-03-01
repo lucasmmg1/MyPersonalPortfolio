@@ -39,7 +39,7 @@
     }
     #BioTitle
     {
-        font-size: 1.05rem !important;
+        font-size: 0.975rem !important;
     }
     #BioSubtitle
     {
@@ -50,7 +50,7 @@
 {
     body
     {
-        background-color: blueviolet !important;
+        background-color: green !important;
     }
     h1
     {
@@ -87,7 +87,7 @@
     }
     #BioTitle
     {
-        font-size: 1.05rem !important;
+        font-size: 0.975rem !important;
     }
     #BioSubtitle
     {
