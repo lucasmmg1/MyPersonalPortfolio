@@ -43,7 +43,7 @@ class PortfolioBioSubsectionController
     }
     static ShowBioContent()
     {
-        let bioPicture, paragraphHeader, paragraphSection, paragraphFooter, paragraphTitle, paragraphSubtitle, paragraphContent, paragraphLink, paragraphLeft, paragraphRight, paragraphCenter, downloadSection, downloadImage, downloadLink;
+        let bioPicture, paragraphHeader, paragraphSection, paragraphFooter, bioTitle, bioSubtitle, bioSmallDescription, paragraphLink, paragraphLeft, paragraphRight, paragraphCenter, downloadSection, downloadImage, downloadLink;
 
         bioPicture = this.bioSectionUpperLeft.appendChild(document.createElement("img"));
         bioPicture.classList.add("w-100", "rounded-2");
@@ -54,17 +54,18 @@ class PortfolioBioSubsectionController
         paragraphSection.classList.add("mx-0", "mt-4", "mb-0", "p-0", "text-justify");
         paragraphFooter = this.bioSectionUpperRight.appendChild(document.createElement("div"));
         paragraphFooter.classList.add("m-0", "p-0", "text-end");
-        paragraphTitle = paragraphHeader.appendChild(document.createElement("h3"));
-        paragraphTitle.classList.add("m-0", "p-0", "text-opaque-dark");
-        paragraphTitle.innerHTML = Constants.generalContent["k_PortfolioPage_BioTitle"];
-        paragraphTitle.id = "BioTitle";
-        paragraphSubtitle = paragraphHeader.appendChild(document.createElement("h6"));
-        paragraphSubtitle.classList.add("m-0", "p-0", "text-opaque-light");
-        paragraphSubtitle.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioSubtitle");
-        paragraphSubtitle.id = "BioSubtitle";
-        paragraphContent = paragraphSection.appendChild(document.createElement("p"));
-        paragraphContent.classList.add("m-0", "p-0", "text-opaque-light");
-        paragraphContent.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioUpperParagraph");
+        bioTitle = paragraphHeader.appendChild(document.createElement("h3"));
+        bioTitle.classList.add("m-0", "p-0", "text-opaque-dark");
+        bioTitle.innerHTML = Constants.generalContent["k_PortfolioPage_BioTitle"];
+        bioTitle.id = "BioTitle";
+        bioSubtitle = paragraphHeader.appendChild(document.createElement("h6"));
+        bioSubtitle.classList.add("m-0", "p-0", "text-opaque-light");
+        bioSubtitle.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioSubtitle");
+        bioSubtitle.id = "BioSubtitle";
+        bioSmallDescription = paragraphSection.appendChild(document.createElement("p"));
+        bioSmallDescription.classList.add("m-0", "p-0", "text-opaque-light");
+        bioSmallDescription.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioUpperParagraph");
+        bioSmallDescription.id = "BioUpperDescription";
         paragraphLink = paragraphFooter.appendChild(document.createElement("a"));
         paragraphLink.classList.add("m-0", "p-0", "link-dark");
         paragraphLink.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioReadMoreLink");
@@ -72,12 +73,15 @@ class PortfolioBioSubsectionController
         paragraphLeft = this.bioSectionFooterLeft.appendChild(document.createElement("p"));
         paragraphLeft.classList.add("w-75", "m-0", "p-0", "mx-auto");
         paragraphLeft.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioBottomLeftParagraph");
+        paragraphLeft.id = "BioFooterLeftDescription"
         paragraphRight = this.bioSectionFooterRight.appendChild(document.createElement("p"));
         paragraphRight.classList.add("w-75", "m-0", "p-0", "mx-auto");
         paragraphRight.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioBottomRightParagraph");
+        paragraphRight.id = "BioFooterRightDescription";
         paragraphCenter = this.bioSectionFooterCenter.appendChild(document.createElement("p"));
         paragraphCenter.classList.add("w-75", "mt-4", "mb-2", "p-0", "mx-auto", "text-center");
         paragraphCenter.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_BioBottomMiddleParagraph");
+        paragraphCenter.id = "BioFooterCenterDescription";
         downloadSection = this.bioSectionFooterCenter.appendChild(document.createElement("div"))
         downloadSection.classList.add("w-30", "mt-3", "mb-5", "p-0", "mx-auto", "bgcolor_F7F7F7", "rounded-3", "link-primary", "text-center");
         downloadImage = downloadSection.appendChild(document.createElement("img"));
