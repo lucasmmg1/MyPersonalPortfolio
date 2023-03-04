@@ -39,6 +39,7 @@ class MoodboardView
 
         media = link.appendChild(document.createElement(projectView.previewType));
         if (media === undefined) return;
+        media.onload = () => this.loadedImages++;
         media.classList.add("w-100");
         media.alt = "";
         media.src = `${projectView.previewFilePath}${projectView.previewFileType}`;

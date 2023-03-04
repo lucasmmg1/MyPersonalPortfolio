@@ -25,6 +25,7 @@ class PortfolioSectionController
                 break;
 
             case "Projetos":
+                console.log("Projects");
                 PortfolioProjectsSubsectionController.Show();
                 break;
 
