@@ -46,7 +46,8 @@ class PortfolioPageController
 
         for (let languageCode of Object.keys(Language.availableLanguages))
         {
-            let nonActiveLanguageOption = dropdownMenuContent.appendChild(document.createElement('a'));
+            if (languageCode === Language.GetCurrentLanguage()) continue;
+            let nonActiveLanguageOption = dropdownMenuContent.appendChild(document.createElement('button'));
             nonActiveLanguageOption.classList.add('dropdown-item', 'Calibri');
             nonActiveLanguageOption.onclick = function()
             {
@@ -67,12 +68,13 @@ class PortfolioPageController
             navbarOption.classList.add("row", "position-relative", "navbar-link");
             navbarOption.id = `${this.pagesIds[i]}Navbar`;
             navbarOption.addEventListener('click', () =>
-                {
-                    this.UpdateSelectedPageId(i);
-                    this.UpdateSelectedNavbarOption();
-                    this.UpdateSelectedSectionOption();
-                },
-                true);
+            {
+                if (navbarOption.id === `${this.selectedPageId}Navbar`) return;
+                this.UpdateSelectedPageId(i);
+                this.UpdateSelectedNavbarOption();
+                this.UpdateSelectedSectionOption();
+            },
+            true);
 
             let placeholderTMP = navbarOption.appendChild(document.createElement("p"));
             placeholderTMP.classList.add("m-0", "p-0", "opacity-0");
@@ -90,7 +92,7 @@ class PortfolioPageController
         this.selectedSection = this.websiteContent.appendChild(document.createElement("div"));
 
         this.websiteContent.classList.add("row", "mx-0", "my-0");
-        this.selectedSection.classList.add("row", "w-100", "vh-100", "m-0", "p-0", "justify-content-center", "FadeIn");
+        this.selectedSection.classList.add("row", "vw-100", "vh-100", "m-0", "p-0", "justify-content-center", "FadeIn");
     }
     static UpdateSelectedPageId(index)
     {

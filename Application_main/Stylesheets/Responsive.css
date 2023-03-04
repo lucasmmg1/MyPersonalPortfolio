@@ -39,7 +39,7 @@
     }
     #BioTitle
     {
-        font-size: 1.05rem !important;
+        font-size: 1rem !important;
     }
     #BioSubtitle
     {
@@ -60,6 +60,47 @@
     #BioFooterCenterDescription
     {
         font-size: 0.9rem !important;
+    }
+    #ProjectsSection
+    {
+        flex-direction: column !important;
+    }
+    #ProjectsNavbar
+    {
+        width: 90% !important;
+    }
+    #ProjectsMoodboard
+    {
+        width: 90% !important;
+        margin-top: 3rem !important;
+    }
+    #ProjectsNavbarSearchOutline
+    {
+        width: 83.33% !important;
+    }
+    #ProjectsNavbarSearchButton
+    {
+        width: 16.66% !important;
+    }
+    #ProjectsNavbarSearchHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategoriesHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategories
+    {
+        width: 98.5% !important;
+    }
+    #ProjectsNavbarSoftwaresHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarSoftwares
+    {
+        width: 98.5% !important;
     }
 }
 @media (min-width: 375px)
@@ -125,6 +166,47 @@
     {
         font-size: 0.9rem !important;
     }
+    #ProjectsSection
+    {
+        flex-direction: column !important;
+    }
+    #ProjectsNavbar
+    {
+        width: 90% !important;
+    }
+    #ProjectsMoodboard
+    {
+        width: 90% !important;
+        margin-top: 3rem !important;
+    }
+    #ProjectsNavbarSearchOutline
+    {
+        width: 83.33% !important;
+    }
+    #ProjectsNavbarSearchButton
+    {
+        width: 16.66% !important;
+    }
+    #ProjectsNavbarSearchHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategoriesHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategories
+    {
+        width: 98.5% !important;
+    }
+    #ProjectsNavbarSoftwaresHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarSoftwares
+    {
+        width: 98.5% !important;
+    }
 }
 @media (min-width: 428px)
 {
@@ -188,6 +270,47 @@
     #BioFooterCenterDescription
     {
         font-size: 0.9rem !important;
+    }
+    #ProjectsSection
+    {
+        flex-direction: column !important;
+    }
+    #ProjectsNavbar
+    {
+        width: 90% !important;
+    }
+    #ProjectsMoodboard
+    {
+        width: 90% !important;
+        margin-top: 3rem !important;
+    }
+    #ProjectsNavbarSearchOutline
+    {
+        width: 83.33% !important;
+    }
+    #ProjectsNavbarSearchButton
+    {
+        width: 16.66% !important;
+    }
+    #ProjectsNavbarSearchHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategoriesHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategories
+    {
+        width: 98.5% !important;
+    }
+    #ProjectsNavbarSoftwaresHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarSoftwares
+    {
+        width: 98.5% !important;
     }
 }
 @media (min-width: 575px)
@@ -253,6 +376,47 @@
     {
         font-size: 1.1rem !important;
     }
+    #ProjectsSection
+    {
+        flex-direction: column !important;
+    }
+    #ProjectsNavbar
+    {
+        width: 90% !important;
+    }
+    #ProjectsMoodboard
+    {
+        width: 90% !important;
+        margin-top: 3rem !important;
+    }
+    #ProjectsNavbarSearchOutline
+    {
+        width: 91.66% !important;
+    }
+    #ProjectsNavbarSearchButton
+    {
+        width: 8.33% !important;
+    }
+    #ProjectsNavbarSearchHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategoriesHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategories
+    {
+        width: 98.5% !important;
+    }
+    #ProjectsNavbarSoftwaresHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarSoftwares
+    {
+        width: 98.5% !important;
+    }
 }
 @media (min-width: 700px)
 {
@@ -316,6 +480,47 @@
     #BioFooterCenterDescription
     {
         font-size: 1.2rem !important;
+    }
+    #ProjectsSection
+    {
+        flex-direction: column !important;
+    }
+    #ProjectsNavbar
+    {
+        width: 90% !important;
+    }
+    #ProjectsMoodboard
+    {
+        width: 90% !important;
+        margin-top: 3rem;
+    }
+    #ProjectsNavbarSearchOutline
+    {
+        width: 91.66% !important;
+    }
+    #ProjectsNavbarSearchButton
+    {
+        width: 8.33% !important;
+    }
+    #ProjectsNavbarSearchHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategoriesHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategories
+    {
+        width: 98.5% !important;
+    }
+    #ProjectsNavbarSoftwaresHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarSoftwares
+    {
+        width: 98.5% !important;
     }
 }
 @media (min-width: 830px)
@@ -381,6 +586,48 @@
     {
         font-size: 0.9rem !important;
     }
+    #ProjectsSection
+    {
+        flex-direction: column !important;
+        justify-content: unset !important;
+    }
+    #ProjectsNavbar
+    {
+        width: 90% !important;
+    }
+    #ProjectsMoodboard
+    {
+        width: 90% !important;
+        margin-top: 3rem !important;
+    }
+    #ProjectsNavbarSearchOutline
+    {
+        width: 91.66% !important;
+    }
+    #ProjectsNavbarSearchButton
+    {
+        width: 8.33% !important;
+    }
+    #ProjectsNavbarSearchHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategoriesHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarCategories
+    {
+        width: 98.5% !important;
+    }
+    #ProjectsNavbarSoftwaresHr
+    {
+        width: 100% !important;
+    }
+    #ProjectsNavbarSoftwares
+    {
+        width: 98.5% !important;
+    }
 }
 @media (min-width: 992px)
 {
@@ -443,6 +690,48 @@
     #BioFooterCenterDescription
     {
         font-size: 0.9rem !important;
+    }
+    #ProjectsSection
+    {
+        flex-direction: row !important;
+        justify-content: center !important;
+    }
+    #ProjectsNavbar
+    {
+        width: 30% !important;
+    }
+    #ProjectsMoodboard
+    {
+        width: 55% !important;
+        margin-top: 0 !important;
+    }
+    #ProjectsNavbarSearchOutline
+    {
+        width: 66.66% !important;
+    }
+    #ProjectsNavbarSearchButton
+    {
+        width: 16.66% !important;
+    }
+    #ProjectsNavbarSearchHr
+    {
+        width: 83.33% !important;
+    }
+    #ProjectsNavbarCategoriesHr
+    {
+        width: 75% !important;
+    }
+    #ProjectsNavbarCategories
+    {
+        width: 66.66% !important;
+    }
+    #ProjectsNavbarSoftwaresHr
+    {
+        width: 75% !important;
+    }
+    #ProjectsNavbarSoftwares
+    {
+        width: 66.66% !important;
     }
 }
 @media (min-width: 1200px)
@@ -507,6 +796,48 @@
     {
         font-size: 1rem !important;
     }
+    #ProjectsSection
+    {
+        flex-direction: row !important;
+        justify-content: center !important;
+    }
+    #ProjectsNavbar
+    {
+        width: 30% !important;
+    }
+    #ProjectsMoodboard
+    {
+        width: 55% !important;
+        margin-top: 0 !important;
+    }
+    #ProjectsNavbarSearchOutline
+    {
+        width: 66.66% !important;
+    }
+    #ProjectsNavbarSearchButton
+    {
+        width: 16.66% !important;
+    }
+    #ProjectsNavbarSearchHr
+    {
+        width: 83.33% !important;
+    }
+    #ProjectsNavbarCategoriesHr
+    {
+        width: 75% !important;
+    }
+    #ProjectsNavbarCategories
+    {
+        width: 66.66% !important;
+    }
+    #ProjectsNavbarSoftwaresHr
+    {
+        width: 75% !important;
+    }
+    #ProjectsNavbarSoftwares
+    {
+        width: 66.66% !important;
+    }
 }
 @media (min-width: 1920px)
 {
@@ -548,26 +879,68 @@
     }
     #BioTitle
     {
-        font-size: 1.65rem !important;
+        font-size: 1.5rem !important;
     }
     #BioSubtitle
     {
-        font-size: 1.35rem !important;
+        font-size: 1.2rem !important;
     }
     #BioUpperDescription
     {
-        font-size: 1.2rem !important;
+        font-size: 1.05rem !important;
     }
     #BioFooterLeftDescription
     {
-        font-size: 1.2rem !important;
+        font-size: 1.05rem !important;
     }
     #BioFooterRightDescription
     {
-        font-size: 1.2rem !important;
+        font-size: 1.05rem !important;
     }
     #BioFooterCenterDescription
     {
-        font-size: 1.2rem !important;
+        font-size: 1.05rem !important;
+    }
+    #ProjectsSection
+    {
+        flex-direction: row !important;
+        justify-content: center !important;
+    }
+    #ProjectsNavbar
+    {
+        width: 30% !important;
+    }
+    #ProjectsMoodboard
+    {
+        width: 55% !important;
+        margin-top: 0 !important;
+    }
+    #ProjectsNavbarSearchOutline
+    {
+        width: 66.66% !important;
+    }
+    #ProjectsNavbarSearchButton
+    {
+        width: 16.66% !important;
+    }
+    #ProjectsNavbarSearchHr
+    {
+        width: 83.33% !important;
+    }
+    #ProjectsNavbarCategoriesHr
+    {
+        width: 75% !important;
+    }
+    #ProjectsNavbarCategories
+    {
+        width: 66.66% !important;
+    }
+    #ProjectsNavbarSoftwaresHr
+    {
+        width: 75% !important;
+    }
+    #ProjectsNavbarSoftwares
+    {
+        width: 66.66% !important;
     }
 }

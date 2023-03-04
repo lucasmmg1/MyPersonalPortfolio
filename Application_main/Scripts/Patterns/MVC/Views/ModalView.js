@@ -4,6 +4,7 @@ class ModalView
     static modalPNL;
     static modalDialogPNL;
     static modalContentPNL;
+    static isResetingModal;
 
     static Create()
     {
@@ -16,8 +17,14 @@ class ModalView
     }
     static Reset()
     {
+        this.isResetingModal = true;
+
+        this.modalDialogPNL.classList.remove(this.modalDialogSize);
+
         while (this.modalContentPNL.firstChild)
             this.modalContentPNL.removeChild(this.modalContentPNL.lastChild);
+
+        this.isResetingModal = false;
     }
 
     static Setup()
@@ -35,14 +42,16 @@ class ModalView
         $(this.modalPNL).on('hide.bs.modal', function ()
         {
             document.body.style.overflow = "auto";
-            setTimeout(ModalView.Reset, 500);
+            setTimeout(() => ModalView.Reset(), 500);
         });
     }
 
-    static ShowImageModal(carouselSize, numberOfSlides, carouselContentPath, descriptionSize, descriptionTitle, descriptionParagraph)
+    static ShowImageModal(modalDialogSize, carouselSize, numberOfSlides, carouselContentPath, descriptionSize, descriptionTitle, descriptionParagraph)
     {
         let carouselPNL, carouselIndicatorsPNL, carouselInnerPNL, descriptionPNL, descriptionTitleTMP, descriptionParagraphTMP, carouselPreviousBTN, carouselNextBTN, carouselPreviousButtonIconIMG, carouselPreviousButtonOverlayTMP, carouselNextButtonIconIMG, carouselNextButtonOverlayTMP, buttonRow, closeButton;
 
+        this.modalDialogSize = modalDialogSize;
+        this.modalDialogPNL.classList.add(this.modalDialogSize);
         carouselPNL = this.modalContentPNL.appendChild(document.createElement("div"));
         carouselPNL.classList.add("m-0", "p-0", "carousel", "slide");
         carouselPNL.id = "modalCarousel";

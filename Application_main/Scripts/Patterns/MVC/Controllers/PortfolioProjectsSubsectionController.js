@@ -31,10 +31,10 @@ class PortfolioProjectsSubsectionController
             new ProjectView(["aplicativos"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Thumbnail2`, "col-3", "0", "", "col-6", "k_PortfolioPage_ProjectsTDMTitle", "k_PortfolioPage_ProjectsTDMDescription", "col-6"),
             new ProjectView(["aplicativos"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Thumbnail1`, "col-3", "0", "", "col-6", "k_PortfolioPage_ProjectsRoxteenRoxstarTitle", "k_PortfolioPage_ProjectsRoxteenRoxstarDescription", "col-6"),
             new ProjectView(["modelagens"]),
-            new ProjectView(["modelagens"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail5`, "col-6", "1", "./Application_main/Sprites/Pages/Projects/Modelagens/Ilusao/Ilusao", "col-6", "k_PortfolioPage_ProjectsMundoBitaTitle", "k_PortfolioPage_ProjectsMundoBitaDescription", "modal-xl"),
-            new ProjectView(["modelagens"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail4`, "col-6", "15", "./Application_main/Sprites/Pages/Projects/Modelagens/Tie Fighter/TieFighter", "col-6", "k_PortfolioPage_ProjectsGalinhaPintadinhaTitle", "k_PortfolioPage_ProjectsGalinhaPintadinhaDescription", "modal-xl"),
-            new ProjectView(["modelagens"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail3`, "col-6", "3", "./Application_main/Sprites/Pages/Projects/Modelagens/Sabre de Luz/Sabre", "col-6", "k_PortfolioPage_ProjectsTDMTitle", "k_PortfolioPage_ProjectsTDMDescription", "modal-xl"),
-            new ProjectView(["modelagens"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail2`, "col-6", "6", "./Application_main/Sprites/Pages/Projects/Modelagens/Hamburguer/Hamburguer", "col-6", "k_PortfolioPage_ProjectsBlenderGuru2019DonutTitle", "k_PortfolioPage_ProjectsBlenderGuru2019DonutDescription", "modal-xl"),
+            new ProjectView(["modelagens"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail5`, "col-6", "1", "./Application_main/Sprites/Pages/Projects/Modelagens/Ilusao/Ilusao", "col-6", "k_PortfolioPage_ProjectsOpticalIllusionTitle", "k_PortfolioPage_ProjectsOpticalIllusionDescription", "modal-lg"),
+            new ProjectView(["modelagens"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail4`, "col-7", "15", "./Application_main/Sprites/Pages/Projects/Modelagens/Tie Fighter/TieFighter", "col-5", "k_PortfolioPage_ProjectsTieFighterTitle", "k_PortfolioPage_ProjectsTieFighterDescription", "modal-xl"),
+            new ProjectView(["modelagens"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail3`, "col-7", "3", "./Application_main/Sprites/Pages/Projects/Modelagens/Sabre de Luz/Sabre", "col-5", "k_PortfolioPage_ProjectsLukesLightsaberTitle", "k_PortfolioPage_ProjectsLukesLightsaberDescription", "modal-xl"),
+            new ProjectView(["modelagens"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail2`, "col-6", "6", "./Application_main/Sprites/Pages/Projects/Modelagens/Hamburguer/Hamburguer", "col-6", "k_PortfolioPage_ProjectsDefaultCube2021HamburguerTitle", "k_PortfolioPage_ProjectsDefaultCube2021HamburguerDescription", "modal-lg"),
             new ProjectView(["modelagens"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail1`, "col-6", "9", "./Application_main/Sprites/Pages/Projects/Modelagens/Rosquinha/Rosquinha", "col-6", "k_PortfolioPage_ProjectsBlenderGuru2019DonutTitle", "k_PortfolioPage_ProjectsBlenderGuru2019DonutDescription", "modal-lg"),
 
             new ProjectView(["processing"], "video", "col-3", ".mp4", `./Application_main/Sprites/Pages/Projects/Processing/a_Thumbnails/Thumbnail1`, "col-6", "9", "./Application_main/Sprites/Pages/Projects/Modelagens/Rosquinha/Rosquinha", "col-6", "k_PortfolioPage_ProjectsBlenderGuru2019DonutTitle", "k_PortfolioPage_ProjectsBlenderGuru2019DonutDescription", "modal-lg"),
@@ -42,105 +42,111 @@ class PortfolioProjectsSubsectionController
     }
     static SetupProjectsContent()
     {
-        this.projectsNavbar = PortfolioPageController.selectedSection.appendChild(document.createElement("div"));
+        let projectsSection = PortfolioPageController.selectedSection.appendChild(document.createElement("div"));
+        projectsSection.classList.add("d-flex", "mx-0", "mt-5", "mb-0", "p-0");
+        projectsSection.id = "ProjectsSection";
+        this.projectsNavbar = projectsSection.appendChild(document.createElement("div"));
+        this.projectsNavbar.classList.add("mx-auto", "my-0", "p-0");
+        this.projectsNavbar.id = "ProjectsNavbar";
         let projectsNavbarSearch = this.projectsNavbar.appendChild(document.createElement("div"));
+        projectsNavbarSearch.classList.add("KeepCalm", "m-0", "p-0", "input-group");
         let projectsNavbarSearchOutline = projectsNavbarSearch.appendChild(document.createElement("div"));
+        projectsNavbarSearchOutline.classList.add("form-outline");
+        projectsNavbarSearchOutline.id = "ProjectsNavbarSearchOutline";
         let projectsNavbarSearchInput = projectsNavbarSearchOutline.appendChild(document.createElement("input"));
-        let projectsNavbarSearchButton = projectsNavbarSearch.appendChild(document.createElement("button"));
-        let projectsNavbarSearchButtonLink = projectsNavbarSearchButton.appendChild(document.createElement("i"));
-        let navbarHr = this.projectsNavbar.appendChild(document.createElement("hr"));
-        let projectsNavbarCategoriesTitle = this.projectsNavbar.appendChild(document.createElement("div"));
-        let projectsNavbarCategoriesTitleTMP = this.projectsNavbar.appendChild(document.createElement("p"));
-        let categoriesHr = this.projectsNavbar.appendChild(document.createElement("hr"));
-        let projectsNavbarCategories = this.projectsNavbar.appendChild(document.createElement("div"));
-        let projectsNavbarSoftwaresTitle = this.projectsNavbar.appendChild(document.createElement("div"));
-        let projectsNavbarSoftwaresTitleTMP = this.projectsNavbar.appendChild(document.createElement("p"));
-        let softwaresHr = this.projectsNavbar.appendChild(document.createElement("hr"));
-        let projectsNavbarSoftwares = this.projectsNavbar.appendChild(document.createElement("div"));
-        this.projectsSection = PortfolioPageController.selectedSection.appendChild(document.createElement("div"));
-
-        this.projectsNavbar.classList.add("col-lg-3", "mt-5", "p-0");
-        projectsNavbarSearch.classList.add("KeepCalm", "d-flex", "w-70", "m-0", "px-0", "pt-2", "pb-0", "input-group");
-        projectsNavbarSearchOutline.classList.add("form-outline", "w-80");
         projectsNavbarSearchInput.classList.add("form-control");
         projectsNavbarSearchInput.id = "projectsSearchForm";
         projectsNavbarSearchInput.type = "search";
         projectsNavbarSearchInput.placeholder = "Pesquisar";
-        projectsNavbarSearchButton.classList.add("btn", "btn-primary", "w-15");
+        let projectsNavbarSearchButton = projectsNavbarSearch.appendChild(document.createElement("button"));
+        projectsNavbarSearchButton.classList.add("btn", "btn-primary");
+        projectsNavbarSearchButton.id = "ProjectsNavbarSearchButton";
         projectsNavbarSearchButton.type = "button";
         projectsNavbarSearchButton.addEventListener("click",() =>
         {
-            console.log("Click");
             this.UpdateProjectsNavbar("");
             this.UpdateProjectsContent(projectsNavbarSearchInput.value);
         });
+        let projectsNavbarSearchButtonLink = projectsNavbarSearchButton.appendChild(document.createElement("i"));
         projectsNavbarSearchButtonLink.classList.add("fas", "fa-search");
-
-        navbarHr.classList.add("w-75", "mt-3", "mb-0", "p-0");
-        projectsNavbarCategoriesTitle.classList.add("row", "mx-0", "mt-4", "mb-0", "p-0");
-        projectsNavbarCategoriesTitleTMP.classList.add("row", "flex-row", "m-0", "p-0");
+        let projectsNavbarSearchHr = this.projectsNavbar.appendChild(document.createElement("hr"));
+        projectsNavbarSearchHr.classList.add("mt-3", "mb-0", "p-0");
+        projectsNavbarSearchHr.id = "ProjectsNavbarSearchHr";
+        let projectsNavbarCategoriesTitle = this.projectsNavbar.appendChild(document.createElement("div"));
+        projectsNavbarCategoriesTitle.classList.add("mx-0", "mt-4", "mb-0", "p-0", "text-start");
+        let projectsNavbarCategoriesTitleTMP = projectsNavbarCategoriesTitle.appendChild(document.createElement("p"));
+        projectsNavbarCategoriesTitleTMP.classList.add("m-0", "p-0");
         projectsNavbarCategoriesTitleTMP.innerHTML = "Categorias";
-        categoriesHr.classList.add("w-65", "m-0", "p-0");
-        projectsNavbarCategories.classList.add("list-groups", "mx-0", "mt-2", "mb-0", "p-0", "w-75");
-        projectsNavbarSoftwaresTitle.classList.add("row", "mx-0", "mt-5", "mb-0", "p-0");
-        projectsNavbarSoftwaresTitleTMP.classList.add("row", "flex-row", "m-0", "p-0");
-        projectsNavbarSoftwaresTitleTMP.innerHTML = "Softwares";
-        softwaresHr.classList.add("w-65", "m-0", "p-0");
-        projectsNavbarSoftwares.classList.add("list-groups", "mx-0", "mt-2", "mb-0", "p-0", "w-75");
-        this.projectsSection.classList.add("col-lg-8", "mt-5", "p-0", "FadeIn");
-        this.projectsSection.id = "ProjectsMoodboard";
+        let projectsNavbarCategoriesHr = this.projectsNavbar.appendChild(document.createElement("hr"));
+        projectsNavbarCategoriesHr.classList.add("m-0", "p-0");
+        projectsNavbarCategoriesHr.id = "ProjectsNavbarCategoriesHr";
+        let projectsNavbarCategories = this.projectsNavbar.appendChild(document.createElement("div"));
+        projectsNavbarCategories.classList.add("list-groups", "mx-0", "mt-2", "mb-0", "p-0");
+        projectsNavbarCategories.id = "ProjectsNavbarCategories";
 
         for (let i = 0; i < Object.values(Constants.ptBrContent["k_PortfolioPage_ProjectsCategories"]).length; i++)
         {
-            let projectsNavbarCategoriesItem = projectsNavbarCategories.appendChild(document.createElement("div"))
+            let projectsNavbarCategoriesItem = projectsNavbarCategories.appendChild(document.createElement("div"));
+            projectsNavbarCategoriesItem.classList.add("d-flex", "flex-row", "m-0", "p-0", "Calibri");
             let projectsNavbarItemName = projectsNavbarCategoriesItem.appendChild(document.createElement("div"));
-            let projectsNavbarItemQuantity = projectsNavbarCategoriesItem.appendChild(document.createElement("div"));
+            projectsNavbarItemName.classList.add("col-6", "m-0", "p-0", "text-start");
             let projectsNavbarItemNameTMP = projectsNavbarItemName.appendChild(document.createElement("button"));
-            let projectsNavbarItemQuantityTMP = projectsNavbarItemQuantity.appendChild(document.createElement("p"));
-
-            projectsNavbarCategoriesItem.classList.add("row", "m-0", "p-0");
-            projectsNavbarItemName.classList.add("col-5", "m-0", "p-0","Calibri");
-            projectsNavbarItemNameTMP.classList.add("row", "flex-row", "m-0", "p-0");
+            projectsNavbarItemNameTMP.classList.add("m-0", "p-0");
             projectsNavbarItemNameTMP.id = `Projetos${Object.keys(Constants.ptBrContent["k_PortfolioPage_ProjectsCategories"])[i]}Navbar`;
             projectsNavbarItemNameTMP.innerHTML = Object.keys(Language.GetElementByLanguage("k_PortfolioPage_ProjectsCategories"))[i];
-            projectsNavbarItemQuantity.classList.add("col-5", "m-0", "px-3", "py-0", "Calibri");
-            projectsNavbarItemQuantityTMP.classList.add("row", "flex-row-reverse", "m-0", "p-0");
-            projectsNavbarItemQuantityTMP.id = `Projetos${Object.values(Constants.ptBrContent["k_PortfolioPage_ProjectsCategories"])[i]}Navbar`;
-            projectsNavbarItemQuantityTMP.innerHTML = Object.values(Language.GetElementByLanguage("k_PortfolioPage_ProjectsCategories"))[i];
-
             projectsNavbarItemNameTMP.addEventListener("click",() =>
             {
                 this.UpdateProjectsNavbar(projectsNavbarItemNameTMP.id);
                 this.UpdateProjectsContent(Object.keys(Constants.ptBrContent["k_PortfolioPage_ProjectsCategories"])[i]);
             });
+            let projectsNavbarItemQuantity = projectsNavbarCategoriesItem.appendChild(document.createElement("div"));
+            projectsNavbarItemQuantity.classList.add("col-6", "m-0", "p-0", "text-end");
+            let projectsNavbarItemQuantityTMP = projectsNavbarItemQuantity.appendChild(document.createElement("p"));
+            projectsNavbarItemQuantityTMP.classList.add("m-0", "p-0");
+            projectsNavbarItemQuantityTMP.id = `Projetos${Object.values(Constants.ptBrContent["k_PortfolioPage_ProjectsCategories"])[i]}Navbar`;
+            projectsNavbarItemQuantityTMP.innerHTML = Object.values(Language.GetElementByLanguage("k_PortfolioPage_ProjectsCategories"))[i];
             this.projectNavbarCategoriesItems.push(projectsNavbarItemNameTMP);
         }
 
+        let projectsNavbarSoftwaresTitle = this.projectsNavbar.appendChild(document.createElement("div"));
+        projectsNavbarSoftwaresTitle.classList.add("mx-0", "mt-5", "mb-0", "p-0", "text-start");
+        let projectsNavbarSoftwaresTitleTMP = projectsNavbarSoftwaresTitle.appendChild(document.createElement("p"));
+        projectsNavbarSoftwaresTitleTMP.classList.add("m-0", "p-0");
+        projectsNavbarSoftwaresTitleTMP.innerHTML = "Softwares";
+        let projectsNavbarSoftwaresHr = this.projectsNavbar.appendChild(document.createElement("hr"));
+        projectsNavbarSoftwaresHr.classList.add("m-0", "p-0");
+        projectsNavbarSoftwaresHr.id = "ProjectsNavbarSoftwaresHr";
+        let projectsNavbarSoftwares = this.projectsNavbar.appendChild(document.createElement("div"));
+        projectsNavbarSoftwares.classList.add("list-groups", "mx-0", "mt-2", "mb-0", "p-0");
+        projectsNavbarSoftwares.id = "ProjectsNavbarSoftwares";
+
         for (let i = 0; i < Object.values(Constants.ptBrContent["k_PortfolioPage_ProjectsSoftwares"]).length; i++)
         {
-            let projectsNavbarSoftwaresItem = projectsNavbarSoftwares.appendChild(document.createElement("div"))
+            let projectsNavbarSoftwaresItem = projectsNavbarSoftwares.appendChild(document.createElement("div"));
+            projectsNavbarSoftwaresItem.classList.add("d-flex", "flex-row", "m-0", "p-0", "Calibri");
             let projectsNavbarItemName = projectsNavbarSoftwaresItem.appendChild(document.createElement("div"));
-            let projectsNavbarItemQuantity = projectsNavbarSoftwaresItem.appendChild(document.createElement("div"));
+            projectsNavbarItemName.classList.add("col-6", "m-0", "p-0", "text-start");
             let projectsNavbarItemNameTMP = projectsNavbarItemName.appendChild(document.createElement("button"));
-            let projectsNavbarItemQuantityTMP = projectsNavbarItemQuantity.appendChild(document.createElement("p"));
-
-            projectsNavbarSoftwaresItem.classList.add("row", "m-0", "p-0");
-            projectsNavbarItemName.classList.add("col-5", "m-0", "p-0","Calibri");
-            projectsNavbarItemNameTMP.classList.add("row", "flex-row", "m-0", "p-0");
+            projectsNavbarItemNameTMP.classList.add("m-0", "p-0");
             projectsNavbarItemNameTMP.id = `Projetos${Object.keys(Constants.ptBrContent["k_PortfolioPage_ProjectsSoftwares"])[i]}Navbar`;
             projectsNavbarItemNameTMP.innerHTML = Object.keys(Language.GetElementByLanguage("k_PortfolioPage_ProjectsSoftwares"))[i];
-            projectsNavbarItemQuantity.classList.add("col-5", "m-0", "px-3", "py-0", "Calibri");
-            projectsNavbarItemQuantityTMP.classList.add("row", "flex-row-reverse", "m-0", "p-0");
-            projectsNavbarItemQuantityTMP.id = `Projetos${Object.values(Constants.ptBrContent["k_PortfolioPage_ProjectsSoftwares"])[i]}Navbar`;
-            projectsNavbarItemQuantityTMP.innerHTML = Object.values(Language.GetElementByLanguage("k_PortfolioPage_ProjectsSoftwares"))[i];
-
             projectsNavbarItemNameTMP.addEventListener("click",() =>
             {
                 this.UpdateProjectsNavbar(projectsNavbarItemNameTMP.id);
                 this.UpdateProjectsContent(Object.keys(Constants.ptBrContent["k_PortfolioPage_ProjectsSoftwares"])[i]);
             });
+            let projectsNavbarItemQuantity = projectsNavbarSoftwaresItem.appendChild(document.createElement("div"));
+            projectsNavbarItemQuantity.classList.add("col-6", "m-0", "p-0", "text-end");
+            let projectsNavbarItemQuantityTMP = projectsNavbarItemQuantity.appendChild(document.createElement("p"));
+            projectsNavbarItemQuantityTMP.classList.add("m-0", "p-0");
+            projectsNavbarItemQuantityTMP.id = `Projetos${Object.values(Constants.ptBrContent["k_PortfolioPage_ProjectsSoftwares"])[i]}Navbar`;
+            projectsNavbarItemQuantityTMP.innerHTML = Object.values(Language.GetElementByLanguage("k_PortfolioPage_ProjectsSoftwares"))[i];
             this.projectNavbarSoftwaresItems.push(projectsNavbarItemNameTMP);
         }
+
+        this.projectsSection = projectsSection.appendChild(document.createElement("div"));
+        this.projectsSection.classList.add("mx-auto", "my-0", "p-0", "FadeIn");
+        this.projectsSection.id = "ProjectsMoodboard";
     }
     static SetupSelectedProjectContent()
     {
@@ -163,11 +169,7 @@ class PortfolioProjectsSubsectionController
         {
             setTimeout(() =>
             {
-                for (let moodboardProject of MoodboardView.unloadedProjects)
-                {
-                    if (moodboardProject.readyState < 2) continue;
-                    MoodboardView.loadedImages++;
-                }
+                console.log("Loading");
             }, 100);
         }
         while (MoodboardView.loadedImages != MoodboardView.unloadedProjects.length);
@@ -185,31 +187,22 @@ class PortfolioProjectsSubsectionController
     }
     static ShowSelectedProjectModalContent(selectedProject)
     {
-        ModalView.modalDialogSize = selectedProject.modalDialogSize;
-        ModalView.modalDialogPNL.classList.add(selectedProject.modalDialogSize);
-        ModalView.ShowImageModal(selectedProject.carouselSize, selectedProject.numberOfSlides, selectedProject.carouselContentPath, selectedProject.descriptionSize, selectedProject.descriptionTitleKey, selectedProject.descriptionParagraphKey)
+        ModalView.ShowImageModal(selectedProject.modalDialogSize, selectedProject.carouselSize, selectedProject.numberOfSlides, selectedProject.carouselContentPath, selectedProject.descriptionSize, selectedProject.descriptionTitleKey, selectedProject.descriptionParagraphKey)
     }
 
     static UpdateProjectsNavbar(id)
     {
-        for (let projectsNavbarCategoriesItem of this.projectNavbarCategoriesItems)
-            projectsNavbarCategoriesItem.classList.add("deselected");
-        for (let projectsNavbarSoftwaresItem of this.projectNavbarSoftwaresItems)
-            projectsNavbarSoftwaresItem.classList.add("deselected");
+        let projects = [];
 
         for (let projectsNavbarCategoriesItem of this.projectNavbarCategoriesItems)
-        {
-            if (projectsNavbarCategoriesItem.id !== id) continue;
-            projectsNavbarCategoriesItem.classList.remove("deselected");
-            projectsNavbarCategoriesItem.classList.add("selected");
-            return;
-        }
+            projects.push(projectsNavbarCategoriesItem);
         for (let projectsNavbarSoftwaresItem of this.projectNavbarSoftwaresItems)
+            projects.push(projectsNavbarSoftwaresItem);
+        for (let project of projects)
         {
-            if (projectsNavbarSoftwaresItem.id !== id) continue;
-            projectsNavbarSoftwaresItem.classList.remove("deselected");
-            projectsNavbarSoftwaresItem.classList.add("selected");
-            return;
+            project.classList.remove("selected");
+            project.classList.remove("deselected");
+            project.classList.add(project.id === id ? "selected" : "deselected");
         }
     }
     static UpdateProjectsContent(word)
