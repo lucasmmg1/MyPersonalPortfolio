@@ -1,9 +1,5 @@
 @media (max-width: 375px)
 {
-    body
-    {
-        background-color: blue !important;
-    }
     h1
     {
         font-size: 3.25rem !important;
@@ -105,10 +101,6 @@
 }
 @media (min-width: 375px)
 {
-    body
-    {
-        background-color: green !important;
-    }
     h1
     {
         font-size: 3.75rem !important;
@@ -210,10 +202,6 @@
 }
 @media (min-width: 428px)
 {
-    body
-    {
-        background-color: red !important;
-    }
     h1
     {
         font-size: 4.25rem !important;
@@ -315,10 +303,6 @@
 }
 @media (min-width: 575px)
 {
-    body
-    {
-        background-color: green !important;
-    }
     h1
     {
         font-size: 4.75rem !important;
@@ -420,10 +404,6 @@
 }
 @media (min-width: 700px)
 {
-    body
-    {
-        background-color: yellow !important;
-    }
     h1
     {
         font-size: 5.65rem !important;
@@ -525,10 +505,6 @@
 }
 @media (min-width: 830px)
 {
-    body
-    {
-        background-color: purple !important;
-    }
     h1
     {
         font-size: 5rem !important;
@@ -631,10 +607,6 @@
 }
 @media (min-width: 992px)
 {
-    body
-    {
-        background-color: orangered !important;
-    }
     h1
     {
         font-size: 5.5rem !important;
@@ -736,10 +708,6 @@
 }
 @media (min-width: 1200px)
 {
-    body
-    {
-        background-color: pink !important;
-    }
     h1
     {
         font-size: 5rem !important;
@@ -841,10 +809,6 @@
 }
 @media (min-width: 1920px)
 {
-    body
-    {
-        background-color: brown !important;
-    }
     h1
     {
         font-size: 5rem !important;
