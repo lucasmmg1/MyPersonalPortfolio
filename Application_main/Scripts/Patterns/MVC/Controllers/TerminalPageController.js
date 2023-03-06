@@ -37,7 +37,20 @@ class TerminalPageController
     }
     static SetupTerminalCommands()
     {
-        let typewriter = new Typewriter(this.terminalGreetings, {loop: false, delay: 25, cursor: ""});
+        var onCreateTextNodeEvent = () =>
+        {
+            for (let i = 0; i < Object.keys(Language.availableLanguages).length; i++)
+            {
+                let languageDiv = this.terminalHelper.appendChild(document.createElement("div"));
+                languageDiv.classList.add("row");
+                let typewriter = new Typewriter(languageDiv, {loop: false, delay: 25, cursor: ""});
+                typewriter.typeString(`${Object.keys(Language.availableLanguages)[i]}: ${Object.values(Language.availableLanguages)[i]}`).start();
+            }
+
+            typewriter = null;
+        };
+
+        let typewriter = new Typewriter(this.terminalGreetings, {loop: false, delay: 25, cursor: "",});
 
         $(this.terminalBody).terminal
         ({
@@ -229,21 +242,12 @@ class TerminalPageController
 
                 prompt: '$ ',
                 checkArity: false,
-                greetings: typewriter.typeString(Language.GetElementByLanguage("k_TerminalPage_TerminalGreeting") + Constants.generalContent["k_TerminalPage_TerminalLanguageWarning"]).start(),
+                greetings: false, 
+                onInit: function(term) 
+                {
+                    term.echo(typewriter.typeString(Language.GetElementByLanguage("k_TerminalPage_TerminalGreeting") + Constants.generalContent["k_TerminalPage_TerminalLanguageWarning"]).callFunction(onCreateTextNodeEvent).start());
+                },
             });
-
-        setTimeout(() =>
-        {
-            for (let i = 0; i < Object.keys(Language.availableLanguages).length; i++)
-            {
-                let languageDiv = this.terminalHelper.appendChild(document.createElement("div"));
-                languageDiv.classList.add("row");
-                let typewriter = new Typewriter(languageDiv, {loop: false, delay: 25, cursor: ""});
-                typewriter.typeString(`${Object.keys(Language.availableLanguages)[i]}: ${Object.values(Language.availableLanguages)[i]}`).start();
-            }
-
-            typewriter = null;
-        }, (Language.GetElementByLanguage("k_TerminalPage_TerminalGreeting").length + Constants.generalContent["k_TerminalPage_TerminalLanguageWarning"].length) * 32.5);
     }
     static SetupTerminalInterface()
     {
