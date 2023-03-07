@@ -2,16 +2,13 @@ class TerminalPageController
 {
     static terminalContent;
     static terminalWindow;
-    static terminalHeader;
-    static terminalBody;
+    static terminalHead;
+    static terminalContent;
     static terminalGreetings;
     static terminalHelper;
-    static currentCommand;
 
     static Setup()
     {
-        this.currentCommand = 0;
-
         this.SetupTerminalInterface();
         this.SetupTerminalCommands();
         this.SetupTerminalOrder();
@@ -37,10 +34,38 @@ class TerminalPageController
     }
     static SetupTerminalCommands()
     {
-        let typewriter = new Typewriter(this.terminalGreetings, {loop: false, delay: 25, cursor: ""});
+        let currentCommand = 0;
+        let typewriter = new Typewriter(this.terminalGreetings, {loop: false, delay: 25, cursor: "",});
 
-        $(this.terminalBody).terminal
-        ({
+        let onCreateTextNodeEvent = () =>
+        {
+            for (let i = 0; i < Object.keys(Language.availableLanguages).length; i++)
+            {
+                let languageDiv = this.terminalHelper.appendChild(document.createElement("div"));
+                languageDiv.classList.add("row");
+                let typewriter = new Typewriter(languageDiv, {loop: false, delay: 25, cursor: ""});
+                typewriter.typeString(`${Object.keys(Language.availableLanguages)[i]}: ${Object.values(Language.availableLanguages)[i]}`).start();
+            }
+
+            typewriter = null;
+        };
+        let onCommandSuccess = sumDelta =>
+        {
+            currentCommand += sumDelta;
+            let currentCommandText = currentCommand.toString();
+            document.querySelector(`[data-index="${currentCommandText}"]`).classList.add("mb-3");
+        }
+        let onCommandError = error =>
+        {
+            let errorMessage = document.getElementsByClassName("terminal-output")[0].appendChild(document.createElement("p"));
+            errorMessage.innerHTML = error;
+            errorMessage.classList.add("text-red");
+            currentCommand += 1;
+        }
+
+        $(this.terminalContent).terminal
+        (
+            {
                 ajuda: function ()
                 {
                     this.echo("sentido_da_vida: explica qual é o sentido da vida.");
@@ -49,7 +74,7 @@ class TerminalPageController
                     this.echo("cachorro: mostra uma imagem de um cachorro.");
                     this.echo("urso: mostra uma imagem de um urso.");
                     this.echo("comecar: inicia a experiência.");
-                    TerminalPageController.UpdateGivenCommand(7);
+                    onCommandSuccess(7);
                 },
                 help: function()
                 {
@@ -59,38 +84,38 @@ class TerminalPageController
                     this.echo("cachorro: mostra uma imagem de um cachorro.");
                     this.echo("urso: mostra uma imagem de um urso.");
                     this.echo("comecar: inicia a experiência.");
-                    TerminalPageController.UpdateGivenCommand(7);
+                    onCommandSuccess(7);
                 },
                 apt: function()
                 {
                     this.echo("Sorry, this is not a linux terminal!");
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 vim: function()
                 {
                     this.echo("Sorry, this is not a linux terminal!");
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 sudo: function()
                 {
                     this.echo("Sorry, this is not a linux terminal!");
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 sentido_da_vida: function()
                 {
                     this.echo("De acordo com Douglas Adams, o sentido da vida, do universo e tudo mais é 42.")
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 meaning_of_life: function()
                 {
                     this.echo("According to Douglas Adams, the meaning of life, the universe and everything is 42.")
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 executar_ordem: function(order)
                 {
                     if (order === undefined)
                     {
-                        TerminalPageController.ReturnError(`Erro: Número de parâmetros incorreto!`);
+                        onCommandError(`Erro: Número de parâmetros incorreto!`);
                         return;
                     }
 
@@ -100,13 +125,13 @@ class TerminalPageController
                         str = `Executando ordem '${order}'.`;
 
                     this.echo(str);
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 execute_order: function(order)
                 {
                     if (order === undefined)
                     {
-                        TerminalPageController.ReturnError(`Error: Wrong number of parameters!`);
+                        onCommandError(`Error: Wrong number of parameters!`);
                         return;
                     }
 
@@ -116,7 +141,7 @@ class TerminalPageController
                         str = `Executing order '${order}'.`;
 
                     this.echo(str);
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 gato: function()
                 {
@@ -128,7 +153,7 @@ class TerminalPageController
                     img.on('load', this.resume);
                     this.pause();
                     this.echo(img);
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 cat: function()
                 {
@@ -140,7 +165,7 @@ class TerminalPageController
                     img.on('load', this.resume);
                     this.pause();
                     this.echo(img);
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 cachorro: function()
                 {
@@ -152,7 +177,7 @@ class TerminalPageController
                     img.on('load', this.resume);
                     this.pause();
                     this.echo(img);
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 dog: function()
                 {
@@ -164,7 +189,7 @@ class TerminalPageController
                     img.on('load', this.resume);
                     this.pause();
                     this.echo(img);
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 urso: function()
                 {
@@ -176,7 +201,7 @@ class TerminalPageController
                     img.on('load', this.resume);
                     this.pause();
                     this.echo(img);
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 bear: function()
                 {
@@ -188,7 +213,7 @@ class TerminalPageController
                     img.on('load', this.resume);
                     this.pause();
                     this.echo(img);
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
                 },
                 comecar: function()
                 {
@@ -198,7 +223,7 @@ class TerminalPageController
                 {
                     if (languageCode === undefined)
                     {
-                        TerminalPageController.ReturnError(`Error: Wrong number of parameters!`);
+                        onCommandError(`Error: Wrong number of parameters!`);
                         return;
                     }
 
@@ -209,7 +234,7 @@ class TerminalPageController
                     }
 
                     this.echo(Language.GetElementByLanguage("k_TerminalPage_ReloadWarning"));
-                    TerminalPageController.UpdateGivenCommand(2);
+                    onCommandSuccess(2);
 
                     setTimeout(() =>
                     {
@@ -224,26 +249,18 @@ class TerminalPageController
             {
                 onCommandNotFound: function(command)
                 {
-                    TerminalPageController.ReturnError(`Erro: Comando '${command}' não encotrado!`);
+                    onCommandError(`Erro: Comando '${command}' não encotrado!`);
                 },
 
                 prompt: '$ ',
                 checkArity: false,
-                greetings: typewriter.typeString(Language.GetElementByLanguage("k_TerminalPage_TerminalGreeting") + Constants.generalContent["k_TerminalPage_TerminalLanguageWarning"]).start(),
-            });
-
-        setTimeout(() =>
-        {
-            for (let i = 0; i < Object.keys(Language.availableLanguages).length; i++)
-            {
-                let languageDiv = this.terminalHelper.appendChild(document.createElement("div"));
-                languageDiv.classList.add("row");
-                let typewriter = new Typewriter(languageDiv, {loop: false, delay: 25, cursor: ""});
-                typewriter.typeString(`${Object.keys(Language.availableLanguages)[i]}: ${Object.values(Language.availableLanguages)[i]}`).start();
+                greetings: false, 
+                onInit: function(term) 
+                {
+                    term.echo(typewriter.typeString(Language.GetElementByLanguage("k_TerminalPage_TerminalGreeting") + Constants.generalContent["k_TerminalPage_TerminalLanguageWarning"]).callFunction(onCreateTextNodeEvent).start());
+                },
             }
-
-            typewriter = null;
-        }, (Language.GetElementByLanguage("k_TerminalPage_TerminalGreeting").length + Constants.generalContent["k_TerminalPage_TerminalLanguageWarning"].length) * 32.5);
+        );
     }
     static SetupTerminalInterface()
     {
@@ -253,29 +270,15 @@ class TerminalPageController
         this.terminalContent.classList.add("d-flex", "w-50","h-100", "mx-auto");
         this.terminalWindow = this.terminalContent.appendChild(document.createElement("div"));
         this.terminalWindow.classList.add("col", "h-50", "my-auto", "justify-content-center");
-        this.terminalHeader = this.terminalWindow.appendChild(document.createElement("div"));
-        this.terminalHeader.classList.add("text-center", "bgcolor_0E1013", "rounded-top", "text-cream");
-        this.terminalBody = this.terminalWindow.appendChild(document.createElement("div"));
-        this.terminalBody.classList.add("w-100", "h-100", "ps-2", "pt-2", "bgcolor_300A25", "text-white");
-        this.terminalHeader.innerHTML = "~./index.html";
-        this.terminalGreetings = this.terminalBody.appendChild(document.createElement("div"));
+        this.terminalHead = this.terminalWindow.appendChild(document.createElement("div"));
+        this.terminalHead.classList.add("text-center", "bgcolor_0E1013", "rounded-top", "text-cream");
+        this.terminalContent = this.terminalWindow.appendChild(document.createElement("div"));
+        this.terminalContent.classList.add("w-100", "h-100", "ps-2", "pt-2", "bgcolor_300A25", "text-white");
+        this.terminalHead.innerHTML = "~./index.html";
+        this.terminalGreetings = this.terminalContent.appendChild(document.createElement("div"));
         this.terminalGreetings.classList.add("row", "pb-2");
-        this.terminalHelper = this.terminalBody.appendChild(document.createElement("div"));
+        this.terminalHelper = this.terminalContent.appendChild(document.createElement("div"));
         this.terminalHelper.classList.add("row", "pb-2");
-    }
-
-    static UpdateGivenCommand(sumDelta)
-    {
-        this.currentCommand += sumDelta;
-        let currentCommandText = this.currentCommand.toString();
-        document.querySelector(`[data-index="${currentCommandText}"]`).classList.add("mb-3");
-    }
-    static ReturnError(error)
-    {
-        let errorMessage = document.getElementsByClassName("terminal-output")[0].appendChild(document.createElement("p"));
-        errorMessage.innerHTML = error;
-        errorMessage.classList.add("text-red");
-        this.currentCommand += 1;
     }
 }
 

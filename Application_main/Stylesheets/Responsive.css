@@ -98,6 +98,18 @@
     {
         width: 98.5% !important;
     }
+    #ProjectsModalContent
+    {
+        flex-direction: column-reverse !important;
+    }
+    #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    #ProjectsModalDescription
+    {
+        width: 100% !important;
+    }
 }
 @media (min-width: 375px)
 {
@@ -198,6 +210,18 @@
     #ProjectsNavbarSoftwares
     {
         width: 98.5% !important;
+    }
+    #ProjectsModalContent
+    {
+        flex-direction: column-reverse !important;
+    }
+    #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    #ProjectsModalDescription
+    {
+        width: 100% !important;
     }
 }
 @media (min-width: 428px)
@@ -300,6 +324,18 @@
     {
         width: 98.5% !important;
     }
+    #ProjectsModalContent
+    {
+        flex-direction: column-reverse !important;
+    }
+    #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    #ProjectsModalDescription
+    {
+        width: 100% !important;
+    }
 }
 @media (min-width: 575px)
 {
@@ -401,6 +437,18 @@
     {
         width: 98.5% !important;
     }
+    #ProjectsModalContent
+    {
+        flex-direction: column-reverse !important;
+    }
+    #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    #ProjectsModalDescription
+    {
+        width: 100% !important;
+    }
 }
 @media (min-width: 700px)
 {
@@ -501,6 +549,18 @@
     #ProjectsNavbarSoftwares
     {
         width: 98.5% !important;
+    }
+    #ProjectsModalContent
+    {
+        flex-direction: column-reverse !important;
+    }
+    #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    #ProjectsModalDescription
+    {
+        width: 100% !important;
     }
 }
 @media (min-width: 830px)
@@ -604,6 +664,18 @@
     {
         width: 98.5% !important;
     }
+    #ProjectsModalContent
+    {
+        flex-direction: column-reverse !important;
+    }
+    #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    #ProjectsModalDescription
+    {
+        width: 100% !important;
+    }
 }
 @media (min-width: 992px)
 {
@@ -704,6 +776,18 @@
     #ProjectsNavbarSoftwares
     {
         width: 66.66% !important;
+    }
+    #ProjectsModalContent
+    {
+        flex-direction: row !important;
+    }
+    #ProjectsModalCarousel
+    {
+        width: 50% !important;
+    }
+    #ProjectsModalDescription
+    {
+        width: 50% !important;
     }
 }
 @media (min-width: 1200px)
@@ -806,6 +890,18 @@
     {
         width: 66.66% !important;
     }
+    #ProjectsModalContent
+    {
+        flex-direction: row !important;
+    }
+    #ProjectsModalCarousel
+    {
+        width: 50% !important;
+    }
+    #ProjectsModalDescription
+    {
+        width: 50% !important;
+    }
 }
 @media (min-width: 1920px)
 {
@@ -906,5 +1002,17 @@
     #ProjectsNavbarSoftwares
     {
         width: 66.66% !important;
+    }
+    #ProjectsModalContent
+    {
+        flex-direction: row !important;
+    }
+    #ProjectsModalCarousel
+    {
+        width: 50% !important;
+    }
+    #ProjectsModalDescription
+    {
+        width: 50% !important;
     }
 }

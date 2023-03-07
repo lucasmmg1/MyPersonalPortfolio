@@ -38,6 +38,7 @@ class ModalView
         this.modalPNL.role = "dialog";
         this.modalDialogPNL.classList.add("modal-dialog", "modal-dialog-centered");
         this.modalContentPNL.classList.add("row", "d-flex", "flex-row", "m-0", "p-0", "modal-content");
+        this.modalContentPNL.id = "ProjectsModalContent";
 
         $(this.modalPNL).on('hide.bs.modal', function ()
         {
@@ -46,7 +47,7 @@ class ModalView
         });
     }
 
-    static ShowImageModal(modalDialogSize, carouselSize, numberOfSlides, carouselContentPath, descriptionSize, descriptionTitle, descriptionParagraph)
+    static ShowImageModal(modalDialogSize, numberOfSlides, carouselContentPath, descriptionTitle, descriptionParagraph)
     {
         let carouselPNL, carouselIndicatorsPNL, carouselInnerPNL, descriptionPNL, descriptionTitleTMP, descriptionParagraphTMP, carouselPreviousBTN, carouselNextBTN, carouselPreviousButtonIconIMG, carouselPreviousButtonOverlayTMP, carouselNextButtonIconIMG, carouselNextButtonOverlayTMP, buttonRow, closeButton;
 
@@ -54,9 +55,9 @@ class ModalView
         this.modalDialogPNL.classList.add(this.modalDialogSize);
         carouselPNL = this.modalContentPNL.appendChild(document.createElement("div"));
         carouselPNL.classList.add("m-0", "p-0", "carousel", "slide");
-        carouselPNL.id = "modalCarousel";
+        carouselPNL.id = "ProjectsModalCarousel";
         carouselPNL.dataset.bsRide = "carousel";
-        carouselPNL.classList.add(carouselSize);
+
         carouselIndicatorsPNL = carouselPNL.appendChild(document.createElement("div"));
         carouselIndicatorsPNL.classList.add("carousel-indicators");
         carouselInnerPNL = carouselPNL.appendChild(document.createElement("div"));
@@ -64,7 +65,7 @@ class ModalView
         carouselPreviousBTN = carouselPNL.appendChild(document.createElement("button"));
         carouselPreviousBTN.classList.add("carousel-control-prev");
         carouselPreviousBTN.type = "button";
-        carouselPreviousBTN.dataset.bsTarget = "#modalCarousel";
+        carouselPreviousBTN.dataset.bsTarget = "#ProjectsModalCarousel";
         carouselPreviousBTN.dataset.bsSlide = "prev";
         carouselPreviousButtonIconIMG = carouselPreviousBTN.appendChild(document.createElement("span"));
         carouselPreviousButtonIconIMG.classList.add("carousel-control-prev-icon");
@@ -75,7 +76,7 @@ class ModalView
         carouselNextBTN = carouselPNL.appendChild(document.createElement("button"));
         carouselNextBTN.classList.add("carousel-control-next");
         carouselNextBTN.type = "button";
-        carouselNextBTN.dataset.bsTarget = "#modalCarousel";
+        carouselNextBTN.dataset.bsTarget = "#ProjectsModalCarousel";
         carouselNextBTN.dataset.bsSlide = "next";
         carouselNextButtonIconIMG = carouselNextBTN.appendChild(document.createElement("span"));
         carouselNextButtonIconIMG.classList.add("carousel-control-next-icon");
@@ -85,8 +86,7 @@ class ModalView
         carouselNextButtonOverlayTMP.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_ProjectsCarouselNextButton");
         descriptionPNL = this.modalContentPNL.appendChild(document.createElement("div"));
         descriptionPNL.classList.add("m-0", "p-0");
-        descriptionPNL.id = "modalDescription";
-        descriptionPNL.classList.add(descriptionSize);
+        descriptionPNL.id = "ProjectsModalDescription";
         buttonRow = descriptionPNL.appendChild(document.createElement("div"));
         buttonRow.classList.add("m-0", "p-0", "w-100", "text-end");
         closeButton = buttonRow.appendChild(document.createElement("button"));
@@ -105,7 +105,7 @@ class ModalView
         {
             let slideIndicator = carouselIndicatorsPNL.appendChild(document.createElement("button"));
             slideIndicator.type = "button";
-            slideIndicator.dataset.bsTarget = "#modalCarousel";
+            slideIndicator.dataset.bsTarget = "#ProjectsModalCarousel";
             slideIndicator.dataset.bsSlideTo = `${i}`;
 
             let slidePNL = carouselInnerPNL.appendChild(document.createElement("div"));
