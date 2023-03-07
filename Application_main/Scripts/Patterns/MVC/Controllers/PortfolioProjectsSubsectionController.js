@@ -24,20 +24,20 @@ class PortfolioProjectsSubsectionController
     {
         this.projects =
         [
-            new ProjectView(["aplicativos"]),
-            new ProjectView(["aplicativos"]),
-            new ProjectView(["aplicativos"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Thumbnail4`, "0", "", "k_PortfolioPage_ProjectsMundoBitaTitle", "k_PortfolioPage_ProjectsMundoBitaDescription", "modal-lg"),
-            new ProjectView(["aplicativos"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Thumbnail3`, "0", "", "k_PortfolioPage_ProjectsGalinhaPintadinhaTitle", "k_PortfolioPage_ProjectsGalinhaPintadinhaDescription", "modal-lg"),
-            new ProjectView(["aplicativos"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Thumbnail2`, "0", "", "k_PortfolioPage_ProjectsTDMTitle", "k_PortfolioPage_ProjectsTDMDescription", "modal-lg"),
-            new ProjectView(["aplicativos"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Thumbnail1`, "0", "", "k_PortfolioPage_ProjectsRoxteenRoxstarTitle", "k_PortfolioPage_ProjectsRoxteenRoxstarDescription", "modal-lg"),
-            new ProjectView(["modelagens"]),
-            new ProjectView(["modelagens"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail5`, "1", "./Application_main/Sprites/Pages/Projects/Modelagens/Ilusao/Ilusao", "k_PortfolioPage_ProjectsOpticalIllusionTitle", "k_PortfolioPage_ProjectsOpticalIllusionDescription", "modal-lg"),
-            new ProjectView(["modelagens"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail4`, "15", "./Application_main/Sprites/Pages/Projects/Modelagens/Tie Fighter/TieFighter", "k_PortfolioPage_ProjectsTieFighterTitle", "k_PortfolioPage_ProjectsTieFighterDescription", "modal-xl"),
-            new ProjectView(["modelagens"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail3`, "3", "./Application_main/Sprites/Pages/Projects/Modelagens/Sabre de Luz/Sabre", "k_PortfolioPage_ProjectsLukesLightsaberTitle", "k_PortfolioPage_ProjectsLukesLightsaberDescription", "modal-xl"),
-            new ProjectView(["modelagens"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail2`, "6", "./Application_main/Sprites/Pages/Projects/Modelagens/Hamburguer/Hamburguer", "k_PortfolioPage_ProjectsDefaultCube2021HamburguerTitle", "k_PortfolioPage_ProjectsDefaultCube2021HamburguerDescription", "modal-lg"),
-            new ProjectView(["modelagens"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail1`, "9", "./Application_main/Sprites/Pages/Projects/Modelagens/Rosquinha/Rosquinha", "k_PortfolioPage_ProjectsBlenderGuru2019DonutTitle", "k_PortfolioPage_ProjectsBlenderGuru2019DonutDescription", "modal-lg"),
+            new ProjectView(["*", "aplicativos"]),
+            new ProjectView(["*", "aplicativos"]),
+            new ProjectView(["*", "aplicativos"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Thumbnail4`, "0", "", "k_PortfolioPage_ProjectsMundoBitaTitle", "k_PortfolioPage_ProjectsMundoBitaDescription", "modal-lg"),
+            new ProjectView(["*", "aplicativos"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Thumbnail3`, "0", "", "k_PortfolioPage_ProjectsGalinhaPintadinhaTitle", "k_PortfolioPage_ProjectsGalinhaPintadinhaDescription", "modal-lg"),
+            new ProjectView(["*", "aplicativos"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Thumbnail2`, "0", "", "k_PortfolioPage_ProjectsTDMTitle", "k_PortfolioPage_ProjectsTDMDescription", "modal-lg"),
+            new ProjectView(["*", "aplicativos"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Thumbnail1`, "0", "", "k_PortfolioPage_ProjectsRoxteenRoxstarTitle", "k_PortfolioPage_ProjectsRoxteenRoxstarDescription", "modal-lg"),
+            new ProjectView(["*", "modelagens"]),
+            new ProjectView(["*", "modelagens"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail5`, "1", "./Application_main/Sprites/Pages/Projects/Modelagens/Ilusao/Ilusao", "k_PortfolioPage_ProjectsOpticalIllusionTitle", "k_PortfolioPage_ProjectsOpticalIllusionDescription", "modal-lg"),
+            new ProjectView(["*", "modelagens"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail4`, "15", "./Application_main/Sprites/Pages/Projects/Modelagens/Tie Fighter/TieFighter", "k_PortfolioPage_ProjectsTieFighterTitle", "k_PortfolioPage_ProjectsTieFighterDescription", "modal-xl"),
+            new ProjectView(["*", "modelagens"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail3`, "3", "./Application_main/Sprites/Pages/Projects/Modelagens/Sabre de Luz/Sabre", "k_PortfolioPage_ProjectsLukesLightsaberTitle", "k_PortfolioPage_ProjectsLukesLightsaberDescription", "modal-xl"),
+            new ProjectView(["*", "modelagens"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail2`, "6", "./Application_main/Sprites/Pages/Projects/Modelagens/Hamburguer/Hamburguer", "k_PortfolioPage_ProjectsDefaultCube2021HamburguerTitle", "k_PortfolioPage_ProjectsDefaultCube2021HamburguerDescription", "modal-lg"),
+            new ProjectView(["*", "modelagens"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Thumbnail1`, "9", "./Application_main/Sprites/Pages/Projects/Modelagens/Rosquinha/Rosquinha", "k_PortfolioPage_ProjectsBlenderGuru2019DonutTitle", "k_PortfolioPage_ProjectsBlenderGuru2019DonutDescription", "modal-lg"),
 
-            new ProjectView(["processing"], "video", "col-3", ".mp4", `./Application_main/Sprites/Pages/Projects/Processing/a_Thumbnails/Thumbnail1`, "9", "./Application_main/Sprites/Pages/Projects/Modelagens/Rosquinha/Rosquinha", "k_PortfolioPage_ProjectsBlenderGuru2019DonutTitle", "k_PortfolioPage_ProjectsBlenderGuru2019DonutDescription", "modal-lg"),
+            new ProjectView(["*", "processing"], "video", "col-3", ".mp4", `./Application_main/Sprites/Pages/Projects/Processing/a_Thumbnails/Thumbnail1`, "9", "./Application_main/Sprites/Pages/Projects/Modelagens/Rosquinha/Rosquinha", "k_PortfolioPage_ProjectsBlenderGuru2019DonutTitle", "k_PortfolioPage_ProjectsBlenderGuru2019DonutDescription", "modal-lg"),
         ];
     }
     static SetupProjectsContent()
@@ -172,7 +172,7 @@ class PortfolioProjectsSubsectionController
                 console.log("Loading");
             }, 100);
         }
-        while (MoodboardView.loadedImages != MoodboardView.unloadedProjects.length);
+        while (MoodboardView.loadedImages !== MoodboardView.unloadedProjects.length);
         MoodboardView.unloadedProjects = [];
 
         setTimeout
