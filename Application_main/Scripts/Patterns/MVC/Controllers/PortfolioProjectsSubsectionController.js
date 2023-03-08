@@ -6,9 +6,10 @@ class PortfolioProjectsSubsectionController
     static projectNavbarCategoriesItems = [];
     static projectNavbarSoftwaresItems = [];
     static projects;
+    static previousSearch;
 
     static Setup()
-    {
+    {        
         ModalView.Create();
         this.SetupProjects();
         this.SetupProjectsContent();
@@ -16,7 +17,8 @@ class PortfolioProjectsSubsectionController
     }
     static Show()
     {
-        this.UpdateProjectsNavbar(this.projectNavbarCategoriesItems[0].id)
+        this.previousSearch = "aplicativos";
+        this.UpdateProjectsNavbar(this.projectNavbarCategoriesItems[0].id);
         this.UpdateProjectsContent("aplicativos");
         document.getElementById('websiteMiddleNavbar').scrollIntoView({behavior: 'smooth'});
     }
@@ -58,14 +60,50 @@ class PortfolioProjectsSubsectionController
         projectsNavbarSearchInput.id = "projectsSearchForm";
         projectsNavbarSearchInput.type = "search";
         projectsNavbarSearchInput.placeholder = "Pesquisar";
+        projectsNavbarSearchInput.addEventListener("keyup", event => 
+        {
+            // Caso o texto digitado esteja na navbar, selecionar a navbar
+
+            if (event.keyCode !== 13 || projectsNavbarSearchInput.value === null || projectsNavbarSearchInput.value === "")
+            {
+                return;
+            }
+
+            let str = projectsNavbarSearchInput.value.toLowerCase();
+            event.preventDefault();
+
+            if (this.previousSearch === str)
+            {
+                return;
+            }
+
+            this.UpdateProjectsNavbar(str);
+            this.UpdateProjectsContent(str);
+            this.previousSearch = str;
+        });
         let projectsNavbarSearchButton = projectsNavbarSearch.appendChild(document.createElement("button"));
         projectsNavbarSearchButton.classList.add("btn", "btn-primary");
         projectsNavbarSearchButton.id = "ProjectsNavbarSearchButton";
         projectsNavbarSearchButton.type = "button";
-        projectsNavbarSearchButton.addEventListener("click",() =>
+        projectsNavbarSearchButton.addEventListener("click", () =>
         {
-            this.UpdateProjectsNavbar("");
-            this.UpdateProjectsContent(projectsNavbarSearchInput.value);
+            // Caso o texto digitado esteja na navbar, selecionar a navbar
+
+            if (projectsNavbarSearchInput.value === null || projectsNavbarSearchInput.value === "")
+            {
+                return;
+            }
+
+            let str = projectsNavbarSearchInput.value.toLowerCase();
+
+            if (this.previousSearch === str)
+            {
+                return;
+            }
+
+            this.UpdateProjectsNavbar(str);
+            this.UpdateProjectsContent(str);
+            this.previousSearch = str;
         });
         let projectsNavbarSearchButtonLink = projectsNavbarSearchButton.appendChild(document.createElement("i"));
         projectsNavbarSearchButtonLink.classList.add("fas", "fa-search");
@@ -96,8 +134,11 @@ class PortfolioProjectsSubsectionController
             projectsNavbarItemNameTMP.innerHTML = Object.keys(Language.GetElementByLanguage("k_PortfolioPage_ProjectsCategories"))[i];
             projectsNavbarItemNameTMP.addEventListener("click",() =>
             {
+                let str = Object.keys(Constants.ptBrContent["k_PortfolioPage_ProjectsCategories"])[i].toLowerCase();
+                if (this.previousSearch === str) return;
                 this.UpdateProjectsNavbar(projectsNavbarItemNameTMP.id);
-                this.UpdateProjectsContent(Object.keys(Constants.ptBrContent["k_PortfolioPage_ProjectsCategories"])[i]);
+                this.UpdateProjectsContent(str);
+                this.previousSearch = str;
             });
             let projectsNavbarItemQuantity = projectsNavbarCategoriesItem.appendChild(document.createElement("div"));
             projectsNavbarItemQuantity.classList.add("col-6", "m-0", "p-0", "text-end");
@@ -130,10 +171,13 @@ class PortfolioProjectsSubsectionController
             projectsNavbarItemNameTMP.classList.add("m-0", "p-0");
             projectsNavbarItemNameTMP.id = `Projetos${Object.keys(Constants.ptBrContent["k_PortfolioPage_ProjectsSoftwares"])[i]}Navbar`;
             projectsNavbarItemNameTMP.innerHTML = Object.keys(Language.GetElementByLanguage("k_PortfolioPage_ProjectsSoftwares"))[i];
-            projectsNavbarItemNameTMP.addEventListener("click",() =>
+            projectsNavbarItemNameTMP.addEventListener("click", () =>
             {
+                let str = Object.keys(Constants.ptBrContent["k_PortfolioPage_ProjectsSoftwares"])[i].toLowerCase();
+                if (this.previousSearch === str) return;
                 this.UpdateProjectsNavbar(projectsNavbarItemNameTMP.id);
-                this.UpdateProjectsContent(Object.keys(Constants.ptBrContent["k_PortfolioPage_ProjectsSoftwares"])[i]);
+                this.UpdateProjectsContent(str);
+                this.previousSearch = str;
             });
             let projectsNavbarItemQuantity = projectsNavbarSoftwaresItem.appendChild(document.createElement("div"));
             projectsNavbarItemQuantity.classList.add("col-6", "m-0", "p-0", "text-end");
@@ -156,20 +200,38 @@ class PortfolioProjectsSubsectionController
     }
     static ShowSelectedProjectContent(selectedProjects)
     {
-        if (selectedProjects === null) return;
-
-        let instantiationOrder = 0;
-        for (let selectedProject of selectedProjects)
+        if (selectedProjects === null || selectedProjects.length === 0)
         {
-            MoodboardView.Create(instantiationOrder, this.selectedProjectSection, selectedProject, this.ShowSelectedProjectModalContent);
-            instantiationOrder++;
+            let placeholderPNL = this.selectedProjectSection.appendChild(document.createElement("div"));
+            let placeholderIMG = placeholderPNL.appendChild(document.createElement("img"));
+            let placeholderTitleTMP = placeholderPNL.appendChild(document.createElement("h5"));
+            let placeholderDescriptionTMP = placeholderPNL.appendChild(document.createElement("p"));
+
+            placeholderPNL.classList.add("w-75", "m-auto");
+
+            placeholderIMG.classList.add("w-50");
+            placeholderIMG.src = "./Application_main/Sprites/Pages/Projects/placeholder.gif";
+
+            placeholderTitleTMP.classList.add("mx-auto", "mt-5", "mb-0", "p-0", "text-opaque-dark");
+            placeholderTitleTMP.innerHTML = "Nenhum projeto encontrado...";
+
+            placeholderDescriptionTMP.classList.add("mx-auto", "mt-2", "mb-0", "p-0", "w-85", "text-opaque-light");
+            placeholderDescriptionTMP.innerHTML = "...mas não se preocupe! Esse portfolio é atualizado constantemente, então fique ligado!";
+        }
+        else
+        {
+            let instantiationOrder = 0;
+            for (let selectedProject of selectedProjects)
+            {
+                MoodboardView.Create(instantiationOrder, this.selectedProjectSection, selectedProject, this.ShowSelectedProjectModalContent);
+                instantiationOrder++;
+            }
         }
 
         do
         {
             setTimeout(() =>
             {
-                console.log("Loading");
             }, 100);
         }
         while (MoodboardView.loadedImages !== MoodboardView.unloadedProjects.length);
@@ -193,6 +255,7 @@ class PortfolioProjectsSubsectionController
     static UpdateProjectsNavbar(id)
     {
         let projects = [];
+        console.log(id);
 
         for (let projectsNavbarCategoriesItem of this.projectNavbarCategoriesItems)
             projects.push(projectsNavbarCategoriesItem);
@@ -202,7 +265,22 @@ class PortfolioProjectsSubsectionController
         {
             project.classList.remove("selected");
             project.classList.remove("deselected");
-            project.classList.add(project.id === id ? "selected" : "deselected");
+
+            if (project.id.toLowerCase() !== id.toLowerCase())
+            {
+                if (project.id.toLowerCase() === `projetos${id.toLowerCase()}navbar`)
+                {
+                    project.classList.add("selected");
+                }
+                else
+                {
+                    project.classList.add("deselected");
+                }
+            }
+            else
+            {
+                project.classList.add("selected");
+            }
         }
     }
     static UpdateProjectsContent(word)
