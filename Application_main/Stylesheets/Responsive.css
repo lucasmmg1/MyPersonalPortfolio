@@ -102,11 +102,19 @@
     {
         flex-direction: column-reverse !important;
     }
-    #ProjectsModalCarousel
+    .modal-lg #ProjectsModalCarousel
     {
         width: 100% !important;
     }
-    #ProjectsModalDescription
+    .modal-lg #ProjectsModalDescription
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalDescription
     {
         width: 100% !important;
     }
@@ -215,11 +223,19 @@
     {
         flex-direction: column-reverse !important;
     }
-    #ProjectsModalCarousel
+    .modal-lg #ProjectsModalCarousel
     {
         width: 100% !important;
     }
-    #ProjectsModalDescription
+    .modal-lg #ProjectsModalDescription
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalDescription
     {
         width: 100% !important;
     }
@@ -328,11 +344,19 @@
     {
         flex-direction: column-reverse !important;
     }
-    #ProjectsModalCarousel
+    .modal-lg #ProjectsModalCarousel
     {
         width: 100% !important;
     }
-    #ProjectsModalDescription
+    .modal-lg #ProjectsModalDescription
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalDescription
     {
         width: 100% !important;
     }
@@ -441,11 +465,19 @@
     {
         flex-direction: column-reverse !important;
     }
-    #ProjectsModalCarousel
+    .modal-lg #ProjectsModalCarousel
     {
         width: 100% !important;
     }
-    #ProjectsModalDescription
+    .modal-lg #ProjectsModalDescription
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalDescription
     {
         width: 100% !important;
     }
@@ -554,11 +586,19 @@
     {
         flex-direction: column-reverse !important;
     }
-    #ProjectsModalCarousel
+    .modal-lg #ProjectsModalCarousel
     {
         width: 100% !important;
     }
-    #ProjectsModalDescription
+    .modal-lg #ProjectsModalDescription
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalDescription
     {
         width: 100% !important;
     }
@@ -668,11 +708,19 @@
     {
         flex-direction: column-reverse !important;
     }
-    #ProjectsModalCarousel
+    .modal-lg #ProjectsModalCarousel
     {
         width: 100% !important;
     }
-    #ProjectsModalDescription
+    .modal-lg #ProjectsModalDescription
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalCarousel
+    {
+        width: 100% !important;
+    }
+    .modal-xxl #ProjectsModalDescription
     {
         width: 100% !important;
     }
@@ -781,13 +829,21 @@
     {
         flex-direction: row !important;
     }
-    #ProjectsModalCarousel
+    .modal-lg #ProjectsModalCarousel
     {
         width: 50% !important;
     }
-    #ProjectsModalDescription
+    .modal-lg #ProjectsModalDescription
     {
         width: 50% !important;
+    }
+    .modal-xxl #ProjectsModalCarousel
+    {
+        width: 60% !important;
+    }
+    .modal-xxl #ProjectsModalDescription
+    {
+        width: 40% !important;
     }
 }
 @media (min-width: 1200px)
@@ -894,13 +950,21 @@
     {
         flex-direction: row !important;
     }
-    #ProjectsModalCarousel
+    .modal-lg #ProjectsModalCarousel
     {
         width: 50% !important;
     }
-    #ProjectsModalDescription
+    .modal-lg #ProjectsModalDescription
     {
         width: 50% !important;
+    }
+    .modal-xxl #ProjectsModalCarousel
+    {
+        width: 60% !important;
+    }
+    .modal-xxl #ProjectsModalDescription
+    {
+        width: 40% !important;
     }
 }
 @media (min-width: 1920px)
@@ -1007,12 +1071,25 @@
     {
         flex-direction: row !important;
     }
-    #ProjectsModalCarousel
+    .modal-lg #ProjectsModalCarousel
     {
         width: 50% !important;
     }
-    #ProjectsModalDescription
+    .modal-lg #ProjectsModalDescription
     {
         width: 50% !important;
     }
+    .modal-xxl #ProjectsModalCarousel
+    {
+        width: 60% !important;
+    }
+    .modal-xxl #ProjectsModalDescription
+    {
+        width: 40% !important;
+    }
+}
+
+.modal-xxl
+{
+    max-width: 85% !important;
 }
