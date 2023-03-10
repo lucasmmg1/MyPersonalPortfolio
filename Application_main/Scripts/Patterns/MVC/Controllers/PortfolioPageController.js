@@ -1,6 +1,6 @@
 class PortfolioPageController
 {
-    static pagesIds = ["Bio", "Projetos"];
+    static pagesIds = ["Bio", "Projetos", "Blog"];
     static selectedPageId;
     static websiteNavbar;
     static selectedSection;
@@ -136,5 +136,5 @@ class PortfolioPageController
     }
 }
 
-currentPage = "PortfolioPage";
+currentPage = PageType.PortfolioPage;
 main();

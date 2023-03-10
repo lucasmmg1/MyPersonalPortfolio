@@ -12,6 +12,9 @@ class PortfolioSectionController
                 PortfolioProjectsSubsectionController.Setup();
                 break;
 
+            case "Blog":
+                break;
+
             default:
                 break;
         }
@@ -25,8 +28,10 @@ class PortfolioSectionController
                 break;
 
             case "Projetos":
-                console.log("Projects");
                 PortfolioProjectsSubsectionController.Show();
+                break;
+
+            case "Blog":
                 break;
 
             default:

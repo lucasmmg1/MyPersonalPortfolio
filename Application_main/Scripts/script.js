@@ -7,11 +7,11 @@ function main()
 
     switch (currentPage)
     {
-        case "TerminalPage":
+        case PageType.TerminalPage:
             TerminalPageController.Setup();
             break;
 
-        case "PortfolioPage":
+        case PageType.PortfolioPage:
             PortfolioPageController.Setup();
             break;
 

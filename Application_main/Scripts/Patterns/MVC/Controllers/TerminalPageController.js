@@ -282,5 +282,5 @@ class TerminalPageController
     }
 }
 
-currentPage = "TerminalPage";
+currentPage = PageType.TerminalPage;
 main();

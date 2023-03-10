@@ -1,13 +1,10 @@
 class MoodboardView
 {
-    static loadedImages;
-    static unloadedProjects = [];
-
-    static Create(instantiationOrder, content, projectView, contentAction)
+    static Create(instantiationOrder, content, project, moodboardType, contentAction)
     {
         setTimeout(() =>
         {
-            if (projectView.previewFilePath === undefined)
+            if (project.navbarPreviewFilePath === undefined)
             {
                 let placeholder = content.appendChild(document.createElement("div"));
                 placeholder.classList.add("col-3");
@@ -16,28 +13,41 @@ class MoodboardView
 
             setTimeout(function()
             {
-                MoodboardView.InstantiateMedia(content, projectView, contentAction);
+                MoodboardView.InstantiateMedia(content, project, contentAction, moodboardType);
             }, instantiationOrder * 10);
         })
     }
-    static InstantiateMedia(content, projectView, contentAction)
+    static InstantiateMedia(content, project, contentAction, moodboardType)
     {
-        let media;
-        let link = content.appendChild(document.createElement("a"));
+        let projectPNL = content.appendChild(document.createElement("div"));
+        projectPNL.classList.add("m-0", "p-1");
 
-        link.type = "button";
-        link.classList.add(projectView.previewFileSize, "p-1");
-        link.dataset.bsToggle = "modal";
-        link.dataset.bsTarget = "#modalContent";
-        link.onclick = function()
+        let projectBTN = projectPNL.appendChild(document.createElement("a"));
+        projectBTN.type = "button";
+        projectBTN.classList.add("overlay", "m-0", "p-0");
+        projectBTN.dataset.bsToggle = "modal";
+        projectBTN.dataset.bsTarget = "#modalContent";
+        projectBTN.onclick = function()
         {
-            contentAction(projectView);
+            contentAction(project);
         };
 
-        media = link.appendChild(document.createElement(projectView.previewType));
-        if (media === undefined) return;
-        media.classList.add("w-100");
-        media.alt = "";
-        media.src = `${projectView.previewFilePath}${projectView.previewFileType}`;
+        let projectIMG = projectBTN.appendChild(document.createElement(project.previewType));
+        if (projectIMG === undefined) return;
+        projectIMG.classList.add("w-100");
+        projectIMG.alt = "";
+
+        switch (moodboardType)
+        {
+            case MoodboardType.Navbar:
+                projectPNL.classList.add(project.navbarPreviewFileSize);
+                projectIMG.src = `${project.navbarPreviewFilePath}${project.previewFileType}`;
+                break;
+
+            case MoodboardType.Search:
+                projectPNL.classList.add(project.searchPreviewFileSize);
+                projectIMG.src = `${project.searchPreviewFilePath}${project.previewFileType}`;
+                break;
+        }
     }
 }
