@@ -1,3 +1,76 @@
+@media (max-width: 375px)
+{
+    #TerminalWindow
+    {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+@media (min-width: 375px)
+{
+    #TerminalWindow
+    {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+@media (min-width: 428px)
+{
+    #TerminalWindow
+    {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+@media (min-width: 575px)
+{
+    #TerminalWindow
+    {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+@media (min-width: 700px)
+{
+    #TerminalWindow
+    {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+@media (min-width: 830px)
+{
+    #TerminalWindow
+    {
+        width: 75% !important;
+        height: 75% !important;
+    }
+}
+@media (min-width: 992px)
+{
+    #TerminalWindow
+    {
+        width: 75% !important;
+        height: 75% !important;
+    }
+}
+@media (min-width: 1200px)
+{
+    #TerminalWindow
+    {
+        width: 50% !important;
+        height: 50% !important;
+    }
+}
+@media (min-width: 1920px)
+{
+    #TerminalWindow
+    {
+        width: 50% !important;
+        height: 50% !important;
+    }
+}
+
 @keyframes terminal-blink
 {
     0%, 50%
@@ -16,19 +89,21 @@
 {
     background-color: #300A25 !important;
 }
-
 .terminal-output .terminal-command
 {
     background-color: #300A25 !important;
 }
-
 .terminal-output .terminal-error
 {
     background-color: #300A25 !important;
 }
-
 .cmd, .cmd div, .cmd span[data-text]:not(.cmd-inverted):not(.token):not(.emoji), .terminal, .terminal-output>:not(.raw) a, .terminal-output>:not(.raw) div, .terminal-output>:not(.raw) span[data-text]:not(.token):not(.inverted):not(.terminal-inverted):not(.cmd-inverted):not(.terminal-error):not(.emoji), .terminal.external [data-text]
 {
     background-color: #300A25;
     color: #aaa;
+}
+.Typewriter__wrapper
+{
+    margin: 0 !important;
+    padding: 0 !important;
 }

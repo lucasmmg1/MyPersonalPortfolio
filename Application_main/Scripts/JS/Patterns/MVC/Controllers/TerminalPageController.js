@@ -217,7 +217,7 @@ class TerminalPageController
                 },
                 comecar: function()
                 {
-                    window.location = "./portfolio.html";
+                    window.location = "../../../../HTML/portfolio.html";
                 },
                 cl: function(languageCode)
                 {
@@ -243,7 +243,7 @@ class TerminalPageController
                 },
                 start: function()
                 {
-                    window.location = "./portfolio.html";
+                    window.location = "../../../../HTML/portfolio.html";
                 }
             },
             {
@@ -264,21 +264,22 @@ class TerminalPageController
     }
     static SetupTerminalInterface()
     {
-        document.body.classList.add("bgcolor_F7F7F7");
+        document.body.classList.add("bgcolor_F7F7F7", "m-0", "p-0");
 
         this.terminalContent = document.body.appendChild(document.createElement("div"));
-        this.terminalContent.classList.add("d-flex", "w-50","h-100", "mx-auto");
+        this.terminalContent.classList.add("d-flex", "w-100", "h-100", "m-0", "p-0");
         this.terminalWindow = this.terminalContent.appendChild(document.createElement("div"));
-        this.terminalWindow.classList.add("col", "h-50", "my-auto", "justify-content-center");
+        this.terminalWindow.classList.add("m-auto", "p-0");
+        this.terminalWindow.id = "TerminalWindow";
         this.terminalHead = this.terminalWindow.appendChild(document.createElement("div"));
         this.terminalHead.classList.add("text-center", "bgcolor_0E1013", "rounded-top", "text-cream");
         this.terminalContent = this.terminalWindow.appendChild(document.createElement("div"));
-        this.terminalContent.classList.add("w-100", "h-100", "ps-2", "pt-2", "bgcolor_300A25", "text-white");
+        this.terminalContent.classList.add("w-100", "h-100", "m-0", "ps-2", "pt-2", "bgcolor_300A25", "text-white");
         this.terminalHead.innerHTML = "~./index.html";
         this.terminalGreetings = this.terminalContent.appendChild(document.createElement("div"));
-        this.terminalGreetings.classList.add("row", "pb-2");
+        this.terminalGreetings.classList.add("row", "mx-0", "mt-0", "mb-3", "p-0");
         this.terminalHelper = this.terminalContent.appendChild(document.createElement("div"));
-        this.terminalHelper.classList.add("row", "pb-2");
+        this.terminalHelper.classList.add("row", "mx-0", "mt-0", "mb-4", "p-0");
     }
 }
 

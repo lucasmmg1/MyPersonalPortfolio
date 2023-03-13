@@ -1,27 +1,27 @@
 @font-face
 {
     font-family: "CommunistBasic";
-    src: url('../Fonts/CommunistBasic.ttf');
+    src: url('../../Fonts/CommunistBasic.TTF');
 }
 @font-face
 {
     font-family: "CommunistBold";
-    src: url('../Fonts/CommunistBold.ttf');
+    src: url('../../Fonts/CommunistBold.TTF');
 }
 @font-face
 {
     font-family: "CommunistSoft";
-    src: url('../Fonts/CommunistSoft.ttf');
+    src: url('../../Fonts/CommunistSoft.TTF');
 }
 @font-face
 {
     font-family: "SansationRegular";
-    src: url('../Fonts/Sansation_Regular.ttf');
+    src: url('../../Fonts/Sansation_Regular.ttf');
 }
 @font-face
 {
     font-family: "KeepCalm";
-    src: url('../Fonts/KeepCalm.ttf');
+    src: url('../../Fonts/KeepCalm.ttf');
 }
 
 .CommunistBasic
