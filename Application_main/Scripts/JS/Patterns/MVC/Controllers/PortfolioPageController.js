@@ -1,6 +1,6 @@
 class PortfolioPageController
 {
-    static pagesIds = ["Bio", "Projetos", "Blog"];
+    static pagesIds = ["Bio", "Projetos"];
     static selectedPageId;
     static websiteNavbar;
     static selectedSection;

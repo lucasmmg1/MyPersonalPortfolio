@@ -30,34 +30,37 @@ class ModalView
     static Setup()
     {
         this.modalPNL = document.body.appendChild(document.createElement("div"));
-        this.modalDialogPNL = this.modalPNL.appendChild(document.createElement("div"));
-        this.modalContentPNL = this.modalDialogPNL.appendChild(document.createElement("div"));
-
         this.modalPNL.classList.add("modal", "fade");
         this.modalPNL.id = "modalContent";
+        this.modalPNL.tabIndex = -1;
         this.modalPNL.role = "dialog";
+
+        this.modalDialogPNL = this.modalPNL.appendChild(document.createElement("div"));
         this.modalDialogPNL.classList.add("modal-dialog", "modal-dialog-centered");
+        this.modalDialogPNL.role = "document";
+
+        this.modalContentPNL = this.modalDialogPNL.appendChild(document.createElement("div"));
         this.modalContentPNL.classList.add("row", "d-flex", "flex-row", "m-0", "p-0", "modal-content");
         this.modalContentPNL.id = "ProjectsModalContent";
-
-        $(this.modalPNL).on('hide.bs.modal', function ()
-        {
-            document.body.style.overflow = "auto";
-            setTimeout(() => ModalView.Reset(), 500);
-        });
     }
 
     static ShowImageModal(modalDialogSize, numberOfSlides, carouselContentPath, descriptionTitle, descriptionParagraph)
     {
+        function OnModalClose()
+        {
+            document.body.style.overflow = "auto";
+            setTimeout(() => ModalView.Reset(), 500);
+        }
+
         let carouselPNL, carouselIndicatorsPNL, carouselInnerPNL, descriptionPNL, descriptionTitleTMP, descriptionParagraphTMP, carouselPreviousBTN, carouselNextBTN, carouselPreviousButtonIconIMG, carouselPreviousButtonOverlayTMP, carouselNextButtonIconIMG, carouselNextButtonOverlayTMP, buttonRow, closeButton;
 
         this.modalDialogSize = modalDialogSize;
         this.modalDialogPNL.classList.add(this.modalDialogSize);
+
         carouselPNL = this.modalContentPNL.appendChild(document.createElement("div"));
         carouselPNL.classList.add("m-0", "p-0", "carousel", "slide");
         carouselPNL.id = "ProjectsModalCarousel";
         carouselPNL.dataset.bsRide = "carousel";
-
         carouselIndicatorsPNL = carouselPNL.appendChild(document.createElement("div"));
         carouselIndicatorsPNL.classList.add("carousel-indicators");
         carouselInnerPNL = carouselPNL.appendChild(document.createElement("div"));
@@ -87,19 +90,28 @@ class ModalView
         descriptionPNL = this.modalContentPNL.appendChild(document.createElement("div"));
         descriptionPNL.classList.add("m-0", "p-0");
         descriptionPNL.id = "ProjectsModalDescription";
-        buttonRow = descriptionPNL.appendChild(document.createElement("div"));
-        buttonRow.classList.add("m-0", "p-0", "w-100", "text-end");
-        closeButton = buttonRow.appendChild(document.createElement("button"));
-        closeButton.classList.add("m-0", "p-0");
-        closeButton.innerHTML = "&times;"
-        closeButton.type = "button";
-        closeButton.dataset.dismiss="modal";
-        descriptionTitleTMP = descriptionPNL.appendChild(document.createElement("h4"));
-        descriptionTitleTMP.classList.add("mx-0", "my-4", "p-0", "text-center");
+        let descriptionHeaderPNL = descriptionPNL.appendChild(document.createElement("div"));
+        descriptionHeaderPNL.classList.add("m-0", "p-0", "text-center");
+        let closeBTN = descriptionHeaderPNL.appendChild(document.createElement("button"));
+        closeBTN.classList.add("w-95", "h3", "m-0", "p-0", "text-end");
+        closeBTN.type = "button";
+        closeBTN.dataset.dismiss="modal";
+        closeBTN.ariaLabel = "Close";
+        closeBTN.onclick = () => $("#modalContent").modal("hide");
+        let closeBTNSpan = closeBTN.appendChild(document.createElement("span"));
+        closeBTNSpan.ariaHidden = true;
+        closeBTNSpan.innerHTML = "&times;"
+        descriptionTitleTMP = descriptionHeaderPNL.appendChild(document.createElement("h4"));
+        descriptionTitleTMP.classList.add("w-100", "mx-0", "my-0", "px-5", "py-0", "text-center");
         descriptionTitleTMP.innerHTML = Language.GetElementByLanguage(descriptionTitle);
-        descriptionParagraphTMP = descriptionPNL.appendChild(document.createElement("p"));
-        descriptionParagraphTMP.classList.add("m-5", "p-0", "text-justify");
+        let descriptionContentPNL = descriptionPNL.appendChild(document.createElement("div"));
+        descriptionContentPNL.classList.add("m-0", "p-0");
+        descriptionParagraphTMP = descriptionContentPNL.appendChild(document.createElement("p"));
+        descriptionParagraphTMP.classList.add("mx-0", "mt-4", "mb-0", "px-5", "py-0", "text-justify");
         descriptionParagraphTMP.innerHTML = Language.GetElementByLanguage(descriptionParagraph);
+
+        $("#modalContent").on('hide.bs.modal', OnModalClose);
+        $("#ProjectsModalCarousel").carousel("cycle");
 
         for (let i = 0; i < numberOfSlides; i++)
         {
