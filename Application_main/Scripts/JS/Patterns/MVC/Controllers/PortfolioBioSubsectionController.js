@@ -47,7 +47,7 @@ class PortfolioBioSubsectionController
 
         bioPicture = this.bioSectionUpperLeft.appendChild(document.createElement("img"));
         bioPicture.classList.add("w-100", "rounded-2");
-        bioPicture.src = "./Application_main/Sprites/Pages/Bio/sprt_UI_FotoPerfil.png";
+        bioPicture.src = "../../Sprites/Pages/Bio/sprt_UI_FotoPerfil.png";
         paragraphHeader = this.bioSectionUpperRight.appendChild(document.createElement("div"));
         paragraphHeader.classList.add("m-0", "p-0", "text-start");
         paragraphSection = this.bioSectionUpperRight.appendChild(document.createElement("div"));
@@ -86,12 +86,12 @@ class PortfolioBioSubsectionController
         downloadSection.classList.add("w-30", "mt-3", "mb-5", "p-0", "mx-auto", "bgcolor_F7F7F7", "rounded-3", "link-primary", "text-center");
         downloadImage = downloadSection.appendChild(document.createElement("img"));
         downloadImage.classList.add("w-10", "mx-1", "my-0", "p-0");
-        downloadImage.src = "./Application_main/Sprites/Pages/Bio/sprt_UI_PDFLogo.png";
+        downloadImage.src = "../../Sprites/Pages/Bio/sprt_UI_PDFLogo.png";
         downloadLink = downloadSection.appendChild(document.createElement("a"))
         downloadLink.classList.add("mx-1", "my-0", "p-0");
         downloadLink.innerHTML = "curriculum-lucas.pdf";
         downloadLink.target = "_blank";
-        downloadLink.href = "./Application_main/Arquivos/curriculum-lucas.pdf";
+        downloadLink.href = "../../Files/curriculum-lucas.pdf";
         downloadLink.download = "curriculum-lucas.pdf";
     }
 }

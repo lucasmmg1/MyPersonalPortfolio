@@ -91,7 +91,7 @@ class ModalView
         descriptionPNL.classList.add("m-0", "p-0");
         descriptionPNL.id = "ProjectsModalDescription";
         let descriptionHeaderPNL = descriptionPNL.appendChild(document.createElement("div"));
-        descriptionHeaderPNL.classList.add("m-0", "p-0", "text-center");
+        descriptionHeaderPNL.classList.add("row", "m-0", "p-0", "text-center");
         let closeBTN = descriptionHeaderPNL.appendChild(document.createElement("button"));
         closeBTN.classList.add("w-95", "h3", "m-0", "p-0", "text-end");
         closeBTN.type = "button";
@@ -104,11 +104,16 @@ class ModalView
         descriptionTitleTMP = descriptionHeaderPNL.appendChild(document.createElement("h4"));
         descriptionTitleTMP.classList.add("w-100", "mx-0", "my-0", "px-5", "py-0", "text-center");
         descriptionTitleTMP.innerHTML = Language.GetElementByLanguage(descriptionTitle);
+        let dateTMP = descriptionHeaderPNL.appendChild(document.createElement("p"));
+        dateTMP.classList.add("col-12", "h6", "mx-auto", "mt-1", "mb-0", "p-0", "text-opaque-light");
+        dateTMP.innerHTML = "Atualizado em 13/03/2023 as 11h21";
         let descriptionContentPNL = descriptionPNL.appendChild(document.createElement("div"));
         descriptionContentPNL.classList.add("m-0", "p-0");
         descriptionParagraphTMP = descriptionContentPNL.appendChild(document.createElement("p"));
         descriptionParagraphTMP.classList.add("mx-0", "mt-4", "mb-0", "px-5", "py-0", "text-justify");
         descriptionParagraphTMP.innerHTML = Language.GetElementByLanguage(descriptionParagraph);
+        let descriptionFooterPNL = descriptionPNL.appendChild(document.createElement("div"));
+        descriptionFooterPNL.classList.add("row", "m-0", "p-0", "text-center");
 
         $("#modalContent").on('hide.bs.modal', OnModalClose);
         $("#ProjectsModalCarousel").carousel("cycle");

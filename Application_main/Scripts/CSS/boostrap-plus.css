@@ -1,3 +1,8 @@
+.rounded-35
+{
+    border-radius: 10% 30% 50% 70% !important;
+}
+
 .w-5
 {
     width: 5% !important;
@@ -53,4 +58,31 @@
 .w-95
 {
     width: 95% !important;
+}
+
+.opacity-0
+{
+    opacity: 0 !important;
+}
+
+.text-justify
+{
+    text-align: justify !important;
+}
+.text-indent-1
+{
+    text-indent: 2em !important;
+}
+
+.selected
+{
+    font-weight: bold !important;
+}
+.deselected
+{
+    font-weight: normal !important;
+}
+.line-height-1
+{
+    line-height: 3.5rem !important;
 }
