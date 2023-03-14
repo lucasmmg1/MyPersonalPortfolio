@@ -13,6 +13,7 @@ class ProjectView
     static descriptionTitleKey;
     static descriptionParagraphKey;
     static modalDialogSize;
+    static element;
 
     constructor(tags, previewType = undefined, navbarPreviewFileSize = undefined, previewFileType = undefined, navbarPreviewFilePath = undefined, searchPreviewFilePath = undefined, numberOfSlides = undefined, carouselContentPath = undefined, lastEditedKey = undefined, descriptionTitleKey = undefined, descriptionParagraphKey = undefined, modalDialogSize = undefined)
     {

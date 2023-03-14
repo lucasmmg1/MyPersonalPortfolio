@@ -4,7 +4,6 @@ class ModalView
     static modalPNL;
     static modalDialogPNL;
     static modalContentPNL;
-    static isResetingModal;
 
     static Create()
     {
@@ -17,18 +16,24 @@ class ModalView
     }
     static Reset()
     {
-        let buttons = document.getElementsByTagName('button');
-        for (const button of buttons) 
-            button.disabled = false;
-        
-        this.isResetingModal = true;
-
         this.modalDialogPNL.classList.remove(this.modalDialogSize);
 
         while (this.modalContentPNL.firstChild)
             this.modalContentPNL.removeChild(this.modalContentPNL.lastChild);
 
-        this.isResetingModal = false;
+        for (let category of PortfolioProjectsSubsectionController.projects)
+        {
+            category.element.classList.remove("disable-link");
+            category.element.classList.add("enable-link");
+
+            if (category.projects === undefined) continue;
+            for (let project of category.projects)
+            {
+                if (project.element === undefined) continue;
+                project.element.classList.remove("disable-link");
+                project.element.classList.add("enable-link");
+            }
+        }
     }
 
     static Setup()
@@ -50,6 +55,20 @@ class ModalView
 
     static ShowImageModal(modalDialogSize, numberOfSlides, carouselContentPath, lastEdited, descriptionTitle, descriptionParagraph)
     {
+        for (let category of PortfolioProjectsSubsectionController.projects)
+        {
+            category.element.classList.remove("disable-link");
+            category.element.classList.add("enable-link");
+
+            if (category.projects === undefined) continue;
+            for (let project of category.projects)
+            {
+                if (project.element === undefined) continue;
+                project.element.classList.remove("enable-link");
+                project.element.classList.add("disable-link");
+            }
+        }
+
         function OnModalClose()
         {
             document.body.style.overflow = "auto";
@@ -119,7 +138,7 @@ class ModalView
         let descriptionFooterPNL = descriptionPNL.appendChild(document.createElement("div"));
         descriptionFooterPNL.classList.add("row", "m-0", "p-0", "text-center");
 
-        $("#modalContent").on('hide.bs.modal', OnModalClose);
+        $("#modalContent").on('hide.bs.modal', () => OnModalClose());
         $("#ProjectsModalCarousel").carousel("cycle");
 
         for (let i = 0; i < numberOfSlides; i++)

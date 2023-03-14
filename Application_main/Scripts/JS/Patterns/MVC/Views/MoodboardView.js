@@ -31,6 +31,7 @@ class MoodboardView
         {
             contentAction(project);
         };
+        project.element = projectBTN;
 
         let projectIMG = projectBTN.appendChild(document.createElement(project.previewType));
         if (projectIMG === undefined) return;
