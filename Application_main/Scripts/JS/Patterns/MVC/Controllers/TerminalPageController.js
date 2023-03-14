@@ -217,7 +217,7 @@ class TerminalPageController
                 },
                 comecar: function()
                 {
-                    window.location = "../../../../HTML/portfolio.html";
+                    window.location = "./Application_main/Scripts/HTML/portfolio.html";
                 },
                 cl: function(languageCode)
                 {
@@ -243,7 +243,7 @@ class TerminalPageController
                 },
                 start: function()
                 {
-                    window.location = "../../../../HTML/portfolio.html";
+                    window.location = "./Application_main/Scripts/HTML/portfolio.html";
                 }
             },
             {

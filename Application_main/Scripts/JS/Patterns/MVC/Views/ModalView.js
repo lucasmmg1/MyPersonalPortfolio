@@ -4,7 +4,6 @@ class ModalView
     static modalPNL;
     static modalDialogPNL;
     static modalContentPNL;
-    static isResetingModal;
 
     static Create()
     {
@@ -17,14 +16,24 @@ class ModalView
     }
     static Reset()
     {
-        this.isResetingModal = true;
-
         this.modalDialogPNL.classList.remove(this.modalDialogSize);
 
         while (this.modalContentPNL.firstChild)
             this.modalContentPNL.removeChild(this.modalContentPNL.lastChild);
 
-        this.isResetingModal = false;
+        for (let category of PortfolioProjectsSubsectionController.projects)
+        {
+            category.element.classList.remove("disable-link");
+            category.element.classList.add("enable-link");
+
+            if (category.projects === undefined) continue;
+            for (let project of category.projects)
+            {
+                if (project.element === undefined) continue;
+                project.element.classList.remove("disable-link");
+                project.element.classList.add("enable-link");
+            }
+        }
     }
 
     static Setup()
@@ -44,8 +53,22 @@ class ModalView
         this.modalContentPNL.id = "ProjectsModalContent";
     }
 
-    static ShowImageModal(modalDialogSize, numberOfSlides, carouselContentPath, descriptionTitle, descriptionParagraph)
+    static ShowImageModal(modalDialogSize, numberOfSlides, carouselContentPath, lastEdited, descriptionTitle, descriptionParagraph)
     {
+        for (let category of PortfolioProjectsSubsectionController.projects)
+        {
+            category.element.classList.remove("disable-link");
+            category.element.classList.add("enable-link");
+
+            if (category.projects === undefined) continue;
+            for (let project of category.projects)
+            {
+                if (project.element === undefined) continue;
+                project.element.classList.remove("enable-link");
+                project.element.classList.add("disable-link");
+            }
+        }
+
         function OnModalClose()
         {
             document.body.style.overflow = "auto";
@@ -91,7 +114,7 @@ class ModalView
         descriptionPNL.classList.add("m-0", "p-0");
         descriptionPNL.id = "ProjectsModalDescription";
         let descriptionHeaderPNL = descriptionPNL.appendChild(document.createElement("div"));
-        descriptionHeaderPNL.classList.add("m-0", "p-0", "text-center");
+        descriptionHeaderPNL.classList.add("row", "m-0", "p-0", "text-center");
         let closeBTN = descriptionHeaderPNL.appendChild(document.createElement("button"));
         closeBTN.classList.add("w-95", "h3", "m-0", "p-0", "text-end");
         closeBTN.type = "button";
@@ -104,13 +127,18 @@ class ModalView
         descriptionTitleTMP = descriptionHeaderPNL.appendChild(document.createElement("h4"));
         descriptionTitleTMP.classList.add("w-100", "mx-0", "my-0", "px-5", "py-0", "text-center");
         descriptionTitleTMP.innerHTML = Language.GetElementByLanguage(descriptionTitle);
+        let dateTMP = descriptionHeaderPNL.appendChild(document.createElement("p"));
+        dateTMP.classList.add("col-12", "h6", "mx-auto", "mt-1", "mb-0", "p-0", "text-opaque-light");
+        dateTMP.innerHTML = `${Language.GetElementByLanguage("k_PortfolioPage_ProjectsUpdatedAt")} ${Language.GetElementByLanguage(lastEdited)}`;
         let descriptionContentPNL = descriptionPNL.appendChild(document.createElement("div"));
         descriptionContentPNL.classList.add("m-0", "p-0");
         descriptionParagraphTMP = descriptionContentPNL.appendChild(document.createElement("p"));
         descriptionParagraphTMP.classList.add("mx-0", "mt-4", "mb-0", "px-5", "py-0", "text-justify");
         descriptionParagraphTMP.innerHTML = Language.GetElementByLanguage(descriptionParagraph);
+        let descriptionFooterPNL = descriptionPNL.appendChild(document.createElement("div"));
+        descriptionFooterPNL.classList.add("row", "m-0", "p-0", "text-center");
 
-        $("#modalContent").on('hide.bs.modal', OnModalClose);
+        $("#modalContent").on('hide.bs.modal', () => OnModalClose());
         $("#ProjectsModalCarousel").carousel("cycle");
 
         for (let i = 0; i < numberOfSlides; i++)

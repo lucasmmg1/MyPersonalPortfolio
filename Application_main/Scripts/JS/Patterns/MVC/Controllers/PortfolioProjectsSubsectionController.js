@@ -34,10 +34,10 @@ class PortfolioProjectsSubsectionController
                 [
                     new ProjectView(["*"]),
                     new ProjectView(["*"]),
-                    new ProjectView(["*", "unity", "unity-3d", "mundo bita", "mundo", "bita", "video", "videos", "criança", "crianças", "infantil", "infantis", "fazendinha", "natureza", "animal", "animais", "amigo", "amigos", "musica", "musicas"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Navbar/Thumbnail4`, `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Search/Thumbnail4`, "10", "./Application_main/Sprites/Pages/Projects/Aplicativos/Mundo Bita/MundoBita", "k_PortfolioPage_ProjectsMundoBitaTitle", "k_PortfolioPage_ProjectsMundoBitaDescription", "modal-xxl"),
-                    new ProjectView(["*", "unity", "unity-3d", "galinha pintadinha", "galinha", "pintadinha", "galinhas", "pitadinhas", "pitinho", "galo", "animal", "animais", "pinto", "galo carijó", "galo", "carijo", "video", "videos", "criança", "crianças", "infatil", "infantis", "musica", "musicas"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Navbar/Thumbnail3`, `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Search/Thumbnail3`,  "5", "./Application_main/Sprites/Pages/Projects/Aplicativos/Galinha Pintadinha/GalinhaPintadinha", "k_PortfolioPage_ProjectsGalinhaPintadinhaTitle", "k_PortfolioPage_ProjectsGalinhaPintadinhaDescription", "modal-xxl"),
-                    new ProjectView(["*", "unity", "unity-3d", "turma da mônica", "turma da monica", "turma", "mônica", "monica", "cascão", "cascao", "magali", "cebolinha", "cebola", "monicão", "monicao", "bidu", "louco", "amigos", "crianças", "quadrinho", "quadrinhos", "comic", "comics", "história em quadrinhos", "historia em quadrinhos", "história", "historia", "comic book", "comic books", "infatil", "infatis", "infatojuvenil", "infantojuvenis", "infanto-juvenil", "infanto-juvenis", "melância", "melancia", "coelho", "coelhos", "coelhada", "coelhadas", "sansão", "sansao"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Navbar/Thumbnail2`, `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Search/Thumbnail2`,  "10", "./Application_main/Sprites/Pages/Projects/Aplicativos/TDM/TDM", "k_PortfolioPage_ProjectsTDMTitle", "k_PortfolioPage_ProjectsTDMDescription", "modal-lg"),
-                    new ProjectView(["*", "unity", "unity-3d", "luccas neto", "luccas", "neto", "lucas neto", "lucas", "irmãos neto", "roxteen", "roxstar", "música", "musica", "infatil", "infatojuvenil", "infantojuvenis", "infanto-juvenil", "infanto-juvenis", "infanto juvenil", "infanto juvenis", "infantis", "pvp", "batalha", "multiplayer", "multijogador", "multi-jogador", "multi-jogadores", "multijogadores", "amigos", "musicas", "músicas"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Navbar/Thumbnail1`, `./Application_main/Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Search/Thumbnail1`,  "10", "./Application_main/Sprites/Pages/Projects/Aplicativos/Roxteen Roxstar/RoxteenRoxstar", "k_PortfolioPage_ProjectsRoxteenRoxstarTitle", "k_PortfolioPage_ProjectsRoxteenRoxstarDescription", "modal-lg"),
+                    new ProjectView(["*", "unity", "unity-3d", "mundo bita", "mundo", "bita", "video", "videos", "criança", "crianças", "infantil", "infantis", "fazendinha", "natureza", "animal", "animais", "amigo", "amigos", "musica", "musicas"], "img", "col-6", ".png", `../../Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Navbar/Thumbnail4`, `../../Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Search/Thumbnail4`, "9", "../../Sprites/Pages/Projects/Aplicativos/Mundo Bita/MundoBita", "k_PortfolioPage_ProjectsMundoBitaUpdate", "k_PortfolioPage_ProjectsMundoBitaTitle", "k_PortfolioPage_ProjectsMundoBitaDescription", "modal-xxl"),
+                    new ProjectView(["*", "unity", "unity-3d", "galinha pintadinha", "galinha", "pintadinha", "galinhas", "pitadinhas", "pitinho", "galo", "animal", "animais", "pinto", "galo carijó", "galo", "carijo", "video", "videos", "criança", "crianças", "infatil", "infantis", "musica", "musicas"], "img", "col-6", ".png", `../../Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Navbar/Thumbnail3`, `../../Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Search/Thumbnail3`,  "5", "../../Sprites/Pages/Projects/Aplicativos/Galinha Pintadinha/GalinhaPintadinha", "k_PortfolioPage_ProjectsGalinhaPintadinhaUpdate", "k_PortfolioPage_ProjectsGalinhaPintadinhaTitle", "k_PortfolioPage_ProjectsGalinhaPintadinhaDescription", "modal-xxl"),
+                    new ProjectView(["*", "unity", "unity-3d", "turma da mônica", "turma da monica", "turma", "mônica", "monica", "cascão", "cascao", "magali", "cebolinha", "cebola", "monicão", "monicao", "bidu", "louco", "amigos", "crianças", "quadrinho", "quadrinhos", "comic", "comics", "história em quadrinhos", "historia em quadrinhos", "história", "historia", "comic book", "comic books", "infatil", "infatis", "infatojuvenil", "infantojuvenis", "infanto-juvenil", "infanto-juvenis", "melância", "melancia", "coelho", "coelhos", "coelhada", "coelhadas", "sansão", "sansao"], "img", "col-3", ".png", `../../Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Navbar/Thumbnail2`, `../../Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Search/Thumbnail2`,  "10", "../../Sprites/Pages/Projects/Aplicativos/TDM/TDM", "k_PortfolioPage_ProjectsTDMUpdate", "k_PortfolioPage_ProjectsTDMTitle", "k_PortfolioPage_ProjectsTDMDescription", "modal-lg"),
+                    new ProjectView(["*", "unity", "unity-3d", "luccas neto", "luccas", "neto", "lucas neto", "lucas", "irmãos neto", "roxteen", "roxstar", "música", "musica", "infatil", "infatojuvenil", "infantojuvenis", "infanto-juvenil", "infanto-juvenis", "infanto juvenil", "infanto juvenis", "infantis", "pvp", "batalha", "multiplayer", "multijogador", "multi-jogador", "multi-jogadores", "multijogadores", "amigos", "musicas", "músicas"], "img", "col-3", ".png", `../../Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Navbar/Thumbnail1`, `../../Sprites/Pages/Projects/Aplicativos/a_Thumbnails/Search/Thumbnail1`,  "10", "../../Sprites/Pages/Projects/Aplicativos/Roxteen Roxstar/RoxteenRoxstar", "k_PortfolioPage_ProjectsRoxteenRoxstarUpdate", "k_PortfolioPage_ProjectsRoxteenRoxstarTitle", "k_PortfolioPage_ProjectsRoxteenRoxstarDescription", "modal-lg"),
                 ],
             ),
             new CategoryView
@@ -55,11 +55,11 @@ class PortfolioProjectsSubsectionController
                 ProjectType.Category,
                 [
                     new ProjectView(["*"]),
-                    new ProjectView(["*", "ilusão de ótica", "ilusão de otica", "ilusao de ótica", "ilusão de otica", "ilusão", "ilusao", "ótica", "otica", "quadrado", "blender", "3d"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Navbar/Thumbnail5`, `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Search/Thumbnail5`,  "1", "./Application_main/Sprites/Pages/Projects/Modelagens/Ilusao/Ilusao", "k_PortfolioPage_ProjectsOpticalIllusionTitle", "k_PortfolioPage_ProjectsOpticalIllusionDescription", "modal-lg"),
-                    new ProjectView(["*", "blender", "3d", "starwars", "star wars", "star", "wars", "guerra nas estrelas", "guerra", "estrelas", "guerras", "estrela", "nave", "tie fighter", "tie", "fighter", "cruzador imperial", "cruzador", "imperial", "nave de guerra", "warship", "império galáctico", "imperio galáctico", "império galactico", "imperio galactico", "império galático", "império galatico", "imperio galático", "imperio galatico", "império", "imperio", "galáctico", "galactico", "galático", "galatico"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Navbar/Thumbnail4`, `./Application_main/Sprites/Pages/Projects/searchPreviewPlaceholder`,  "15", "./Application_main/Sprites/Pages/Projects/Modelagens/Tie Fighter/TieFighter", "k_PortfolioPage_ProjectsTieFighterTitle", "k_PortfolioPage_ProjectsTieFighterDescription", "modal-xl"),
-                    new ProjectView(["*", "sabre", "luz", "luke", "guerra", "estrelas", "guerras", "estrela", "blender", "3d", "light saber", "lightsaber", "luke skywalker", "skywalker", "star wars", "guerra nas estrelas", "sabre de luz", "arma", "espada", "lase", "kyber kristal", "kyber", "guerra", "nas", "estrelas", "star", "wars"], "img", "col-6", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Navbar/Thumbnail3`,  `./Application_main/Sprites/Pages/Projects/searchPreviewPlaceholder`, "3", "./Application_main/Sprites/Pages/Projects/Modelagens/Sabre de Luz/Sabre", "k_PortfolioPage_ProjectsLukesLightsaberTitle", "k_PortfolioPage_ProjectsLukesLightsaberDescription", "modal-xl"),
-                    new ProjectView(["*", "blender", "3d", "hamburguer", "alimento", "alimentos", "food", "foods", "junkfood", "junk food", "comida", "comidas", "ingredientes", "ingrediente", "ingredients", "ingredient", "lettuce", "alface", "alfaces", "fastfood", "fast food", "fast-food", "tomate", "tomato", "tomatos", "tomates", "vegetal", "vegetais", "vegetable", "vegetables", "fruta", "frutas", "fruit", "fruits", "bacon", "cheese", "queijo", "queijos", "pão", "pao", "bread", "mcdonald's", "mc donald's", "mc donalds", "mcdonalds", "mc"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Navbar/Thumbnail2`, `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Search/Thumbnail2`,  "6", "./Application_main/Sprites/Pages/Projects/Modelagens/Hamburguer/Hamburguer", "k_PortfolioPage_ProjectsDefaultCube2021HamburguerTitle", "k_PortfolioPage_ProjectsDefaultCube2021HamburguerDescription", "modal-lg"),
-                    new ProjectView(["*", "blender", "3d", "rosquinha", "massa", "massas", "comida", "comidas", "doce", "doces", "candy", "donut", "blender guru", "blender-guru", "blenderguru", "andrew pierce", "andrew", "pierce", "granulado", "sprinkles", "sprinkle", "sparkle", "sparkles", "coffee", "café", "cafe", "bebida", "xícara", "xicara", "xícaras", "xicaras", "cup"], "img", "col-3", ".png", `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Navbar/Thumbnail1`, `./Application_main/Sprites/Pages/Projects/Modelagens/a_Thumbnails/Search/Thumbnail1`,  "9", "./Application_main/Sprites/Pages/Projects/Modelagens/Rosquinha/Rosquinha", "k_PortfolioPage_ProjectsBlenderGuru2019DonutTitle", "k_PortfolioPage_ProjectsBlenderGuru2019DonutDescription", "modal-lg"),
+                    new ProjectView(["*", "ilusão de ótica", "ilusão de otica", "ilusao de ótica", "ilusão de otica", "ilusão", "ilusao", "ótica", "otica", "quadrado", "blender", "3d"], "img", "col-3", ".png", `../../Sprites/Pages/Projects/Modelagens/a_Thumbnails/Navbar/Thumbnail5`, `../../Sprites/Pages/Projects/Modelagens/a_Thumbnails/Search/Thumbnail5`,  "1", "../../Sprites/Pages/Projects/Modelagens/Ilusao/Ilusao", "k_PortfolioPage_ProjectsOpticalIllusionUpdate", "k_PortfolioPage_ProjectsOpticalIllusionTitle", "k_PortfolioPage_ProjectsOpticalIllusionDescription", "modal-lg"),
+                    new ProjectView(["*", "blender", "3d", "starwars", "star wars", "star", "wars", "guerra nas estrelas", "guerra", "estrelas", "guerras", "estrela", "nave", "tie fighter", "tie", "fighter", "cruzador imperial", "cruzador", "imperial", "nave de guerra", "warship", "império galáctico", "imperio galáctico", "império galactico", "imperio galactico", "império galático", "império galatico", "imperio galático", "imperio galatico", "império", "imperio", "galáctico", "galactico", "galático", "galatico"], "img", "col-6", ".png", `../../Sprites/Pages/Projects/Modelagens/a_Thumbnails/Navbar/Thumbnail4`, `../../Sprites/Pages/Projects/searchPreviewPlaceholder`,  "15", "../../Sprites/Pages/Projects/Modelagens/Tie Fighter/TieFighter", "k_PortfolioPage_ProjectsTieFighterUpdate", "k_PortfolioPage_ProjectsTieFighterTitle", "k_PortfolioPage_ProjectsTieFighterDescription", "modal-xl"),
+                    new ProjectView(["*", "sabre", "luz", "luke", "guerra", "estrelas", "guerras", "estrela", "blender", "3d", "light saber", "lightsaber", "luke skywalker", "skywalker", "star wars", "guerra nas estrelas", "sabre de luz", "arma", "espada", "lase", "kyber kristal", "kyber", "guerra", "nas", "estrelas", "star", "wars"], "img", "col-6", ".png", `../../Sprites/Pages/Projects/Modelagens/a_Thumbnails/Navbar/Thumbnail3`,  `../../Sprites/Pages/Projects/searchPreviewPlaceholder`, "3", "../../Sprites/Pages/Projects/Modelagens/Sabre de Luz/Sabre", "k_PortfolioPage_ProjectsLukesLightsaberUpdate", "k_PortfolioPage_ProjectsLukesLightsaberTitle", "k_PortfolioPage_ProjectsLukesLightsaberDescription", "modal-xl"),
+                    new ProjectView(["*", "blender", "3d", "hamburguer", "alimento", "alimentos", "food", "foods", "junkfood", "junk food", "comida", "comidas", "ingredientes", "ingrediente", "ingredients", "ingredient", "lettuce", "alface", "alfaces", "fastfood", "fast food", "fast-food", "tomate", "tomato", "tomatos", "tomates", "vegetal", "vegetais", "vegetable", "vegetables", "fruta", "frutas", "fruit", "fruits", "bacon", "cheese", "queijo", "queijos", "pão", "pao", "bread", "mcdonald's", "mc donald's", "mc donalds", "mcdonalds", "mc"], "img", "col-3", ".png", `../../Sprites/Pages/Projects/Modelagens/a_Thumbnails/Navbar/Thumbnail2`, `../../Sprites/Pages/Projects/Modelagens/a_Thumbnails/Search/Thumbnail2`,  "6", "../../Sprites/Pages/Projects/Modelagens/Hamburguer/Hamburguer", "k_PortfolioPage_ProjectsDefaultCube2021HamburguerUpdate", "k_PortfolioPage_ProjectsDefaultCube2021HamburguerTitle", "k_PortfolioPage_ProjectsDefaultCube2021HamburguerDescription", "modal-lg"),
+                    new ProjectView(["*", "blender", "3d", "rosquinha", "massa", "massas", "comida", "comidas", "doce", "doces", "candy", "donut", "blender guru", "blender-guru", "blenderguru", "andrew pierce", "andrew", "pierce", "granulado", "sprinkles", "sprinkle", "sparkle", "sparkles", "coffee", "café", "cafe", "bebida", "xícara", "xicara", "xícaras", "xicaras", "cup"], "img", "col-3", ".png", `../../Sprites/Pages/Projects/Modelagens/a_Thumbnails/Navbar/Thumbnail1`, `../../Sprites/Pages/Projects/Modelagens/a_Thumbnails/Search/Thumbnail1`,  "9", "../../Sprites/Pages/Projects/Modelagens/Rosquinha/Rosquinha", "k_PortfolioPage_ProjectsBlenderGuru2019DonutUpdate", "k_PortfolioPage_ProjectsBlenderGuru2019DonutTitle", "k_PortfolioPage_ProjectsBlenderGuru2019DonutDescription", "modal-lg"),
                 ],
             ),
             new CategoryView
@@ -89,6 +89,12 @@ class PortfolioProjectsSubsectionController
     {
         function OnSearchInputKeyUp(event)
         {
+            for (let category of PortfolioProjectsSubsectionController.projects)
+            {
+                category.element.classList.remove("enable-link");
+                category.element.classList.add("disable-link");
+            }
+
             if (event.keyCode !== 13 || projectsNavbarSearchInput.value === null || projectsNavbarSearchInput.value === "")
             {
                 return;
@@ -109,6 +115,12 @@ class PortfolioProjectsSubsectionController
 
         function OnSearchButtonClicked()
         {
+            for (let category of PortfolioProjectsSubsectionController.projects)
+            {
+                category.element.classList.remove("enable-link");
+                category.element.classList.add("disable-link");
+            }
+
             if (projectsNavbarSearchInput.value === null || projectsNavbarSearchInput.value === "")
             {
                 return;
@@ -128,6 +140,12 @@ class PortfolioProjectsSubsectionController
 
         function OnNavbarItemClicked(name, id)
         {
+            for (let category of PortfolioProjectsSubsectionController.projects)
+            {
+                category.element.classList.remove("enable-link");
+                category.element.classList.add("disable-link");
+            }
+
             let str = name.toLowerCase();
             if (PortfolioProjectsSubsectionController.previousSearch === str) return;
             PortfolioProjectsSubsectionController.previousSearch = str;
@@ -239,7 +257,7 @@ class PortfolioProjectsSubsectionController
             placeholderPNL.classList.add("w-75", "m-auto");
 
             placeholderIMG.classList.add("w-50");
-            placeholderIMG.src = "./Application_main/Sprites/Pages/Projects/projectsNotFound.gif";
+            placeholderIMG.src = "../../Sprites/Pages/Projects/projectsNotFound.gif";
 
             placeholderTitleTMP.classList.add("mx-auto", "mt-5", "mb-0", "p-0", "text-opaque-dark");
             placeholderTitleTMP.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_ProjectsNotFoundTitle");
@@ -257,7 +275,7 @@ class PortfolioProjectsSubsectionController
             placeholderPNL.classList.add("w-75", "m-auto");
 
             placeholderIMG.classList.add("w-50");
-            placeholderIMG.src = "./Application_main/Sprites/Pages/Projects/projectsUnderDevelopment.gif";
+            placeholderIMG.src = "../../Sprites/Pages/Projects/projectsUnderDevelopment.gif";
 
             placeholderTitleTMP.classList.add("mx-auto", "mt-5", "mb-0", "p-0", "text-opaque-dark");
             placeholderTitleTMP.innerHTML = Language.GetElementByLanguage("k_PortfolioPage_ProjectsUnderMaintenanceTitle");
@@ -273,7 +291,7 @@ class PortfolioProjectsSubsectionController
 
                 function ShowSelectedProjectModalContent()
                 {
-                    ModalView.ShowImageModal(result.modalDialogSize, result.numberOfSlides, result.carouselContentPath, result.descriptionTitleKey, result.descriptionParagraphKey);
+                    ModalView.ShowImageModal(result.modalDialogSize, result.numberOfSlides, result.carouselContentPath, result.lastEditedKey, result.descriptionTitleKey, result.descriptionParagraphKey);
                 }
 
                 MoodboardView.Create(instantiationOrder, selectedProjectSection, result, moodboardType, ShowSelectedProjectModalContent);
@@ -303,6 +321,15 @@ class PortfolioProjectsSubsectionController
             {
                 this.moodboardSection.classList.remove("FadeOut");
                 this.moodboardSection.classList.add("FadeIn");
+
+                setTimeout(() =>
+                {
+                    for (let category of PortfolioProjectsSubsectionController.projects)
+                    {
+                        category.element.classList.remove("disable-link");
+                        category.element.classList.add("enable-link");
+                    }
+                }, 1000);
             },
             550
         )

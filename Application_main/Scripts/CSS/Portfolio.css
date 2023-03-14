@@ -1124,3 +1124,13 @@
         width: 100% !important;
     }
 }
+
+#BioSectionFooter
+{
+    background-color: #111111 !important;
+}
+#ProjectsNavbarTitle
+{
+    font-size: 1.25rem;
+    margin-bottom: 2rem !important;
+}
