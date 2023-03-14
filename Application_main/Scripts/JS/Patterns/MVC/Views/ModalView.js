@@ -17,6 +17,10 @@ class ModalView
     }
     static Reset()
     {
+        let buttons = document.getElementsByTagName('button');
+        for (const button of buttons) 
+            button.disabled = false;
+        
         this.isResetingModal = true;
 
         this.modalDialogPNL.classList.remove(this.modalDialogSize);
@@ -44,7 +48,7 @@ class ModalView
         this.modalContentPNL.id = "ProjectsModalContent";
     }
 
-    static ShowImageModal(modalDialogSize, numberOfSlides, carouselContentPath, descriptionTitle, descriptionParagraph)
+    static ShowImageModal(modalDialogSize, numberOfSlides, carouselContentPath, lastEdited, descriptionTitle, descriptionParagraph)
     {
         function OnModalClose()
         {
@@ -106,7 +110,7 @@ class ModalView
         descriptionTitleTMP.innerHTML = Language.GetElementByLanguage(descriptionTitle);
         let dateTMP = descriptionHeaderPNL.appendChild(document.createElement("p"));
         dateTMP.classList.add("col-12", "h6", "mx-auto", "mt-1", "mb-0", "p-0", "text-opaque-light");
-        dateTMP.innerHTML = "Atualizado em 13/03/2023 as 11h21";
+        dateTMP.innerHTML = `${Language.GetElementByLanguage("k_PortfolioPage_ProjectsUpdatedAt")} ${Language.GetElementByLanguage(lastEdited)}`;
         let descriptionContentPNL = descriptionPNL.appendChild(document.createElement("div"));
         descriptionContentPNL.classList.add("m-0", "p-0");
         descriptionParagraphTMP = descriptionContentPNL.appendChild(document.createElement("p"));
