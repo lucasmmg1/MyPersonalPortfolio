@@ -6,7 +6,7 @@ class Constants
 
     static generalContent =
     {
-        k_TerminalPage_TerminalLanguageWarning : "\n\n\nTo change your this terminal's current language, type 'cl' followed by one of the following language codes.",
+        k_TerminalPage_TerminalLanguageWarning : "\n\n\nTo change this terminal's current language, type 'cl' followed by one of the following language codes: ",
 
         k_PortfolioPage_BioTitle : "Lucas Martin Macedo Gagliano",
         k_PortfolioPage_ProjectsPlaceholderTitle : "",
@@ -19,6 +19,7 @@ class Constants
         k_Internal_HeaderTitle : "voce me encontrou",
 
         k_TerminalPage_TerminalGreeting : "Bem-vindo ao meu portfolio! \nDigite 'comecar' para ser direcionado ou 'ajuda' para ver uma lista de comandos disponíveis.",
+        k_TerminalPage_ReloadWarning : "Recarregando...",
 
         k_PortfolioPage_BodyHeader : "voce me encontrou. ",
         k_PortfolioPage_NavbarOptions :  ["Bio", "Projetos"],
@@ -69,6 +70,7 @@ class Constants
         k_Internal_HeaderTitle : "you found me",
 
         k_TerminalPage_TerminalGreeting : "Welcome to my portfolio! \nType 'start' to be redirected or 'help' to see a list of available commands.",
+        k_TerminalPage_ReloadWarning : "Reloading...",
 
         k_PortfolioPage_BodyHeader : "you found me. ",
         k_PortfolioPage_NavbarOptions :  ["Bio", "Projects"],
