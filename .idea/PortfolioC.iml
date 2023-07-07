@@ -13,5 +13,6 @@
     <orderEntry type="library" name="jquery.terminal" level="application" />
     <orderEntry type="library" name="jquery-3.6.0.slim" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="@types/jquery" level="application" />
   </component>
 </module>
