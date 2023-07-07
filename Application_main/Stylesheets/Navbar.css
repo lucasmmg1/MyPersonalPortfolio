@@ -1,0 +1,48 @@
+nav
+{
+    padding: 0.75rem;
+    margin: 0.88475rem !important;
+    margin-top: 0 !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+.navbar-link
+{
+    border-radius: 50rem !important;
+    margin: 0.5rem 0.25rem !important;
+    padding: 1rem 1.5rem !important;
+    border: 0 !important;
+    font-family: "SansationRegular", serif;
+}
+.navbar-icon
+{
+    width: 1.60125rem;
+    height: 1.5425rem;
+    margin: 0.5rem;
+}
+
+.navbar-nav .deselected
+{
+    opacity: 45%;
+}
+.navbar-nav .deselected:hover
+{
+    opacity: 100%;
+}
+
+.navbar-options .selected
+{
+    background: #111111;
+    color: #f3f7f7;
+}
+.navbar-options .deselected
+{
+    opacity: 45%;
+    background: #e3e3e3;
+    color: #111111;
+}
+.navbar-options .deselected:hover
+{
+    opacity: 100%;
+}
