@@ -32,12 +32,12 @@
             <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
             <!-- region CDNs -->
 
-            <link href='Application_main/Scripts/CSS/boostrap-plus.css' rel='stylesheet' type='text/css'>
-            <link href='Application_main/Scripts/CSS/Terminal.css' rel='stylesheet' type='text/css'>
-            <link href='Application_main/Scripts/CSS/Portfolio.css' rel='stylesheet' type='text/css'>
-            <link href='Application_main/Scripts/CSS/style.css' rel='stylesheet' type='text/css'>
+            <link href='Application_Main/Scripts/CSS/boostrap-plus.css' rel='stylesheet' type='text/css'>
+            <link href='Application_Main/Scripts/CSS/Terminal.css' rel='stylesheet' type='text/css'>
+            <link href='Application_Main/Scripts/CSS/Portfolio.css' rel='stylesheet' type='text/css'>
+            <link href='Application_Main/Scripts/CSS/style.css' rel='stylesheet' type='text/css'>
 
-        <link href='Application_main/Sprites/Structures/Head/sprt_Structures_Head_favicon.ico' rel='icon'>
+        <link href='Application_Main/Sprites/Structures/Head/sprt_Structures_Head_favicon.ico' rel='icon'>
         <title></title>
 
     </head>
@@ -53,23 +53,23 @@
             <!-- endregion -->
 
             <!-- region Components -->
-            <script src="Application_main/Scripts/JS/Patterns/MVC/Models/Constants.js"></script>
-            <script src="Application_main/Scripts/JS/Patterns/MVC/Models/Language.js"></script>
+            <script src="Application_Main/Scripts/JS/Patterns/MVC/Models/Constants.js"></script>
+            <script src="Application_Main/Scripts/JS/Patterns/MVC/Models/Language.js"></script>
             <!-- endregion -->
 
             <!-- region Effects -->
-            <script src="Application_main/Scripts/JS/Typewriter.js"></script>
+            <script src="Application_Main/Scripts/JS/Typewriter.js"></script>
             <!-- endregion -->
 
             <!-- region Structures -->
-            <script src="Application_main/Scripts/JS/Patterns/MVC/Controllers/DocumentController.js"></script>
-            <script src="Application_main/Scripts/JS/Patterns/MVC/Controllers/HeadController.js"></script>
+            <script src="Application_Main/Scripts/JS/Patterns/MVC/Controllers/DocumentController.js"></script>
+            <script src="Application_Main/Scripts/JS/Patterns/MVC/Controllers/HeadController.js"></script>
             <!-- endregion -->
 
-            <script src="Application_main/Scripts/JS/Structures/Enums/PageType.js"></script>
+            <script src="Application_Main/Scripts/JS/Structures/Enums/PageType.js"></script>
 
-            <script src="Application_main/Scripts/JS/script.js"></script>
-            <script src="Application_main/Scripts/JS/Patterns/MVC/Controllers/TerminalPageController.js"></script>
+            <script src="Application_Main/Scripts/JS/script.js"></script>
+            <script src="Application_Main/Scripts/JS/Patterns/MVC/Controllers/TerminalPageController.js"></script>
 
         <!-- endregion -->
 
