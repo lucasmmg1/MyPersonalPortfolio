@@ -137,4 +137,4 @@ class PortfolioPageController
 }
 
 currentPage = PageType.PortfolioPage;
-main();
+//main();

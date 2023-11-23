@@ -217,7 +217,7 @@ class TerminalPageController
                 },
                 comecar: function()
                 {
-                    window.location = "./Application_main/Scripts/HTML/portfolio.html";
+                    window.location = "../../../../HTML/portfolio.php";
                 },
                 cl: function(languageCode)
                 {
@@ -243,7 +243,7 @@ class TerminalPageController
                 },
                 start: function()
                 {
-                    window.location = "./Application_main/Scripts/HTML/portfolio.html";
+                    window.location = "../../../../HTML/portfolio.php";
                 }
             },
             {
@@ -275,7 +275,7 @@ class TerminalPageController
         this.terminalHead.classList.add("text-center", "bgcolor_0E1013", "rounded-top", "text-cream");
         this.terminalContent = this.terminalWindow.appendChild(document.createElement("div"));
         this.terminalContent.classList.add("w-100", "h-100", "m-0", "ps-2", "pt-2", "bgcolor_300A25", "text-white");
-        this.terminalHead.innerHTML = "~./index.html";
+        this.terminalHead.innerHTML = "~./index.php";
         this.terminalGreetings = this.terminalContent.appendChild(document.createElement("div"));
         this.terminalGreetings.classList.add("row", "mx-0", "mt-0", "mb-3", "p-0");
         this.terminalHelper = this.terminalContent.appendChild(document.createElement("div"));
