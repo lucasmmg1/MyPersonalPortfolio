@@ -1,5 +1,6 @@
 let fields =
 [
+    "k_Internal_Title",
     "k_Navbar_Title",
     "k_Navbar_BioOption",
     "k_Navbar_ProjectsOption",
@@ -14,40 +15,53 @@ let fields =
 
 $(document).ready(function()
 {
+    let promise = Promise.resolve();
     for (let field of fields)
     {
-        $.ajax
-        ({
-            url: "../PHP/RetrieveData.php",
-            method: "GET",
-            data:
-            {
-                field: field,
-                language: "en-us"
-            },
-            success: function(data)
-            {
-                if (data.status === "success")
+        promise = promise.then(function ()
+        {
+            return $.ajax
+            ({
+                url: "../PHP/RetrieveData.php",
+                method: "GET",
+                data:
                 {
-                    SetupField(field, data.data);
-                }
-                else
+                    field: field,
+                    language: Language.GetCurrentLanguage()
+                },
+                success: function(data)
+                {
+                    if (data.status === "success")
+                    {
+                        SetupField(field, data.data);
+                    }
+                    else
+                    {
+
+                    }
+                },
+                error: function(error)
                 {
 
                 }
-            },
-            error: function(error)
-            {
-
-            }
+            });
         });
     }
+});
+document.addEventListener('click', function(event)
+{
+    if (!dropdownMenuContent.contains(event.target))
+        $('.dropdown-toggle').dropdown('hide');
 });
 
 function SetupField(fieldName, data)
 {
     switch (fieldName)
     {
+        case "k_Internal_Title":
+            document.title = data;
+            break;
+
         case "k_Navbar_Title":
             let navbarTitleElement = document.getElementById("NavbarTitle");
             let navbarTitleTypewriter = new Typewriter(navbarTitleElement, {loop: false, delay: 85});
@@ -112,3 +126,5 @@ function SetupField(fieldName, data)
             break;
     }
 }
+Language.SetupLanguages();
+$('.dropdown-toggle').dropdown();

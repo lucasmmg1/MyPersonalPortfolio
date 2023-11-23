@@ -24,7 +24,7 @@
             <link href='../CSS/Portfolio.css' rel='stylesheet' type='text/css'>
             <link href='../CSS/style.css' rel='stylesheet' type='text/css'>
             <link href='../../Sprites/Structures/Head/sprt_Structures_Head_favicon.ico' rel='icon'>
-            <title> portfolio </title>
+            <title> ㅤ </title>
         </head>
 
         <body class='vh-100 m-0 p-0'>
@@ -38,6 +38,7 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
             <script src="https://kit.fontawesome.com/3c6c4efe58.js" crossorigin="anonymous"></script>
             <script src="../JS/Typewriter.js"></script>
+            <script src="../JS/Language.js"></script>
             <script src="../JS/navbar.js"></script>
             <script src="../JS/script.js"></script>
 
