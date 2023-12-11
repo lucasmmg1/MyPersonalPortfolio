@@ -2,8 +2,10 @@
     include_once "Database.php";
 
     $field = $_GET['field'];
+    $table = $_GET['table'];
     $language = $_GET['language'];
-    $query = "SELECT $field FROM cms WHERE language = '$language'";
+
+    $query = "SELECT $field FROM $table WHERE language = '$language'";
     $result = Database::GetConnection()->Query($query);
 
     if ($result && $result->rowCount() > 0)

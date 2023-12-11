@@ -6,57 +6,6 @@
     }
 
 
-    #BioSectionUpper
-    {
-        flex-direction: column-reverse !important;
-    }
-    #BioSectionUpperLeft
-    {
-        width: 100% !important;
-    }
-    #BioSectionUpperRight
-    {
-        width: 100% !important;
-        margin-bottom: 3rem !important;
-    }
-    #BioSectionFooter
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 100% !important;
-        margin-top: 3rem !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 100% !important;
-        margin-top: 0 !important;
-    }
-    #BioTitle
-    {
-        font-size: 1rem !important;
-    }
-    #BioSubtitle
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioUpperDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterLeftDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterRightDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterCenterDescription
-    {
-        font-size: 0.9rem !important;
-    }
     #ProjectsSection
     {
         flex-direction: column !important;
@@ -131,49 +80,7 @@
     }
 
 
-    #BioSectionUpper
-    {
-        flex-direction: column-reverse !important;
-    }
-    #BioSectionUpperLeft
-    {
-        width: 100% !important;
-    }
-    #BioSectionUpperRight
-    {
-        width: 100% !important;
-        margin-bottom: 3rem !important;
-    }
-    #BioSectionFooter
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 100% !important;
-        margin-top: 3rem !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 100% !important;
-        margin-top: 0 !important;
-    }
-    #BioTitle
-    {
-        font-size: 1.045rem !important;
-    }
-    #BioSubtitle
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioUpperDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterLeftDescription
-    {
-        font-size: 0.9rem !important;
-    }
+
     #BioFooterRightDescription
     {
         font-size: 0.9rem !important;
@@ -256,57 +163,7 @@
     }
 
 
-    #BioSectionUpper
-    {
-        flex-direction: column-reverse !important;
-    }
-    #BioSectionUpperLeft
-    {
-        width: 100% !important;
-    }
-    #BioSectionUpperRight
-    {
-        width: 100% !important;
-        margin-bottom: 3rem !important;
-    }
-    #BioSectionFooter
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 100% !important;
-        margin-top: 3rem !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 100% !important;
-        margin-top: 0 !important;
-    }
-    #BioTitle
-    {
-        font-size: 1.2rem !important;
-    }
-    #BioSubtitle
-    {
-        font-size: 0.95rem !important;
-    }
-    #BioUpperDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterLeftDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterRightDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterCenterDescription
-    {
-        font-size: 0.9rem !important;
-    }
+
     #ProjectsSection
     {
         flex-direction: column !important;
@@ -380,58 +237,6 @@
         font-size: 4.75rem !important;
     }
 
-
-    #BioSectionUpper
-    {
-        flex-direction: column-reverse !important;
-    }
-    #BioSectionUpperLeft
-    {
-        width: 100% !important;
-    }
-    #BioSectionUpperRight
-    {
-        width: 100% !important;
-        margin-bottom: 3rem !important;
-    }
-    #BioSectionFooter
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 100% !important;
-        margin-top: 3rem !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 100% !important;
-        margin-top: 0 !important;
-    }
-    #BioTitle
-    {
-        font-size: 1.5rem !important;
-    }
-    #BioSubtitle
-    {
-        font-size: 1.25rem !important;
-    }
-    #BioUpperDescription
-    {
-        font-size: 1.1rem !important;
-    }
-    #BioFooterLeftDescription
-    {
-        font-size: 1.1rem !important;
-    }
-    #BioFooterRightDescription
-    {
-        font-size: 1.1rem !important;
-    }
-    #BioFooterCenterDescription
-    {
-        font-size: 1.1rem !important;
-    }
     #ProjectsSection
     {
         flex-direction: column !important;
@@ -506,57 +311,6 @@
     }
 
 
-    #BioSectionUpper
-    {
-        flex-direction: column-reverse !important;
-    }
-    #BioSectionUpperLeft
-    {
-        width: 100% !important;
-    }
-    #BioSectionUpperRight
-    {
-        width: 100% !important;
-        margin-bottom: 3rem !important;
-    }
-    #BioSectionFooter
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 100% !important;
-        margin-top: 3rem !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 100% !important;
-        margin-top: 0 !important;
-    }
-    #BioTitle
-    {
-        font-size: 1.65rem !important;
-    }
-    #BioSubtitle
-    {
-        font-size: 1.3rem !important;
-    }
-    #BioUpperDescription
-    {
-        font-size: 1.2rem !important;
-    }
-    #BioFooterLeftDescription
-    {
-        font-size: 1.2rem !important;
-    }
-    #BioFooterRightDescription
-    {
-        font-size: 1.2rem !important;
-    }
-    #BioFooterCenterDescription
-    {
-        font-size: 1.2rem !important;
-    }
     #ProjectsSection
     {
         flex-direction: column !important;
@@ -631,57 +385,7 @@
     }
 
 
-    #BioSectionUpper
-    {
-        flex-direction: row !important;
-    }
-    #BioSectionUpperLeft
-    {
-        width: 45% !important;
-    }
-    #BioSectionUpperRight
-    {
-        width: 45% !important;
-        margin-bottom: 0 !important;
-    }
-    #BioSectionFooter
-    {
-        flex-direction: row !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 45% !important;
-        margin-top: 3rem !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 45% !important;
-        margin-top: 3rem !important;
-    }
-    #BioTitle
-    {
-        font-size: 1.075rem !important;
-    }
-    #BioSubtitle
-    {
-        font-size: 1rem !important;
-    }
-    #BioUpperDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterLeftDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterRightDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterCenterDescription
-    {
-        font-size: 0.9rem !important;
-    }
+
     #ProjectsSection
     {
         flex-direction: column !important;
@@ -756,57 +460,7 @@
         font-size: 5.5rem !important;
     }
 
-    #BioSectionUpper
-    {
-        flex-direction: row !important;
-    }
-    #BioSectionUpperLeft
-    {
-        width: 41.66% !important;
-    }
-    #BioSectionUpperRight
-    {
-        width: 41.66% !important;
-        margin-bottom: 0 !important;
-    }
-    #BioSectionFooter
-    {
-        flex-direction: row !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 41.66% !important;
-        margin-top: 3rem !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 41.66% !important;
-        margin-top: 3rem !important;
-    }
-    #BioTitle
-    {
-        font-size: 1.2rem !important;
-    }
-    #BioSubtitle
-    {
-        font-size: 1.05rem !important;
-    }
-    #BioUpperDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterLeftDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterRightDescription
-    {
-        font-size: 0.9rem !important;
-    }
-    #BioFooterCenterDescription
-    {
-        font-size: 0.9rem !important;
-    }
+
     #ProjectsSection
     {
         flex-direction: row !important;
@@ -881,53 +535,7 @@
         font-size: 5rem !important;
     }
 
-    #BioSectionUpper
-    {
-        flex-direction: row !important;
-    }
-    #BioSectionUpperLeft
-    {
-        width: 41.66% !important;
-    }
-    #BioSectionUpperRight
-    {
-        width: 41.66% !important;
-        margin-bottom: 0 !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 41.66% !important;
-        margin-top: 3rem !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 41.66% !important;
-        margin-top: 3rem !important;
-    }
-    #BioTitle
-    {
-        font-size: 1.35rem !important;
-    }
-    #BioSubtitle
-    {
-        font-size: 1.15rem !important;
-    }
-    #BioUpperDescription
-    {
-        font-size: 1rem !important;
-    }
-    #BioFooterLeftDescription
-    {
-        font-size: 1rem !important;
-    }
-    #BioFooterRightDescription
-    {
-        font-size: 1rem !important;
-    }
-    #BioFooterCenterDescription
-    {
-        font-size: 1rem !important;
-    }
+
     #ProjectsSection
     {
         flex-direction: row !important;
@@ -1002,57 +610,7 @@
         font-size: 5rem !important;
     }
 
-    #BioSectionUpper
-    {
-        flex-direction: row !important;
-    }
-    #BioSectionUpperLeft
-    {
-        width: 41.66% !important;
-    }
-    #BioSectionUpperRight
-    {
-        width: 41.66% !important;
-        margin-bottom: 0 !important;
-    }
-    #BioSectionFooter
-    {
-        flex-direction: row !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 41.66% !important;
-        margin-top: 3rem !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 41.66% !important;
-        margin-top: 3rem !important;
-    }
-    #BioTitle
-    {
-        font-size: 1.5rem !important;
-    }
-    #BioSubtitle
-    {
-        font-size: 1.2rem !important;
-    }
-    #BioUpperDescription
-    {
-        font-size: 1.05rem !important;
-    }
-    #BioFooterLeftDescription
-    {
-        font-size: 1.05rem !important;
-    }
-    #BioFooterRightDescription
-    {
-        font-size: 1.05rem !important;
-    }
-    #BioFooterCenterDescription
-    {
-        font-size: 1.05rem !important;
-    }
+
     #ProjectsSection
     {
         flex-direction: row !important;

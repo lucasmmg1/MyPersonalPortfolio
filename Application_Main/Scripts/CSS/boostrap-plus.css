@@ -63,6 +63,10 @@
 {
     width: 95% !important;
 }
+.w-auto
+{
+    width: auto !important;
+}
 
 .opacity-0
 {
@@ -89,4 +93,10 @@
 .line-height-1
 {
     line-height: 3.5rem !important;
+}
+
+.modal-xxl
+{
+    width: 100% !important;
+    max-width: 100% !important;
 }
