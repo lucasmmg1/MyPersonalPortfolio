@@ -32,7 +32,7 @@
             <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
             <!-- region CDNs -->
 
-            <link href='Application_Main/Scripts/CSS/boostrap-plus.css' rel='stylesheet' type='text/css'>
+            <link href='Application_3rdParty/Boostrap Plus/Scripts/CSS/boostrap-plus.css' rel='stylesheet' type='text/css'>
             <link href='Application_Main/Scripts/CSS/Terminal.css' rel='stylesheet' type='text/css'>
             <link href='Application_Main/Scripts/CSS/Portfolio.css' rel='stylesheet' type='text/css'>
             <link href='Application_Main/Scripts/CSS/style.css' rel='stylesheet' type='text/css'>
