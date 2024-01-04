@@ -1,102 +1,134 @@
 class Navbar
 {
-    static fields =
-    [
-        "k_Navbar_Title",
-        "k_Navbar_BioOption",
-        "k_Navbar_ProjectsOption",
-    ];
+    static results =
+    {
+        "k_Navbar_Title": "",
+        "k_Navbar_Options": ""
+    };
 
     static Setup()
     {
-        let promise = Promise.resolve();
-        for (let field of Navbar.fields)
-        {
-            promise = promise.then(function()
-            {
-                let url = new URL('../PHP/RetrieveData.php', window.location.href);
-                let params = {field: field, table: 'navbar', language: Language.GetCurrentLanguage()};
-                url.search = new URLSearchParams(params).toString();
-
-                return fetch(url,
-                {
-                    method: 'GET',
-                })
-                .then(response => response.json())
-                .then(data =>
-                {
-                    if (data.status === 'success')
-                        Navbar.Set(field, data.data);
-                })
-                .catch(error =>
-                {
-                    console.error('Error:', error);
-                });
-            });
-        }
+        Navbar.Store().then(() => Navbar.Assign());
     }
-
-    static Set(field, data)
+    static Store()
     {
-        switch (field)
+        let promises = [];
+
+        for (let field of Object.keys(Navbar.results))
         {
-            case "k_Navbar_Title":
-                let navbarTitleElement = document.getElementById("NavbarTitle");
-                let navbarTitleTypewriter = new Typewriter(navbarTitleElement, {loop: false, delay: 85});
-                navbarTitleTypewriter.typeString(data).start();
-                break;
+            let url = new URL('Queries/RetrieveNavbarPageData.php', window.location.href);
+            let params = {field: field, table: 'Navbar', language: Language.GetCurrentLanguage()};
+            url.search = new URLSearchParams(params).toString();
 
-            case "k_Navbar_BioOption":
-                let bioOptionContainer = document.getElementById("NavbarOptions");
-                let bioOption = bioOptionContainer.appendChild(document.createElement("button"));
-                bioOption.classList.add("row", "position-relative", "navbar-link", "selected");
-                bioOption.id = data;
-                bioOption.addEventListener('click', () =>
+            let promise = fetch(url, {method: 'GET'})
+            .then(response =>
+            {
+                switch (response.ok)
                 {
-                    let projectsOption = document.getElementById("Projetos");
-
-                    projectsOption.classList.remove("selected");
-                    projectsOption.classList.add("deselected");
-                    bioOption.classList.remove("deselected");
-                    bioOption.classList.add("selected");
-
-                    document.querySelector('#ProjectsContainer').innerHTML = '';
-                    Bio.Setup();
-                }, true);
-                let bioOptionPlaceholder = bioOption.appendChild(document.createElement("p"));
-                bioOptionPlaceholder.classList.add("m-0", "p-0", "opacity-0");
-                bioOptionPlaceholder.innerHTML = `${data}`;
-                let bioOptionDefinitive = bioOption.appendChild(document.createElement("p"));
-                bioOptionDefinitive.classList.add("m-0", "p-0", "position-absolute", "navbar-overlay");
-                let bioOptionTypewriter = new Typewriter(bioOptionDefinitive, {loop: false, cursor: "", delay: 85});
-                bioOptionTypewriter.typeString(data).start();
-                break;
-
-            case "k_Navbar_ProjectsOption":
-                let projectsOptionContainer = document.getElementById("NavbarOptions");
-                let projectsOption = projectsOptionContainer.appendChild(document.createElement("button"));
-                projectsOption.classList.add("row", "position-relative", "navbar-link", "deselected");
-                projectsOption.id = data;
-                projectsOption.addEventListener('click', () =>
+                    case true:
+                        return response.json();
+                    case false:
+                        throw new Error("Network response was not ok.");
+                }
+            })
+            .then(data =>
+            {
+                switch (data.status)
                 {
-                    let bioOption = document.getElementById("Bio");
+                    case 'success':
+                        Navbar.results[field] = data.data;
+                        break;
+                    case 'error':
+                        Navbar.results[field] = "";
+                        break;
+                }
+            })
+            .catch(error =>
+            {
+                console.error('Error:', error);
+            });
 
-                    bioOption.classList.remove("selected");
-                    bioOption.classList.add("deselected");
-                    projectsOption.classList.remove("deselected");
-                    projectsOption.classList.add("selected");
+            promises.push(promise);
+        }
+        return Promise.all(promises);
+    }
+    static Assign()
+    {
+        let promise = Promise.resolve();
+        for (let [key, value] of Object.entries(Navbar.results))
+        {
+            switch (key)
+            {
+                case "k_Navbar_Title":
+                    Navbar.AssignTitle(value);
+                    break;
+                case "k_Navbar_Options":
+                    Navbar.AssignOptions(value);
+                    break;
+            }
+        }
+        return promise;
+    }
+    static AssignTitle(data)
+    {
+        let navbarTitleElement = document.getElementById("NavbarTitle");
+        let navbarTitleTypewriter = new Typewriter(navbarTitleElement, {loop: false, delay: 85});
+        navbarTitleTypewriter.typeString(data).start();
+    }
+    static AssignOptions(data)
+    {
+        let json = JSON.parse(data);
+        let navbarOptionsPNL = document.getElementById("NavbarOptions");
 
-                    document.querySelector('#BioContainer').innerHTML = '';
-                    Projects.Setup();
-                }, true);
-                let projectsOptionPlaceholder = projectsOption.appendChild(document.createElement("p"));
-                projectsOptionPlaceholder.classList.add("m-0", "p-0", "opacity-0");
-                projectsOptionPlaceholder.innerHTML = `${data}`;
-                let projectsOptionDefinitive = projectsOption.appendChild(document.createElement("p"));
-                projectsOptionDefinitive.classList.add("m-0", "p-0", "position-absolute", "navbar-overlay");
-                let projectsOptionTypewriter = new Typewriter(projectsOptionDefinitive, {loop: false, cursor: "", delay: 85});
-                projectsOptionTypewriter.typeString(data).start();
-                break;
+        for (let i = 0; i < json.length; i++)
+        {
+            let option = navbarOptionsPNL.appendChild(document.createElement("button"));
+            option.classList.add("row", "position-relative", "navbar-link");
+            option.classList.add(i === 0 ? "selected" : "deselected");
+
+            option.id = json[i];
+            option.addEventListener('click', () =>
+            {
+                for (let child of navbarOptionsPNL.children)
+                {
+                    if (child === option) continue;
+                    child.classList.remove("selected");
+                    child.classList.add("deselected");
+                }
+
+                option.classList.remove("deselected");
+                option.classList.add("selected");
+            }, true);
+            let optionPlaceholder = option.appendChild(document.createElement("p"));
+            optionPlaceholder.classList.add("m-0", "p-0", "opacity-0");
+            optionPlaceholder.innerHTML = `${json[i]}`;
+            let optionDefinitive = option.appendChild(document.createElement("p"));
+            optionDefinitive.classList.add("m-0", "p-0", "position-absolute", "navbar-overlay");
+            let optionTypewriter = new Typewriter(optionDefinitive, {loop: false, cursor: "", delay: 85});
+            optionTypewriter.typeString(json[i]).start();
+        }
+
+        for (let i = 0; i < navbarOptionsPNL.children.length; i++)
+        {
+            let child = navbarOptionsPNL.children[i];
+
+            switch (i)
+            {
+                case 0:
+                    child.addEventListener('click', () =>
+                    {
+                        document.querySelector('#ProjectsContainer').innerHTML = '';
+                        Bio.Setup();
+                    }, true);
+                    break;
+                case 1:
+                    child.addEventListener('click', () =>
+                    {
+                        document.querySelector('#BioContainer').innerHTML = '';
+                        Projects.Setup();
+                    }, true);
+                    break;
+            }
         }
     }
 }
