@@ -31,32 +31,45 @@ class Projects
     }
     static Store()
     {
-        let promise = Promise.resolve();
+        let promises = [];
+
         for (let field of Object.keys(Projects.results))
         {
-            promise = promise.then(function()
-            {
-                let url = new URL('../PHP/RetrieveData.php', window.location.href);
-                let params = {field: field, table: 'projects', language: Language.GetCurrentLanguage()};
-                url.search = new URLSearchParams(params).toString();
+            let url = new URL('Queries/RetrieveProjectsPageData.php', window.location.href);
+            let params = {field: field, table: 'Projects', language: Language.GetCurrentLanguage()};
+            url.search = new URLSearchParams(params).toString();
 
-                return fetch(url,
-                    {
-                        method: 'GET',
-                    })
-                    .then(response => response.json())
-                    .then(data =>
-                    {
-                        if (data.status === 'success')
-                            Projects.results[field] = data.data;
-                    })
-                    .catch(error =>
-                    {
-                        console.error('Error:', error);
-                    });
+            let promise = fetch(url, {method: 'GET'})
+            .then(response =>
+            {
+                switch (response.ok)
+                {
+                    case true:
+                        return response.json();
+                    case false:
+                        throw new Error("Network response was not ok.");
+                }
+            })
+            .then(data =>
+            {
+                switch (data.status)
+                {
+                    case 'success':
+                        Projects.results[field] = data.data;
+                        break;
+                    case 'error':
+                        Projects.results[field] = "";
+                        break;
+                }
+            })
+            .catch(error =>
+            {
+                console.error('Error:', error);
             });
+
+            promises.push(promise);
         }
-        return promise;
+        return Promise.all(promises);
     }
     static Assign()
     {
