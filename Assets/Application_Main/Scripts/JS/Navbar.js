@@ -13,7 +13,6 @@ class Navbar
     static Store()
     {
         let promises = [];
-
         for (let field of Object.keys(Navbar.results))
         {
             let url = new URL('Queries/RetrieveNavbarPageData.php', window.location.href);
