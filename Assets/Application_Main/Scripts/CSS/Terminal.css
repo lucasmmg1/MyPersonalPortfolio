@@ -1,76 +1,111 @@
-@media (max-width: 375px)
+@media (max-width: 320px)
 {
-    #TerminalWindow
+    #TerminalWindowPNL
     {
         width: 100% !important;
         height: 100% !important;
     }
+    #TerminalHeaderPNL
+    {
+        border-radius: 0 0 0 0 !important;
+    }
 }
-@media (min-width: 375px)
+@media (min-width: 320px)
 {
-    #TerminalWindow
+    #TerminalWindowPNL
     {
         width: 100% !important;
         height: 100% !important;
     }
+    #TerminalHeaderPNL
+    {
+        border-radius: 0 0 0 0 !important;
+    }
 }
-@media (min-width: 428px)
+@media (min-width: 480px)
 {
-    #TerminalWindow
+    #TerminalWindowPNL
     {
         width: 100% !important;
         height: 100% !important;
     }
+    #TerminalHeaderPNL
+    {
+        border-radius: 0 0 0 0 !important;
+    }
 }
-@media (min-width: 575px)
+@media (min-width: 600px)
 {
-    #TerminalWindow
+    #TerminalWindowPNL
     {
         width: 100% !important;
         height: 100% !important;
     }
+    #TerminalHeaderPNL
+    {
+        border-radius: 0 0 0 0 !important;
+    }
 }
-@media (min-width: 700px)
+@media (min-width: 768px)
 {
-    #TerminalWindow
+    #TerminalWindowPNL
     {
         width: 100% !important;
         height: 100% !important;
     }
+    #TerminalHeaderPNL
+    {
+        border-radius: 0 0 0 0 !important;
+    }
 }
-@media (min-width: 830px)
+@media (min-width: 900px)
 {
-    #TerminalWindow
+    #TerminalWindowPNL
     {
         width: 75% !important;
         height: 75% !important;
+    }
+    #TerminalHeaderPNL
+    {
+        border-radius: 10px 10px 0 0 !important;
     }
 }
 @media (min-width: 992px)
 {
-    #TerminalWindow
+    #TerminalWindowPNL
     {
         width: 75% !important;
         height: 75% !important;
     }
+    #TerminalHeaderPNL
+    {
+        border-radius: 10px 10px 0 0 !important;
+    }
 }
 @media (min-width: 1200px)
 {
-    #TerminalWindow
+    #TerminalWindowPNL
     {
         width: 50% !important;
         height: 50% !important;
     }
+    #TerminalHeaderPNL
+    {
+        border-radius: 10px 10px 0 0 !important;
+    }
 }
-@media (min-width: 1920px)
+@media (min-width: 1650px)
 {
-    #TerminalWindow
+    #TerminalWindowPNL
     {
         width: 50% !important;
         height: 50% !important;
     }
+    #TerminalHeaderPNL
+    {
+        border-radius: 10px 10px 0 0 !important;
+    }
 }
-
 @keyframes terminal-blink
 {
     0%, 50%
@@ -85,6 +120,10 @@
     }
 }
 
+#terminal-greeting
+{
+    font-size: .85rem !important;
+}
 .cmd .cmd-wrapper .cmd-cursor-line .cmd-cursor .end
 {
     background-color: #300A25 !important;
@@ -104,6 +143,18 @@
 }
 .Typewriter__wrapper
 {
-    margin: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     padding: 0 !important;
+}
+.terminal-scroller
+{
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+    padding: 0 !important;
+}
+.terminal-wrapper
+{
+    margin-left: .5rem !important;
+    margin-right: .5rem !important;
 }

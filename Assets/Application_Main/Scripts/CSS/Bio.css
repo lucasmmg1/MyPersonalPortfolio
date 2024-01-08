@@ -1,281 +1,326 @@
 @media (max-width: 320px)
 {
-    #BioSectionFooterUpper
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLower
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 100% !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 100% !important;
-    }
-    #BioSectionUpper
+    #BioSectionHeaderPNL
     {
         flex-direction: column-reverse !important;
     }
-    #BioSectionUpperLeft
+    #BioSectionHeaderLeftPNL
     {
         width: 100% !important;
     }
-    #BioSectionUpperRight
+    #BioSectionHeaderRightPNL
     {
         width: 100% !important;
         margin-bottom: 3rem !important;
     }
-    #BioUpperDescription
+    #BioSectionHeaderDescriptionTMP
     {
-        font-size: 0.9rem !important;
+        font-size: 1.15rem !important;
+    }
+    #BioSectionFooterPNL
+    {
+        flex-direction: column !important;
+    }
+    #BioSectionFooterLeftPNL
+    {
+        width: 95% !important;
+        margin-top: 3rem !important;
+        margin-bottom: .5rem !important;
+    }
+    #BioSectionFooterRightPNL
+    {
+        width: 90% !important;
+        margin-top: .5rem !important;
+        margin-bottom: 3rem !important;
+    }
+    #TopicAnswerTMP
+    {
+        font-size: 1.15rem !important;
     }
 }
 @media (min-width: 320px)
 {
-    #BioSectionFooterUpper
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLower
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 100% !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 100% !important;
-    }
-    #BioSectionUpper
+    #BioSectionHeaderPNL
     {
         flex-direction: column-reverse !important;
     }
-    #BioSectionUpperLeft
+    #BioSectionHeaderLeftPNL
     {
         width: 100% !important;
     }
-    #BioSectionUpperRight
+    #BioSectionHeaderRightPNL
     {
         width: 100% !important;
         margin-bottom: 3rem !important;
+    }
+    #BioSectionHeaderDescriptionTMP
+    {
+        font-size: 1.15rem !important;
+    }
+    #BioSectionFooterPNL
+    {
+        flex-direction: column !important;
+    }
+    #BioSectionFooterLeftPNL
+    {
+        width: 95% !important;
+        margin-top: 3rem !important;
+        margin-bottom: .5rem !important;
+    }
+    #BioSectionFooterRightPNL
+    {
+        width: 90% !important;
+        margin-top: .5rem !important;
+        margin-bottom: 3rem !important;
+    }
+    #TopicAnswerTMP
+    {
+        font-size: 1.15rem !important;
     }
 }
 @media (min-width: 480px)
 {
-    #BioSectionFooterUpper
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLower
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 100% !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 100% !important;
-    }
-    #BioSectionUpper
+    #BioSectionHeaderPNL
     {
         flex-direction: column-reverse !important;
     }
-    #BioSectionUpperLeft
+    #BioSectionHeaderLeftPNL
     {
         width: 100% !important;
     }
-    #BioSectionUpperRight
+    #BioSectionHeaderRightPNL
     {
         width: 100% !important;
         margin-bottom: 3rem !important;
     }
-    #BioUpperDescription
+    #BioSectionHeaderDescriptionTMP
     {
-        font-size: 0.9rem !important;
+        font-size: 1.15rem !important;
+    }
+    #BioSectionFooterPNL
+    {
+        flex-direction: column !important;
+    }
+    #BioSectionFooterLeftPNL
+    {
+        width: 95% !important;
+        margin-top: 3rem !important;
+        margin-bottom: .5rem !important;
+    }
+    #BioSectionFooterRightPNL
+    {
+        width: 90% !important;
+        margin-top: .5rem !important;
+        margin-bottom: 3rem !important;
+    }
+    #TopicAnswerTMP
+    {
+        font-size: 1.15rem !important;
     }
 }
 @media (min-width: 600px)
 {
-    #BioSectionFooterUpper
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLower
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 100% !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 100% !important;
-    }
-    #BioSectionUpper
+    #BioSectionHeaderPNL
     {
         flex-direction: column-reverse !important;
     }
-    #BioSectionUpperLeft
+    #BioSectionHeaderLeftPNL
     {
         width: 100% !important;
     }
-    #BioSectionUpperRight
+    #BioSectionHeaderRightPNL
     {
         width: 100% !important;
         margin-bottom: 3rem !important;
+    }
+    #BioSectionHeaderDescriptionTMP
+    {
+        font-size: 1.15rem !important;
+    }
+    #BioSectionFooterPNL
+    {
+        flex-direction: column !important;
+    }
+    #BioSectionFooterLeftPNL
+    {
+        width: 95% !important;
+        margin-top: 3rem !important;
+        margin-bottom: .5rem !important;
+    }
+    #BioSectionFooterRightPNL
+    {
+        width: 90% !important;
+        margin-top: .5rem !important;
+        margin-bottom: 3rem !important;
+    }
+    #TopicAnswerTMP
+    {
+        font-size: 1.15rem !important;
     }
 }
 @media (min-width: 768px)
 {
-    #BioSectionFooterUpper
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLower
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 100% !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 100% !important;
-    }
-    #BioSectionUpper
+    #BioSectionHeaderPNL
     {
         flex-direction: column-reverse !important;
     }
-    #BioSectionUpperLeft
+    #BioSectionHeaderLeftPNL
     {
         width: 100% !important;
     }
-    #BioSectionUpperRight
+    #BioSectionHeaderRightPNL
     {
         width: 100% !important;
         margin-bottom: 3rem !important;
     }
-    #BioUpperDescription
+    #BioSectionHeaderDescriptionTMP
     {
-        font-size: 1.2rem !important;
+        font-size: 1.15rem !important;
     }
-}
-@media (min-width: 830px)
-{
-    #BioSectionFooterUpper
-    {
-        flex-direction: row !important;
-    }
-    #BioSectionFooterLower
+    #BioSectionFooterPNL
     {
         flex-direction: column !important;
     }
-    #BioSectionFooterLeft
+    #BioSectionFooterLeftPNL
     {
-        width: 50% !important;
+        width: 95% !important;
+        margin-top: 3rem !important;
+        margin-bottom: .5rem !important;
     }
-    #BioSectionFooterRight
+    #BioSectionFooterRightPNL
     {
-        width: 50% !important;
+        width: 90% !important;
+        margin-top: .5rem !important;
+        margin-bottom: 3rem !important;
     }
-    #BioSectionUpper
+    #TopicAnswerTMP
+    {
+        font-size: 1.15rem !important;
+    }
+
+}
+@media (min-width: 830px)
+{
+    #BioSectionHeaderPNL
     {
         flex-direction: row !important;
     }
-    #BioSectionUpperLeft
+    #BioSectionHeaderLeftPNL
     {
         width: 45% !important;
     }
-    #BioSectionUpperRight
+    #BioSectionHeaderRightPNL
     {
         width: 45% !important;
         margin-bottom: 0 !important;
     }
-    #BioUpperDescription
+    #BioSectionHeaderDescriptionTMP
     {
         font-size: 0.9rem !important;
+    }
+    #BioSectionFooterPNL
+    {
+        flex-direction: column !important;
+    }
+    #BioSectionFooterLeftPNL
+    {
+        width: 95% !important;
+        margin-top: 3rem !important;
+        margin-bottom: .5rem !important;
+    }
+    #BioSectionFooterRightPNL
+    {
+        width: 90% !important;
+        margin-top: .5rem !important;
+        margin-bottom: 3rem !important;
+    }
+    #TopicAnswerTMP
+    {
+        font-size: 1rem !important;
     }
 }
 @media (min-width: 1024px)
 {
-    #BioSectionFooterUpper
+    #BioSectionHeaderPNL
     {
         flex-direction: row !important;
     }
-    #BioSectionFooterLower
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 40% !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 40% !important;
-    }
-
-    #BioSectionUpper
-    {
-        flex-direction: row !important;
-    }
-    #BioSectionUpperLeft
+    #BioSectionHeaderLeftPNL
     {
         width: 41.66% !important;
     }
-    #BioSectionUpperRight
+    #BioSectionHeaderRightPNL
     {
         width: 41.66% !important;
         margin-bottom: 0 !important;
     }
-    #BioUpperDescription
+    #BioSectionHeaderDescriptionTMP
     {
-        font-size: 0.9rem !important;
+        font-size: 0.95rem !important;
+    }
+    #BioSectionFooterPNL
+    {
+        flex-direction: row !important;
+    }
+    #BioSectionFooterLeftPNL
+    {
+        width: 40% !important;
+        margin-top: 3rem !important;
+        margin-bottom: 3rem !important;
+    }
+    #BioSectionFooterRightPNL
+    {
+        width: 40% !important;
+        margin-top: 3rem !important;
+        margin-bottom: 3rem !important;
+    }
+    #TopicAnswerTMP
+    {
+        font-size: .95rem !important;
     }
 }
 @media (min-width: 1200px)
 {
-    #BioSectionFooterUpper
+    #BioSectionHeaderPNL
     {
         flex-direction: row !important;
     }
-    #BioSectionFooterLower
-    {
-        flex-direction: column !important;
-    }
-    #BioSectionFooterLeft
-    {
-        width: 40% !important;
-    }
-    #BioSectionFooterRight
-    {
-        width: 40% !important;
-    }
-    #BioSectionUpper
-    {
-        flex-direction: row !important;
-    }
-    #BioSectionUpperLeft
+    #BioSectionHeaderLeftPNL
     {
         width: 41.66% !important;
     }
-    #BioSectionUpperRight
+    #BioSectionHeaderRightPNL
     {
         width: 41.66% !important;
         margin-bottom: 0 !important;
     }
-    #BioUpperDescription
+    #BioSectionHeaderDescriptionTMP
     {
         font-size: 1rem !important;
     }
+    #BioSectionFooterPNL
+    {
+        flex-direction: row !important;
+    }
+    #BioSectionFooterLeftPNL
+    {
+        width: 45% !important;
+        margin-top: 3rem !important;
+        margin-bottom: 3rem !important;
+    }
+    #BioSectionFooterRightPNL
+    {
+        width: 45% !important;
+        margin-top: 3rem !important;
+        margin-bottom: 3rem !important;
+    }
+    #TopicAnswerTMP
+    {
+        font-size: 1rem !important;
+    }
+}
+
+#BioSectionFooterPNL
+{
+    background-color: #111111 !important;
 }

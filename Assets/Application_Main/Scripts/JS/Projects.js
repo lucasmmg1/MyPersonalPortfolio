@@ -3,6 +3,7 @@ class Projects
     static results =
     {
         "k_ProjectsPage_SearchbarPlaceholder": "",
+        "k_ProjectsPage_NavbarCategoriesTitle": "",
         "k_ProjectsPage_NoProjectFoundTitle": "",
         "k_ProjectsPage_NoProjectFoundSubtitle": "",
         "k_ProjectsPage_Projects": [],
@@ -29,6 +30,7 @@ class Projects
             console.error('Error in promise chain:', error);
         });
     }
+
     static Store()
     {
         let promises = [];
@@ -71,6 +73,7 @@ class Projects
         }
         return Promise.all(promises);
     }
+
     static Assign()
     {
         let promise = Promise.resolve();
@@ -83,10 +86,8 @@ class Projects
                     this.AssignSearchbarValues(value);
                     break;
 
-                case "k_ProjectsPage_NoProjectFoundTitle":
-                    break;
-
-                case "k_ProjectsPage_NoProjectFoundSubtitle":
+                case "k_ProjectsPage_NavbarCategoriesTitle":
+                    this.AssignNavbarCategoriesTitle(value);
                     break;
 
                 case "k_ProjectsPage_Projects":
@@ -97,20 +98,17 @@ class Projects
 
         return promise;
     }
-    static Show()
-    {
-        let promise = Promise.resolve();
-        let projects = document.getElementById("projects");
-        projects.classList.remove("opacity-0");
-        projects.classList.add("FadeIn");
-        return promise;
-    }
-
     static AssignSearchbarValues(data)
     {
         let projectsSearchForm = document.getElementById("projectsSearchForm");
         projectsSearchForm.classList.add("Calibri");
         projectsSearchForm.placeholder = data;
+    }
+    static AssignNavbarCategoriesTitle(data)
+    {
+        let projectsNavbarCategoriesTitleTMP = document.getElementById("ProjectsNavbarCategoriesTitleTMP");
+        projectsNavbarCategoriesTitleTMP.classList.add("Cabin-Medium");
+        projectsNavbarCategoriesTitleTMP.innerHTML = data;
     }
     static AssignNavbarValues()
     {
@@ -159,14 +157,14 @@ class Projects
 
             let noProjectsFoundPlaceholderIMG = noProjectsFoundPlaceholder.appendChild(document.createElement("img"));
             noProjectsFoundPlaceholderIMG.classList.add("w-25", "mx-0", "mt-0", "mb-2", "p-0");
-            noProjectsFoundPlaceholderIMG.src = `${window.location.origin}/Assets/Application_Main/Sprites/Pages/Projects/projectsNotFound.gif`;
+            noProjectsFoundPlaceholderIMG.src = `https://cdn.lucasmartinmacedo.com/_uploads/images/R89smw4RFiflcQQuvGAeO7KCLvORepBA.gif`;
 
             let noProjectsFoundPlaceholderTitle = noProjectsFoundPlaceholder.appendChild(document.createElement("h3"));
-            noProjectsFoundPlaceholderTitle.classList.add("w-100", "mx-0", "mt-4", "mb-2", "p-0", "text-center");
+            noProjectsFoundPlaceholderTitle.classList.add("w-100", "mx-0", "mt-4", "mb-0", "p-0", "text-center", "Cabin-Bold");
             noProjectsFoundPlaceholderTitle.innerHTML = Projects.results["k_ProjectsPage_NoProjectFoundTitle"];
 
             let noProjectsFoundPlaceholderSubtitle = noProjectsFoundPlaceholder.appendChild(document.createElement("p"));
-            noProjectsFoundPlaceholderSubtitle.classList.add("w-50", "mx-0", "mt-2", "mb-0", "p-0", "text-center", "text-opaque-light");
+            noProjectsFoundPlaceholderSubtitle.classList.add("w-50", "m-0", "p-0", "text-center", "tmpcolor_8f8f8f", "Cabin-Medium");
             noProjectsFoundPlaceholderSubtitle.innerHTML = Projects.results["k_ProjectsPage_NoProjectFoundSubtitle"];
 
             return;
@@ -175,7 +173,7 @@ class Projects
         for (let project of projects)
         {
             let projectContainer = projectsMoodboard.appendChild(document.createElement("div"));
-            projectContainer.classList.add(project.default_thumbnail_size, "m-0", "p-1");
+            projectContainer.classList.add(project.default_thumbnail_size, "mx-0", "my-0", "p-1");
 
             if (project.default_thumbnail === "") continue;
 
@@ -239,7 +237,7 @@ class Projects
 
                     let carouselItemImage = carouselItem.appendChild(document.createElement("img"));
                     carouselItemImage.classList.add("d-block", "w-100");
-                    carouselItemImage.src = `${window.location.origin}/${carouselElement.img}`;
+                    carouselItemImage.src = carouselElement.img;
                 }
 
                 let modalContentDescriptionTitle = document.getElementById("ModalContentDescriptionTitle");
@@ -257,21 +255,19 @@ class Projects
             let projectImage = projectLink.appendChild(document.createElement("img"));
             projectImage.classList.add("w-100", "m-0", "p-0");
 
-            let thumbnail;
-            projectContainer.classList.remove("col-3", "col-6");
+            projectContainer.classList.remove("col-3", "w-26dot5", "w-46dot5");
             switch (moodboardType)
             {
                 case "Navbar":
-                    thumbnail = project.default_thumbnail;
+                    projectImage.src = project.default_thumbnail;
                     projectContainer.classList.add(project.default_thumbnail_size);
                     break;
 
                 case "Search":
-                    thumbnail = project.search_thumbnail;
+                    projectImage.src = project.search_thumbnail;
                     projectContainer.classList.add("col-3");
                     break;
             }
-            projectImage.src = `${window.location.origin}/${thumbnail}`;
         }
     }
     static AssignSearchValues()
@@ -292,6 +288,14 @@ class Projects
         Projects.AssignProjectsValues(Projects.RetrieveProjectsByTag(projectsSearchForm.value), MoodboardType.Search);
     }
 
+    static Show()
+    {
+        let promise = Promise.resolve();
+        let projects = document.getElementById("projects");
+        projects.classList.remove("opacity-0");
+        projects.classList.add("FadeIn");
+        return promise;
+    }
     static ResetSearchbarValues()
     {
         let projectsSearchForm = document.getElementById("projectsSearchForm");
@@ -327,7 +331,6 @@ class Projects
         let projectsSearchForm = document.getElementById("projectsSearchForm");
         projectsSearchForm.value = "";
     }
-
     static RetrieveProjectsByCategory(category)
     {
         let list = [];

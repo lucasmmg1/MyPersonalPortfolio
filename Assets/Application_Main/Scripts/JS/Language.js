@@ -1,33 +1,44 @@
 class Language
 {
-    static availableLanguages =
-    [
-        "pt-br",
-        "en-us",
-    ];
+    static codes = [];
 
-    static SetupLanguages()
+    static Store(filename)
     {
-        this.SetCurrentLanguage(this.GetCurrentLanguage() || this.availableLanguages[0]);
+        let url = new URL(filename, window.location.href);
+        let params = {field: "code", table: 'Language'};
+        url.search = new URLSearchParams(params).toString();
 
-        let dropdownMenuButton = document.getElementById("dropdownMenuButton");
-        dropdownMenuButton.innerHTML = Language.GetCurrentLanguage();
-        let dropdownMenuContent = document.getElementById("dropdownMenuContent");
-
-        for (let languageCode of Language.availableLanguages)
+        let promise = fetch(url, {method: 'GET'})
+        .then(response =>
         {
-            if (languageCode === this.GetCurrentLanguage()) continue;
-            let nonActiveLanguageOption = dropdownMenuContent.appendChild(document.createElement('button'));
-            nonActiveLanguageOption.classList.add('dropdown-item', 'Calibri');
-            nonActiveLanguageOption.onclick = function()
+            switch (response.ok)
             {
-                Language.SetCurrentLanguage(languageCode);
-                document.location.reload();
-            };
-
-            nonActiveLanguageOption.innerHTML = languageCode;
-        }
+                case true:
+                    return response.json();
+                case false:
+                    throw new Error("Network response was not ok.");
+            }
+        })
+        .then(data =>
+        {
+            switch (data.status)
+            {
+                case 'success':
+                    for (let code of data.data)
+                        Language.codes.push(code["code"].toLowerCase());
+                    break;
+                case 'error':
+                    Language.codes = [];
+                    break;
+            }
+        })
+        .catch(error =>
+        {
+            console.error('Error:', error);
+        });
+        return promise;
     }
+
     static GetCurrentLanguage()
     {
         return localStorage.getItem("language");
