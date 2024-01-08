@@ -85,43 +85,15 @@ img
     pointer-events: none !important;
 }
 
-.bgcolor_F1F1F1
-{
-    background-color: #F1F1F1 !important;
-}
-.bgcolor_F3F3F3
-{
-    background-color: #F3F3F3 !important;
-}
-.bgcolor_F7F7F7
+.bgcolor_f7f7f7
 {
     background-color: #F7F7F7 !important;
 }
-.bgcolor_E0E0E0
-{
-    background-color: #E0E0E0 !important;
-}
-.bgcolor_E1E1E1
-{
-    background-color: #E1E1E1 !important;
-}
-.bgcolor_300A25
+.bgcolor_300a25
 {
     background-color: #300A25 !important;
 }
-.bgcolor_02172D
-{
-    background-color: #02172D !important;
-}
-.bgcolor_1B1B1B
-{
-    background-color: #1B1B1B !important;
-}
-.bgcolor_141414
-{
-    background-color: #141414 !important;
-}
-.bgcolor_0E1013
+.bgcolor_0e1013
 {
     background-color: #0E1013 !important;
 }
@@ -129,62 +101,47 @@ img
 {
     background-color: #111111 !important;
 }
-.text-opaque-dark
+.tmpcolor_232323
 {
     color: #232323 !important;
 }
-.text-opaque-light
+.tmpcolor_9f0000
+{
+    color: #9f0000;
+}
+.tmpcolor_8f8f8f
 {
     color: #8f8f8f !important;
 }
-.text-white
-{
-    color: #ffffff !important;
-}
-.text-cream
+.tmpcolor_d1d2cf
 {
     color: #d1d2cf !important;
 }
-.text-red
-{
-    color: #ff0000 !important;
-}
-.link-dark
-{
-    color: #111111 !important;
-    text-decoration: underline !important;
-}
-.border-color-cream
-{
-    border-color: #8c8b87 !important;
-}
-
-@font-face
-{
-    font-family: "sansation";
-    src: url('../../Fonts/sansation_regular.ttf');
+@font-face {
+    font-family: "Cabin-Medium";
+    src: url('../../Fonts/Cabin-Medium.ttf');
 }
 @font-face
 {
-    font-family: "Keepcalm";
-    src: url('../../Fonts/keepcalm_regular.ttf');
+    font-family: "LiberationSans-Regular";
+    src: url('../../Fonts/LiberationSans-Regular.ttf');
 }
 @font-face
 {
-    font-family: "Jost";
-    src: url('../../Fonts/jost_regular.ttf');
+    font-family: "Cabin-Bold";
+    src: url('../../Fonts/Cabin-Bold.ttf');
 }
-.Jost
+.Cabin-Medium
 {
-    font-family: "Jost", serif;
+    font-family: "Cabin-Medium", serif;
 }
-.Sansation
+.LiberationSans-Regular
 {
-    font-family: "SansationRegular", serif;
+    font-family: "LiberationSans-Regular", serif;
 }
-.Keepcalm
+.Cabin-Bold
 {
-    font-family: "KeepCalm", serif;
+    font-family: "Cabin-Bold", serif;
 }
 .Calibri
 {

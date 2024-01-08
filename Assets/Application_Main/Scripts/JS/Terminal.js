@@ -3,21 +3,22 @@ class Terminal
     static results =
     {
         "k_TerminalPage_TerminalGreeting": "",
-        "k_TerminalPage_TerminalHelper": "",
-        "k_TerminalPage_TerminalCommands": ""
+        "k_TerminalPage_TerminalAsciiSubtitle": "",
+        "k_TerminalPage_TerminalAsciiTitle": ""
     }
 
     static Setup()
     {
-        Terminal.Store().then(() => Terminal.Assign());
+        Language.Store("Assets/Application_Main/Scripts/PHP/Queries/RetrieveLanguageData.php").then(() => Terminal.AssignTerminalCommands());
     }
+
     static Store()
     {
         let promises = [];
         for (let field of Object.keys(Terminal.results))
         {
             let url = new URL('Assets/Application_Main/Scripts/PHP/Queries/RetrieveTerminalPageData.php', window.location.href);
-            let params = {field: field, table: 'Terminal', language: "pt-br"};
+            let params = {field: field, table: 'Terminal', language: Language.GetCurrentLanguage()};
             url.search = new URLSearchParams(params).toString();
 
             let promise = fetch(url, {method: 'GET'})
@@ -52,6 +53,7 @@ class Terminal
         }
         return Promise.all(promises);
     }
+
     static Assign()
     {
         let promise = Promise.resolve();
@@ -59,38 +61,63 @@ class Terminal
         {
             switch (key)
             {
+                case "k_TerminalPage_TerminalAsciiTitle":
+                    Terminal.AssignTerminalAsciiTitle(value);
+                    break;
+                case "k_TerminalPage_TerminalAsciiSubtitle":
+                    Terminal.AssignTerminalAsciiSubtitle(value);
+                    break;
                 case "k_TerminalPage_TerminalGreeting":
                     Terminal.AssignTerminalGreeting(value);
-                    break;
-                case "k_TerminalPage_TerminalHelper":
-                    Terminal.AssignTerminalHelper(value);
-                    break;
-                case "k_TerminalPage_TerminalCommands":
-                    Terminal.AssignTerminalCommands(value);
                     break;
             }
         }
         return promise;
     }
+    static AssignTerminalAsciiTitle(value)
+    {
+        let terminalContentPNL = document.getElementById("TerminalContentPNL");
+        let terminalScroller = terminalContentPNL.querySelector(".terminal-scroller");
+        let terminalAsciiTitlePNL = terminalScroller.insertBefore(document.createElement("div"), terminalScroller.firstChild);
+        terminalAsciiTitlePNL.classList.add("d-flex", "flex-column", "mx-0", "mt-3", "mb-0", "p-0", "tmpcolor_d1d2cf");
+        terminalAsciiTitlePNL.id = "TerminalAsciiTitlePNL";
+        let terminalAsciiTitleTMP = terminalAsciiTitlePNL.appendChild(document.createElement("pre"));
+        terminalAsciiTitleTMP.classList.add("m-0", "p-0", "tmpcolor_d1d2cf");
+        terminalAsciiTitleTMP.id = "TerminalAsciiTitleTMP";
+        terminalAsciiTitleTMP.innerHTML = value;
+    }
+    static AssignTerminalAsciiSubtitle(value)
+    {
+        let terminalContentPNL = document.getElementById("TerminalContentPNL");
+        let terminalScroller = terminalContentPNL.querySelector(".terminal-scroller");
+        let terminalAsciiSubtitlePNL = terminalScroller.insertBefore(document.createElement("div"), terminalScroller.firstChild);
+        terminalAsciiSubtitlePNL.classList.add("d-flex", "flex-column", "mx-0", "mt-0", "mb-3", "p-0", "tmpcolor_d1d2cf");
+        terminalAsciiSubtitlePNL.id = "TerminalAsciiSubtitlePNL";
+        let terminalAsciiSubtitleTMP = terminalAsciiSubtitlePNL.appendChild(document.createElement("h6"));
+        terminalAsciiSubtitleTMP.classList.add("mx-2", "my-1", "p-0", "Cabin-Medium", "tmpcolor_d1d2cf");
+        terminalAsciiSubtitleTMP.id = "TerminalAsciiSubtitleTMP";
+        terminalAsciiSubtitleTMP.innerHTML = `<i>${value}</i>`;
+    }
     static AssignTerminalGreeting(value)
     {
-        let terminalGreeting = document.getElementById("terminal-greetings");
-        let typewriter = new Typewriter(terminalGreeting, {loop: false, delay: 25, cursor: "",});
-        typewriter.typeString(value).start();
+        let terminalContentPNL = document.getElementById("TerminalContentPNL");
+        let terminalScroller = terminalContentPNL.querySelector(".terminal-scroller");
+        let terminalGreetingPNL = terminalScroller.insertBefore(document.createElement("div"), terminalScroller.firstChild);
+        terminalGreetingPNL.classList.add("d-flex", "flex-row", "mx-2", "my-3", "p-0", "tmpcolor_d1d2cf", "Calibri");
+        terminalGreetingPNL.id = "TerminalGreetingPNL";
+        let terminalGreetingTMP = terminalGreetingPNL.appendChild(document.createElement("p"));
+        terminalGreetingTMP.classList.add("m-0", "p-0", "tmpcolor_d1d2cf");
+        let typewriter = new Typewriter(terminalGreetingTMP, {loop: false, delay: 50});
+        let valueWithoutTags = value.replace(/(<([^>]+)>)/gi, "");
+        typewriter.typeString(valueWithoutTags).callFunction(() => {terminalGreetingTMP.innerHTML = value}).start();
     }
-    static AssignTerminalHelper(value)
-    {
-        let terminalHelper = document.getElementById("terminal-helper");
-        let typewriter = new Typewriter(terminalHelper, {loop: false, delay: 25, cursor: "",});
-        typewriter.typeString(value).start();
-    }
-    static AssignTerminalCommands(value)
+    static AssignTerminalCommands()
     {
         let currentCommand = 0;
 
         let onCommandSuccess = sumDelta =>
         {
-            currentCommand += sumDelta;
+            currentCommand += currentCommand === 0 ? sumDelta : sumDelta + 1;
             let currentCommandText = currentCommand.toString();
             document.querySelector(`[data-index="${currentCommandText}"]`).classList.add("mb-3");
         }
@@ -102,39 +129,57 @@ class Terminal
             currentCommand += 1;
         }
 
-        let terminalInput = document.getElementById("terminal-input");
+        let terminalInput = document.getElementById("TerminalContentPNL");
         $(terminalInput).terminal
         (
             {
-                ajuda: function ()
+                help: function(argument)
                 {
-                    this.echo("gato: mostra uma imagem de um gato.");
-                    this.echo("cachorro: mostra uma imagem de um cachorro.");
-                    this.echo("urso: mostra uma imagem de um urso.");
-                    this.echo("comecar: inicia a experiência.");
-                    onCommandSuccess(7);
-                },
-                help: function()
-                {
-                    this.echo("sentido_da_vida: explica qual é o sentido da vida.");
-                    this.echo("executar_ordem: executa uma ordem.");
-                    this.echo("gato: mostra uma imagem de um gato.");
-                    this.echo("cachorro: mostra uma imagem de um cachorro.");
-                    this.echo("urso: mostra uma imagem de um urso.");
-                    this.echo("comecar: inicia a experiência.");
-                    onCommandSuccess(7);
-                },
-                gato: function()
-                {
-                    let randomId = Math.floor(Math.random() * 1001);
-                    let imgSrc = `https://placekitten.com/${randomId}/${randomId}`;
+                    console.log(Language.codes)
 
-                    let img = $(`<img src = ${imgSrc}>`);
-                    $(img).attr("width", 300);
-                    img.on('load', this.resume);
-                    this.pause();
-                    this.echo(img);
-                    onCommandSuccess(2);
+                    let message = "JQuery terminal, version 2.37.2 <https://terminal.jcubic.pl>.\nCopyright (c) 2010-2023 Jakub T. Jankiewicz <https://jcubic.pl/me>.\nReleased under the MIT license.\n\n";
+
+                    switch (argument)
+                    {
+                        case undefined:
+                            message += "cat\ndog\nbear\nstart\ncl [code]\nhelp [command]";
+                            this.echo(message);
+                            onCommandSuccess(1);
+                            break;
+                        case "cat":
+                            message += "cat: shows a random cat image.";
+                            this.echo(message);
+                            onCommandSuccess(1);
+                            break;
+                        case "dog":
+                            message += "dog: shows a random dog image.";
+                            this.echo(message);
+                            onCommandSuccess(1);
+                            break;
+                        case "bear":
+                            message += "bear: shows a random bear image.";
+                            this.echo(message);
+                            onCommandSuccess(1);
+                            break;
+                        case "start":
+                            message += "start: starts the portfolio.";
+                            this.echo(message);
+                            onCommandSuccess(1);
+                            break;
+                        case "cl":
+                            message += "cl: changes the language of the page.\n\t[code] = en | pt";
+                            this.echo(message);
+                            onCommandSuccess(1);
+                            break;
+                        case "help":
+                            message += "help: shows the help message.\n\t[command] = cat | dog | bear | start | cl";
+                            this.echo(message);
+                            onCommandSuccess(1);
+                            break;
+                        default:
+                            onCommandError(`Erro: Comando '${argument}' não encotrado!`);
+                            break;
+                    }
                 },
                 cat: function()
                 {
@@ -146,19 +191,7 @@ class Terminal
                     img.on('load', this.resume);
                     this.pause();
                     this.echo(img);
-                    onCommandSuccess(2);
-                },
-                cachorro: function()
-                {
-                    let randomId = Math.floor(Math.random() * 1001);
-                    let imgSrc = `https://place-puppy.com/${randomId}x${randomId}`;
-
-                    let img = $(`<img src = ${imgSrc}>`);
-                    $(img).attr("width", 300);
-                    img.on('load', this.resume);
-                    this.pause();
-                    this.echo(img);
-                    onCommandSuccess(2);
+                    onCommandSuccess(1);
                 },
                 dog: function()
                 {
@@ -170,19 +203,7 @@ class Terminal
                     img.on('load', this.resume);
                     this.pause();
                     this.echo(img);
-                    onCommandSuccess(2);
-                },
-                urso: function()
-                {
-                    let randomId = Math.floor(Math.random() * 1001);
-                    let imgSrc = `https://placebear.com/${randomId}/${randomId}`;
-
-                    let img = $(`<img src = ${imgSrc}>`);
-                    $(img).attr("width", 300);
-                    img.on('load', this.resume);
-                    this.pause();
-                    this.echo(img);
-                    onCommandSuccess(2);
+                    onCommandSuccess(1);
                 },
                 bear: function()
                 {
@@ -194,11 +215,11 @@ class Terminal
                     img.on('load', this.resume);
                     this.pause();
                     this.echo(img);
-                    onCommandSuccess(2);
+                    onCommandSuccess(1);
                 },
-                comecar: function()
+                start: function()
                 {
-                    window.location = "./Application_main/Scripts/HTML/portfolio.html";
+                    window.location = "Assets/Application_Main/Scripts/PHP/portfolio.php";
                 },
                 cl: function(languageCode)
                 {
@@ -208,23 +229,17 @@ class Terminal
                         return;
                     }
 
-                    for (let language of Object.keys(Language.availableLanguages))
+                    for (let code of Language.codes)
                     {
-                        if (languageCode.toLowerCase() === language)
-                            Language.SetCurrentLanguage(languageCode.toLowerCase());
+                        if (languageCode.toLowerCase() !== code) continue;
+                        Language.SetCurrentLanguage(languageCode.toLowerCase());
+                        break;
                     }
-
-                    this.echo(Language.GetElementByLanguage("k_TerminalPage_ReloadWarning"));
-                    onCommandSuccess(2);
 
                     setTimeout(() =>
                     {
                         document.location.reload();
                     }, 100);
-                },
-                start: function()
-                {
-                    window.location = "./Application_main/Scripts/HTML/portfolio.html";
                 }
             },
             {
@@ -238,6 +253,8 @@ class Terminal
                 greetings: false,
             }
         );
+
+        Terminal.Store().then(() => Terminal.Assign());
     }
 }
 
