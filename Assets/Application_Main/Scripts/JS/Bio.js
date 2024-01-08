@@ -2,14 +2,14 @@ class Bio
 {
     static results =
     {
-        "k_BioPage_Title" : "",
-        "k_BioPage_Subtitle" : "",
-        "k_BioPage_SmallDescription" : "",
-        "k_BioPage_ReadMore" : "",
-        "k_BioPage_BigLeftDescription" : "",
-        "k_BioPage_BigRightDescription" : "",
-        "k_BioPage_BigMiddleDescription" : "",
+        "k_BioPage_Title": "",
+        "k_BioPage_Subtitle": "",
+        "k_BioPage_SmallDescription": "",
+        "k_BioPage_ReadMore": "",
+        "k_BioPage_Topics": ""
     };
+
+    static selectedTopic;
 
     static Setup()
     {
@@ -25,12 +25,14 @@ class Bio
             console.error('Error in promise chain:', error);
         });
     }
+
     static Store()
     {
         let promises = [];
         for (let field of  Object.keys(Bio.results))
         {
             let url = new URL('Queries/RetrieveBioPageData.php', window.location.href);
+            console.log(Language.GetCurrentLanguage());
             let params = {field: field, table: 'Bio', language: Language.GetCurrentLanguage()};
             url.search = new URLSearchParams(params).toString();
 
@@ -66,6 +68,7 @@ class Bio
         }
         return Promise.all(promises);
     }
+
     static Assign()
     {
         let promise = Promise.resolve();
@@ -74,43 +77,103 @@ class Bio
             switch (key)
             {
                 case "k_BioPage_Title":
-                    let bioTitle = document.getElementById("BioTitle");
-                    bioTitle.innerHTML = value;
+                    Bio.AssignBioTitle(value);
                     break;
-
                 case "k_BioPage_Subtitle":
-                    let bioSubtitle = document.getElementById("BioSubtitle");
-                    bioSubtitle.innerHTML = value;
+                    Bio.AssignBioSubtitle(value);
                     break;
-
                 case "k_BioPage_SmallDescription":
-                    let bioSmallDescription = document.getElementById("BioSmallDescription");
-                    bioSmallDescription.innerHTML = value;
+                    Bio.AssignBioSmallDescription(value);
                     break;
-
                 case "k_BioPage_ReadMore":
-                    let bioReadMore = document.getElementById("BioReadMore");
-                    bioReadMore.innerHTML = value;
+                    Bio.AssignBioReadMore(value);
                     break;
-
-                case "k_BioPage_BigLeftDescription":
-                    let bioBigLeftDescription = document.getElementById("BioBigLeftDescription");
-                    bioBigLeftDescription.innerHTML = value;
-                    break;
-
-                case "k_BioPage_BigRightDescription":
-                    let bioBigRightDescription = document.getElementById("BioBigRightDescription");
-                    bioBigRightDescription.innerHTML = value;
-                    break;
-
-                case "k_BioPage_BigMiddleDescription":
-                    let bioBigMiddleDescription = document.getElementById("BioBigMiddleDescription");
-                    bioBigMiddleDescription.innerHTML = value;
+                case "k_BioPage_Topics":
+                    Bio.AssignTopics(value);
                     break;
             }
         }
         return promise;
     }
+    static AssignBioTitle(value)
+    {
+        let bioTitle = document.getElementById("BioSectionHeaderTitleTMP");
+        bioTitle.innerHTML = value;
+    }
+    static AssignBioSubtitle(value)
+    {
+        let bioSubtitle = document.getElementById("BioSectionHeaderSubtitleTMP");
+        bioSubtitle.innerHTML = value;
+    }
+    static AssignBioSmallDescription(value)
+    {
+        let bioSmallDescription = document.getElementById("BioSectionHeaderDescriptionTMP");
+        bioSmallDescription.innerHTML = value;
+    }
+    static AssignBioReadMore(value)
+    {
+        let bioReadMore = document.getElementById("BioSectionHeaderReadMoreTMP");
+        bioReadMore.innerHTML = value;
+    }
+    static AssignTopics(value)
+    {
+        let bioSectionFooterLeftPNL = document.getElementById("BioSectionFooterLeftPNL");
+        let topicAnswerTMP = document.getElementById("TopicAnswerTMP");
+        let topics = JSON.parse(value);
+
+        for (let i = 0; i < topics.length; i++)
+        {
+            let topicPNL = bioSectionFooterLeftPNL.appendChild(document.createElement("button"));
+            topicPNL.classList.add("d-flex", "flex-row", "w-100", "m-0", "p-2", "rounded-1")
+            let topicQuestionMarkPNL = topicPNL.appendChild(document.createElement("div"));
+            topicQuestionMarkPNL.classList.add("d-flex", "flex-row", "w-5", "h-100", "m-0", "p-3", "align-items-center", "justify-content-start", "Cabin-Bold", "tmpcolor_9f0000", "topic-question-mark");
+            let topicQuestionMarkTMP = topicQuestionMarkPNL.appendChild(document.createElement("h5"));
+            topicQuestionMarkTMP.classList.add("m-0", "p-0");
+            topicQuestionMarkTMP.innerHTML = "Q.";
+            let topicDescriptionPNL = topicPNL.appendChild(document.createElement("div"));
+            topicDescriptionPNL.classList.add("d-flex", "flex-row", "w-90", "h-100", "m-0", "p-3", "align-items-center", "Cabin-Medium", "tmpcolor_d1d2cf", "topic-description");
+            let topicDescriptionTMP = topicDescriptionPNL.appendChild(document.createElement("p"));
+            topicDescriptionTMP.classList.add("m-0", "p-0");
+            topicDescriptionTMP.innerHTML = topics[i].topic;
+            let topicArrowPNL = topicPNL.appendChild(document.createElement("div"));
+            topicArrowPNL.classList.add("d-none", "flex-row", "w-5", "h-100", "m-0", "p-3", "align-items-center", "justify-content-center", "tmpcolor_9f0000", "topic-arrow");
+            let topicArrowIconIMG = topicArrowPNL.appendChild(document.createElement("i"));
+            topicArrowIconIMG.classList.add("fas", "fa-chevron-right");
+            if (i === 0)
+            {
+                topicPNL.classList.add("bgcolor_f7f7f7");
+                topicDescriptionPNL.classList.remove("tmpcolor_d1d2cf");
+                topicDescriptionPNL.classList.add("tmpcolor_232323");
+                topicAnswerTMP.innerHTML = topics[i].description;
+                topicArrowPNL.classList.remove("d-none");
+                topicArrowPNL.classList.add("d-flex");
+                Bio.selectedTopic = topicPNL;
+            }
+            topicPNL.addEventListener("click", function()
+            {
+                Bio.selectedTopic.classList.remove("bgcolor_f7f7f7");
+                Bio.selectedTopic.querySelector(".topic-description").classList.remove("tmpcolor_232323");
+                Bio.selectedTopic.querySelector(".topic-description").classList.add("tmpcolor_d1d2cf");
+                Bio.selectedTopic.querySelector(".topic-arrow").classList.remove("d-flex");
+                Bio.selectedTopic.querySelector(".topic-arrow").classList.add("d-none");
+                topicPNL.classList.add("bgcolor_f7f7f7");
+                topicDescriptionPNL.classList.remove("tmpcolor_d1d2cf");
+                topicDescriptionPNL.classList.add("tmpcolor_232323");
+                topicAnswerTMP.classList.remove("FadeIn");
+                topicAnswerTMP.classList.add("opacity-0");
+                topicAnswerTMP.innerHTML = topics[i].description;
+                setTimeout(function()
+                {
+                    topicAnswerTMP.classList.remove("opacity-0");
+                    topicAnswerTMP.classList.add("FadeIn");
+                }, 50);
+                topicArrowPNL.classList.remove("d-none");
+                topicArrowPNL.classList.add("d-flex");
+                Bio.selectedTopic = topicPNL;
+            });
+        }
+    }
+
     static Show()
     {
         let bio = document.getElementById("bio");

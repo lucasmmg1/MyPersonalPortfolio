@@ -10,10 +10,10 @@ class Navbar
     {
         Navbar.Store().then(() => Navbar.Assign());
     }
+
     static Store()
     {
         let promises = [];
-
         for (let field of Object.keys(Navbar.results))
         {
             let url = new URL('Queries/RetrieveNavbarPageData.php', window.location.href);
@@ -52,6 +52,7 @@ class Navbar
         }
         return Promise.all(promises);
     }
+
     static Assign()
     {
         let promise = Promise.resolve();
@@ -103,7 +104,7 @@ class Navbar
             optionPlaceholder.classList.add("m-0", "p-0", "opacity-0");
             optionPlaceholder.innerHTML = `${json[i]}`;
             let optionDefinitive = option.appendChild(document.createElement("p"));
-            optionDefinitive.classList.add("m-0", "p-0", "position-absolute", "navbar-overlay");
+            optionDefinitive.classList.add("m-0", "p-0", "position-absolute", "navbar-overlay", "Calibri");
             let optionTypewriter = new Typewriter(optionDefinitive, {loop: false, cursor: "", delay: 85});
             optionTypewriter.typeString(json[i]).start();
         }
@@ -132,3 +133,6 @@ class Navbar
         }
     }
 }
+
+Navbar.Setup();
+Bio.Setup();
