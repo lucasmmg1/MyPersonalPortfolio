@@ -133,6 +133,3 @@ class Navbar
         }
     }
 }
-
-Navbar.Setup();
-Bio.Setup();

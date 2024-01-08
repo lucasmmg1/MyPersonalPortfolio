@@ -2,7 +2,12 @@ class Header
 {
     static Setup()
     {
-        Language.Store("Queries/RetrieveLanguageData.php").then(() => Header.Assign());
+        Language.Store("Queries/RetrieveLanguageData.php").then(() =>
+        {
+            Header.Assign()
+            Navbar.Setup();
+            Bio.Setup();
+        });
     }
 
     static Assign()
