@@ -32,7 +32,6 @@ class Bio
         for (let field of  Object.keys(Bio.results))
         {
             let url = new URL('Queries/RetrieveBioPageData.php', window.location.href);
-            console.log(Language.GetCurrentLanguage());
             let params = {field: field, table: 'Bio', language: Language.GetCurrentLanguage()};
             url.search = new URLSearchParams(params).toString();
 
