@@ -18,7 +18,7 @@ class Projects
         this.categories = {};
         this.amounts = {};
 
-        fetch('../HTML/Projects.html')
+        fetch('Assets/Application_Main/Scripts/HTML/Projects.html')
         .then(response => response.text())
         .then(data =>
         {
@@ -37,7 +37,7 @@ class Projects
 
         for (let field of Object.keys(Projects.results))
         {
-            let url = new URL('Queries/RetrieveProjectsPageData.php', window.location.href);
+            let url = new URL('Assets/Application_Main/Scripts/PHP/Queries/RetrieveProjectsPageData.php', window.location.href);
             let params = {field: field, table: 'Projects', language: Language.GetCurrentLanguage()};
             url.search = new URLSearchParams(params).toString();
 

@@ -117,7 +117,7 @@ class Terminal
                     },
                     start: function()
                     {
-                        window.location = "https://lucasmartinmacedo.com/portfolio";
+                        window.location = "portfolio.php";
                     },
                     cl: function(languageCode)
                     {
@@ -204,6 +204,8 @@ class Terminal
     {
         let AssignTerminalAsciiTitle = (value) =>
         {
+            console.log(value)
+
             let terminalContentPNL = document.getElementById("TerminalContentPNL");
             let terminalScroller = terminalContentPNL.querySelector(".terminal-scroller");
             let terminalAsciiTitlePNL = terminalScroller.insertBefore(document.createElement("div"), terminalScroller.firstChild);
@@ -256,7 +258,6 @@ class Terminal
                     break;
             }
         }
-
         return promise;
     }
 }

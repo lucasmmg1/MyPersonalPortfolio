@@ -41,6 +41,9 @@ class Language
 
     static GetCurrentLanguage()
     {
+        if (localStorage.getItem("language") === null)
+            localStorage.setItem("language", Language.codes[0]);
+
         return localStorage.getItem("language");
     }
     static SetCurrentLanguage(languageCode)
