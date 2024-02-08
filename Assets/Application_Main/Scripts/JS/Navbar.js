@@ -16,7 +16,7 @@ class Navbar
         let promises = [];
         for (let field of Object.keys(Navbar.results))
         {
-            let url = new URL('Queries/RetrieveNavbarPageData.php', window.location.href);
+            let url = new URL('Assets/Application_Main/Scripts/PHP/Queries/RetrieveNavbarPageData.php', window.location.href);
             let params = {field: field, table: 'Navbar', language: Language.GetCurrentLanguage()};
             url.search = new URLSearchParams(params).toString();
 
