@@ -124,16 +124,13 @@ class Bio
                 topicPNL.classList.add("d-flex", "flex-row", "w-100", "m-0", "p-2", "rounded-1")
                 let topicQuestionMarkPNL = topicPNL.appendChild(document.createElement("div"));
                 topicQuestionMarkPNL.classList.add("d-flex", "flex-row", "w-5", "h-100", "m-0", "p-3", "align-items-center", "justify-content-start", "Cabin-Bold", "tmpcolor_9f0000", "topic-question-mark");
-                let topicQuestionMarkTMP = topicQuestionMarkPNL.appendChild(document.createElement("h5"));
-                topicQuestionMarkTMP.classList.add("m-0", "p-0");
-                topicQuestionMarkTMP.innerHTML = "Q.";
                 let topicDescriptionPNL = topicPNL.appendChild(document.createElement("div"));
                 topicDescriptionPNL.classList.add("d-flex", "flex-row", "w-90", "h-100", "m-0", "p-3", "align-items-center", "Cabin-Medium", "tmpcolor_d1d2cf", "topic-description");
                 let topicDescriptionTMP = topicDescriptionPNL.appendChild(document.createElement("p"));
                 topicDescriptionTMP.classList.add("m-0", "p-0");
                 topicDescriptionTMP.innerHTML = topics[i].topic;
                 let topicArrowPNL = topicPNL.appendChild(document.createElement("div"));
-                topicArrowPNL.classList.add("d-none", "flex-row", "w-5", "h-100", "m-0", "p-3", "align-items-center", "justify-content-center", "tmpcolor_9f0000", "topic-arrow");
+                topicArrowPNL.classList.add("d-none", "flex-row", "w-5", "h-100", "m-0", "p-3", "align-items-center", "justify-content-center", "tmpcolor_232323", "topic-arrow");
                 let topicArrowIconIMG = topicArrowPNL.appendChild(document.createElement("i"));
                 topicArrowIconIMG.classList.add("fas", "fa-chevron-right");
                 if (i === 0)
@@ -158,12 +155,33 @@ class Bio
                     topicDescriptionPNL.classList.add("tmpcolor_232323");
                     topicAnswerTMP.classList.remove("FadeIn");
                     topicAnswerTMP.classList.add("opacity-0");
-                    topicAnswerTMP.innerHTML = topics[i].description;
-                    setTimeout(function()
+                    let parser = new DOMParser();
+                    let doc = parser.parseFromString(topics[i].description, 'text/html');
+                    let imgs = doc.querySelectorAll('img');
+                    let promises = Array.from(imgs).map(img =>
                     {
-                        topicAnswerTMP.classList.remove("opacity-0");
-                        topicAnswerTMP.classList.add("FadeIn");
-                    }, 50);
+                        return fetch(img.src).then(response =>
+                        {
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! status: ${response.status}`);
+                            }
+                            return new Promise(resolve => {
+                                let image = new Image();
+                                image.onload = resolve;
+                                image.src = img.src;
+                            });
+                        });
+                    });
+                    if (promises.length === 0) promises.push(Promise.resolve());
+                    Promise.all(promises).then(() =>
+                    {
+                        topicAnswerTMP.innerHTML = topics[i].description;
+                        setTimeout(function()
+                        {
+                            topicAnswerTMP.classList.remove("opacity-0");
+                            topicAnswerTMP.classList.add("FadeIn");
+                        }, 50);
+                    });
                     topicArrowPNL.classList.remove("d-none");
                     topicArrowPNL.classList.add("d-flex");
                     Bio.selectedTopic = topicPNL;
