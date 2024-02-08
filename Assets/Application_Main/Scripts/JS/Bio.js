@@ -158,21 +158,19 @@ class Bio
                     let parser = new DOMParser();
                     let doc = parser.parseFromString(topics[i].description, 'text/html');
                     let imgs = doc.querySelectorAll('img');
+
                     let promises = Array.from(imgs).map(img =>
                     {
-                        return fetch(img.src).then(response =>
+                        return new Promise(resolve =>
                         {
-                            if (!response.ok) {
-                                throw new Error(`HTTP error! status: ${response.status}`);
-                            }
-                            return new Promise(resolve => {
-                                let image = new Image();
-                                image.onload = resolve;
-                                image.src = img.src;
-                            });
+                            let image = new Image();
+                            image.onload = resolve;
+                            image.src = img.src;
                         });
                     });
+
                     if (promises.length === 0) promises.push(Promise.resolve());
+
                     Promise.all(promises).then(() =>
                     {
                         topicAnswerTMP.innerHTML = topics[i].description;
