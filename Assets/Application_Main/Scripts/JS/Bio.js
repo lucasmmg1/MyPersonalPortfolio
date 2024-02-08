@@ -175,6 +175,7 @@ class Bio
                 {
                     resolve();
                 };
+                bioPicture.src = "/cdn/_uploads/images/SVXn1wEqDFZ19kbMHE8x9W2A58T8CaaL.webp";
             });
             return promise;
         }
