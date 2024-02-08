@@ -84,7 +84,11 @@ class Bio
             {
                 let bioSubtitle = document.getElementById("BioSectionHeaderSubtitleTMP");
                 bioSubtitle.innerHTML = value;
-                resolve();
+
+                setTimeout(function()
+                {
+                    resolve();
+                }, 500);
             });
             return promise;
         }
