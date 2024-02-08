@@ -148,7 +148,7 @@ class Projects
                 this.classList.add("selected", "enable-link");
 
                 Projects.ResetProjectsValues();
-                this.SetProjectValues(Projects.RetrieveProjectsByCategory(category), MoodboardType.Navbar);
+                Projects.SetProjectValues(Projects.RetrieveProjectsByCategory(category), MoodboardType.Navbar);
             });
             let optionCount = option.appendChild(document.createElement("p"));
             optionCount.classList.add("w-25", "m-0", "p-0", "text-end");
@@ -266,16 +266,22 @@ class Projects
                 };
                 let projectImage = projectLink.appendChild(document.createElement("img"));
                 projectImage.classList.add("w-100", "m-0", "p-0");
-                projectImage.onload = resolve;
+                let image = new Image();
+                image.onload = function()
+                {
+                    projectImage.src = this.src;
+                    resolve();
+                    image = null;
+                };
                 switch (moodboardType)
                 {
                     case "Navbar":
                         projectContainer.classList.add(project.default_thumbnail_size);
-                        projectImage.src = project.default_thumbnail;
+                        image.src = project.default_thumbnail;
                         break;
                     case "Search":
                         projectContainer.classList.add("col-3");
-                        projectImage.src = project.search_thumbnail;
+                        image.src = project.search_thumbnail;
                         break;
                 }
             }));
@@ -283,18 +289,22 @@ class Projects
 
         Promise.all(promises).then(() =>
         {
-            projectsMoodboard.classList.remove("opacity-0");
             projectsMoodboard.classList.add("FadeIn");
+            projectsMoodboard.addEventListener('animationend', function()
+            {
+                this.classList.remove("FadeIn");
+            });
+            setTimeout(function()
+            {
+                projectsMoodboard.classList.remove("opacity-0");
+            }, 50);
         });
     }
     static ResetProjectsValues()
     {
         let projectsMoodboard = document.getElementById("ProjectsMoodboard");
         projectsMoodboard.classList.add("opacity-0");
-        setTimeout(function()
-        {
-            projectsMoodboard.classList.remove("FadeIn");
-        }, 50);
+
         while (projectsMoodboard.firstChild)
             projectsMoodboard.removeChild(projectsMoodboard.lastChild);
     }
