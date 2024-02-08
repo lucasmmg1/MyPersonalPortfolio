@@ -1,17 +1,3 @@
-<?php
-$request = $_SERVER['REQUEST_URI'];
-
-switch ($request) {
-    case '/portfolio.php' :
-        require __DIR__ . '/Assets/Application_Main/Scripts/PHP/portfolio.php';
-        break;
-    default:
-        http_response_code(404);
-        //require __DIR__ . '/404.php';
-        break;
-}
-?>
-
 <html lang="pt-br">
 
     <head>

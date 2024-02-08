@@ -2,7 +2,7 @@ class Header
 {
     static Setup()
     {
-        Language.Store("Queries/RetrieveLanguageData.php").then(() =>
+        Language.Store("Assets/Application_Main/Scripts/PHP/Queries/RetrieveLanguageData.php").then(() =>
         {
             Header.Assign()
             Navbar.Setup();

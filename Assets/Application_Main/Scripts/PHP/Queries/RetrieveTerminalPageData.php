@@ -22,7 +22,9 @@
         $response = array
         (
             "status" => "error",
-            "message" => "Field not found."
+            "message" => "Field not found.",
+            "query" => $query,
+            "result" => $result
         );
     }
 

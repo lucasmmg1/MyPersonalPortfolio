@@ -13,7 +13,7 @@ class Bio
 
     static Setup()
     {
-        fetch('../HTML/Bio.html')
+        fetch('Assets/Application_Main/Scripts/HTML/Bio.html')
         .then(response => response.text())
         .then(data =>
         {
@@ -31,7 +31,7 @@ class Bio
         let promises = [];
         for (let field of  Object.keys(Bio.results))
         {
-            let url = new URL('Queries/RetrieveBioPageData.php', window.location.href);
+            let url = new URL('Assets/Application_Main/Scripts/PHP/Queries/RetrieveBioPageData.php', window.location.href);
             let params = {field: field, table: 'Bio', language: Language.GetCurrentLanguage()};
             url.search = new URLSearchParams(params).toString();
 
