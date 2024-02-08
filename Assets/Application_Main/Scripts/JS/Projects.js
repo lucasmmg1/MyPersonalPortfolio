@@ -290,13 +290,11 @@ class Projects
     static ResetProjectsValues()
     {
         let projectsMoodboard = document.getElementById("ProjectsMoodboard");
-
         projectsMoodboard.classList.add("opacity-0");
         setTimeout(function()
         {
             projectsMoodboard.classList.remove("FadeIn");
         }, 50);
-
         while (projectsMoodboard.firstChild)
             projectsMoodboard.removeChild(projectsMoodboard.lastChild);
     }
